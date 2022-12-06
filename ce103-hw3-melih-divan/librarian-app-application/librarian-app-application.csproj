@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{16FAA83C-6AA4-4C79-A647-C6B21906D441}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>librarian_app_application</RootNamespace>
-    <AssemblyName>librarianApp</AssemblyName>
+    <RootNamespace>librarianApp</RootNamespace>
+    <AssemblyName>librarian-app-application</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
