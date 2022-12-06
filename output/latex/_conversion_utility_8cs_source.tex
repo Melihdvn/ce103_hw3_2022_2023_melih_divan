@@ -1,0 +1,141 @@
+\doxysection{Conversion\+Utility.\+cs}
+\label{_conversion_utility_8cs_source}\index{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/ConversionUtility.cs@{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/ConversionUtility.cs}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using }System.Linq;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using }System.Reflection;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using }System.Text;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using }System.Threading.Tasks;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{namespace }LibraryManagement}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{class }ConversionUtility}
+\DoxyCodeLine{00011     \{}
+\DoxyCodeLine{00012         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsNumeric(\textcolor{keywordtype}{object} Expression)}
+\DoxyCodeLine{00013         \{}
+\DoxyCodeLine{00014             \textcolor{keywordtype}{double} retNum;}
+\DoxyCodeLine{00015 }
+\DoxyCodeLine{00016             \textcolor{keywordtype}{bool} isNum = Double.TryParse(Convert.ToString(Expression), System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out retNum);}
+\DoxyCodeLine{00017             \textcolor{keywordflow}{return} isNum;}
+\DoxyCodeLine{00018         \}}
+\DoxyCodeLine{00019         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] ToByte(\textcolor{keyword}{this} \textcolor{keywordtype}{string} hexString)}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021             \textcolor{keywordflow}{return} Enumerable}
+\DoxyCodeLine{00022                 .Range(0, hexString.Length)}
+\DoxyCodeLine{00023                 .Where(x => x \% 2 == 0)}
+\DoxyCodeLine{00024                 .Select(x => Convert.ToByte(hexString.Substring(x, 2), 16))}
+\DoxyCodeLine{00025                 .ToArray();}
+\DoxyCodeLine{00026         \}}
+\DoxyCodeLine{00027 }
+\DoxyCodeLine{00028         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} ToHex(\textcolor{keyword}{this} \textcolor{keywordtype}{byte}[] arr)}
+\DoxyCodeLine{00029         \{}
+\DoxyCodeLine{00030             var sb = \textcolor{keyword}{new} StringBuilder(arr.Length * 2);}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{byte} b \textcolor{keywordflow}{in} arr)}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 sb.AppendFormat(\textcolor{stringliteral}{"{}\{0:X2\}"{}}, b);}
+\DoxyCodeLine{00034             \}}
+\DoxyCodeLine{00035 }
+\DoxyCodeLine{00036             \textcolor{keywordflow}{return} sb.ToString();}
+\DoxyCodeLine{00037         \}}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} IsHex(\textcolor{keyword}{this} \textcolor{keywordtype}{string} str)}
+\DoxyCodeLine{00040         \{}
+\DoxyCodeLine{00041             \textcolor{keywordtype}{bool} returnValue = \textcolor{keyword}{true};}
+\DoxyCodeLine{00042             \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00043             \{}
+\DoxyCodeLine{00044                 str.ToByte();}
+\DoxyCodeLine{00045             \}}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{catch} (Exception)}
+\DoxyCodeLine{00047             \{}
+\DoxyCodeLine{00048                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00049             \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051             \textcolor{keywordflow}{return} returnValue;}
+\DoxyCodeLine{00052         \}}
+\DoxyCodeLine{00053 }
+\DoxyCodeLine{00054         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{int} GetInt(\textcolor{keyword}{this} \textcolor{keywordtype}{byte}[] data, \textcolor{keywordtype}{int} offset, \textcolor{keywordtype}{int} length)}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             var result = 0;}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{for} (var i = 0; i < length; i++)}
+\DoxyCodeLine{00058             \{}
+\DoxyCodeLine{00059                 result = (result << 8) | data[offset + i];}
+\DoxyCodeLine{00060             \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{00063         \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} ToAscii(\textcolor{keyword}{this} \textcolor{keywordtype}{string} hexString)}
+\DoxyCodeLine{00066         \{}
+\DoxyCodeLine{00067             StringBuilder sb = \textcolor{keyword}{new} StringBuilder();}
+\DoxyCodeLine{00068             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= hexString.Length -\/ 2; i += 2)}
+\DoxyCodeLine{00069             \{}
+\DoxyCodeLine{00070                 sb.Append(Convert.ToString(Convert.ToChar(Int32.Parse(hexString.Substring(i, 2), System.Globalization.NumberStyles.HexNumber))));}
+\DoxyCodeLine{00071             \}}
+\DoxyCodeLine{00072             \textcolor{keywordflow}{return} sb.ToString();}
+\DoxyCodeLine{00073         \}}
+\DoxyCodeLine{00074 }
+\DoxyCodeLine{00075         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{int} ByteArrayToInteger(\textcolor{keywordtype}{byte}[] byteArray)}
+\DoxyCodeLine{00076         \{}
+\DoxyCodeLine{00077             \textcolor{keywordflow}{if} (BitConverter.IsLittleEndian)}
+\DoxyCodeLine{00078                 Array.Reverse(byteArray);}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080             \textcolor{keywordflow}{return} BitConverter.ToInt32(byteArray, 0);}
+\DoxyCodeLine{00081         \}}
+\DoxyCodeLine{00082         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] IntegerToByteArray(\textcolor{keywordtype}{int} value)}
+\DoxyCodeLine{00083         \{}
+\DoxyCodeLine{00084             \textcolor{keywordtype}{byte}[] intBytes = BitConverter.GetBytes(value);}
+\DoxyCodeLine{00085             \textcolor{keywordflow}{if} (BitConverter.IsLittleEndian)}
+\DoxyCodeLine{00086             \{}
+\DoxyCodeLine{00087                 Array.Reverse(intBytes);}
+\DoxyCodeLine{00088             \}}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090             \textcolor{keywordflow}{return} intBytes;}
+\DoxyCodeLine{00091         \}}
+\DoxyCodeLine{00092 }
+\DoxyCodeLine{00093         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] StringListToByteArray(List<string> array, \textcolor{keywordtype}{int} itemMaxCount, \textcolor{keywordtype}{int} itemMaxLength)}
+\DoxyCodeLine{00094         \{}
+\DoxyCodeLine{00095             \textcolor{keywordtype}{byte}[] outputBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[itemMaxCount * itemMaxLength];}
+\DoxyCodeLine{00096             \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{00097             \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} val \textcolor{keywordflow}{in} array)}
+\DoxyCodeLine{00098             \{}
+\DoxyCodeLine{00099                 \textcolor{keywordtype}{byte}[] valBytes = StringToByteArray(val);}
+\DoxyCodeLine{00100                 Array.Copy(valBytes, 0, outputBytes, index, valBytes.Length);}
+\DoxyCodeLine{00101                 index += itemMaxLength;}
+\DoxyCodeLine{00102             \}}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104             \textcolor{keywordflow}{return} outputBytes;}
+\DoxyCodeLine{00105         \}}
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107         \textcolor{keyword}{public} \textcolor{keyword}{static} List<string> ByteArrayToStringList(\textcolor{keywordtype}{byte}[] byteArray, \textcolor{keywordtype}{int} itemMaxCount, \textcolor{keywordtype}{int} itemMaxLength)}
+\DoxyCodeLine{00108         \{}
+\DoxyCodeLine{00109             List<string> list = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < itemMaxCount; i++)}
+\DoxyCodeLine{00112             \{}
+\DoxyCodeLine{00113                 \textcolor{keywordtype}{byte}[] itemBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[itemMaxLength];}
+\DoxyCodeLine{00114                 Array.Copy(byteArray, i * itemMaxLength, itemBytes, 0, itemMaxLength);}
+\DoxyCodeLine{00115                 \textcolor{keywordtype}{string} val = ByteArrayToString(itemBytes);}
+\DoxyCodeLine{00116                 \textcolor{keywordflow}{if} (val != \textcolor{keyword}{null} \&\& val != String.Empty)}
+\DoxyCodeLine{00117                 \{}
+\DoxyCodeLine{00118                     list.Add(val);}
+\DoxyCodeLine{00119                 \}}
+\DoxyCodeLine{00120             \}}
+\DoxyCodeLine{00121 }
+\DoxyCodeLine{00122             \textcolor{keywordflow}{return} list;}
+\DoxyCodeLine{00123         \}}
+\DoxyCodeLine{00124 }
+\DoxyCodeLine{00125         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] StringToByteArray(\textcolor{keywordtype}{string} data)}
+\DoxyCodeLine{00126         \{}
+\DoxyCodeLine{00127             \textcolor{keywordflow}{return} Encoding.ASCII.GetBytes(data);}
+\DoxyCodeLine{00128         \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00130         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{string} ByteArrayToString(\textcolor{keywordtype}{byte}[] byteArray)}
+\DoxyCodeLine{00131         \{}
+\DoxyCodeLine{00132             \textcolor{keywordflow}{return} System.Text.Encoding.UTF8.GetString(byteArray, 0, byteArray.Length).Trim(\textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00133         \}}
+\DoxyCodeLine{00134     \}}
+\DoxyCodeLine{00135 \}}
+
+\end{DoxyCode}

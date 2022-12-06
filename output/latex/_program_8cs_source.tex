@@ -1,0 +1,99 @@
+\doxysection{Program.\+cs}
+\label{_program_8cs_source}\index{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/application/Program.cs@{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/application/Program.cs}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using }System.IO;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using }static System.Console;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using }LibraryManagement;}
+\DoxyCodeLine{00005 }
+\DoxyCodeLine{00006 \textcolor{keyword}{namespace }librarianApp}
+\DoxyCodeLine{00007 \{}
+\DoxyCodeLine{00008 \textcolor{preprocessor}{    \#region Starting app with password function}}
+\DoxyCodeLine{00009     \textcolor{keyword}{class }Program}
+\DoxyCodeLine{00010     \{}
+\DoxyCodeLine{00011         \textcolor{keyword}{static} \textcolor{keywordtype}{void} Main()}
+\DoxyCodeLine{00012         \{}
+\DoxyCodeLine{00013             Title = \textcolor{stringliteral}{"{}Librarian App -\/ Login Screen"{}};}
+\DoxyCodeLine{00014             \textcolor{keywordtype}{string} passwordAttempt, password = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00015             LibraryManager.App libraryApp = \textcolor{keyword}{new} LibraryManager.App();}
+\DoxyCodeLine{00016             BackgroundColor = ConsoleColor.DarkGray;}
+\DoxyCodeLine{00017             ForegroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00018             WriteLine(\textcolor{stringliteral}{@"{}}}
+\DoxyCodeLine{00019 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00020 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00021 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00022 \textcolor{stringliteral}{██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00023 \textcolor{stringliteral}{██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00024 \textcolor{stringliteral}{██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00025 \textcolor{stringliteral}{██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00026 \textcolor{stringliteral}{██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00027 \textcolor{stringliteral}{██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00028 \textcolor{stringliteral}{██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00029 \textcolor{stringliteral}{██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00030 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00031 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00032 \textcolor{stringliteral}{"{}});}
+\DoxyCodeLine{00033             ResetColor();}
+\DoxyCodeLine{00034             ForegroundColor = ConsoleColor.Black;}
+\DoxyCodeLine{00035             BackgroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00036             WriteLine(\textcolor{stringliteral}{"{}Welcome to the Librarian App"{}});}
+\DoxyCodeLine{00037             ResetColor();}
+\DoxyCodeLine{00038             ForegroundColor = ConsoleColor.DarkRed;}
+\DoxyCodeLine{00039             Write(\textcolor{stringliteral}{"{}Please enter password: "{}});}
+\DoxyCodeLine{00040             ForegroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00041             passwordAttempt = ReadLine();}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043             \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}password.txt"{}}, FileMode.Open)))}
+\DoxyCodeLine{00044             \{}
+\DoxyCodeLine{00045                 password = sr.ReadLine();}
+\DoxyCodeLine{00046                 sr.Close();}
+\DoxyCodeLine{00047             \}}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049             \textcolor{keywordflow}{if} (passwordAttempt == password)}
+\DoxyCodeLine{00050             \{}
+\DoxyCodeLine{00051                 ForegroundColor = ConsoleColor.Green;}
+\DoxyCodeLine{00052                 WriteLine(\textcolor{stringliteral}{"{}Login Success."{}});}
+\DoxyCodeLine{00053                 ForegroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00054                 WriteLine(\textcolor{stringliteral}{"{}Press any key to continue..."{}});}
+\DoxyCodeLine{00055                 ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00056                 libraryApp.Start();}
+\DoxyCodeLine{00057             \}}
+\DoxyCodeLine{00058             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00059             \{}
+\DoxyCodeLine{00060                 \textcolor{keywordtype}{int} i = 3;}
+\DoxyCodeLine{00061                 \textcolor{keywordflow}{while} (i > 0)}
+\DoxyCodeLine{00062                 \{}
+\DoxyCodeLine{00063                     ForegroundColor = ConsoleColor.Red;}
+\DoxyCodeLine{00064                     WriteLine(\textcolor{stringliteral}{"{}Wrong password. \(\backslash\)n You have "{}} + (i) + \textcolor{stringliteral}{"{} attempts left."{}});}
+\DoxyCodeLine{00065                     ForegroundColor = ConsoleColor.DarkRed;}
+\DoxyCodeLine{00066                     Write(\textcolor{stringliteral}{"{}Please enter password: "{}});}
+\DoxyCodeLine{00067                     ForegroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00068                     passwordAttempt = ReadLine();}
+\DoxyCodeLine{00069                     \textcolor{keywordflow}{if} (passwordAttempt == password)}
+\DoxyCodeLine{00070                     \{}
+\DoxyCodeLine{00071                         ForegroundColor = ConsoleColor.Green;}
+\DoxyCodeLine{00072                         WriteLine(\textcolor{stringliteral}{"{}Login Success."{}});}
+\DoxyCodeLine{00073                         ForegroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00074                         WriteLine(\textcolor{stringliteral}{"{}Press any key to continue..."{}});}
+\DoxyCodeLine{00075                         ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00076                         libraryApp.Start();}
+\DoxyCodeLine{00077                     \}}
+\DoxyCodeLine{00078                     -\/-\/i;}
+\DoxyCodeLine{00079                 \}}
+\DoxyCodeLine{00080                 \textcolor{keywordflow}{if} (i == 0)}
+\DoxyCodeLine{00081                 \{}
+\DoxyCodeLine{00082                     ForegroundColor = ConsoleColor.Red;}
+\DoxyCodeLine{00083                     WriteLine(\textcolor{stringliteral}{"{}Login Failed. \(\backslash\)n App will close."{}});}
+\DoxyCodeLine{00084                     ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00085 }
+\DoxyCodeLine{00086                 \}}
+\DoxyCodeLine{00087             \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090         \}}
+\DoxyCodeLine{00091     \}}
+\DoxyCodeLine{00092 \textcolor{preprocessor}{    \#endregion}}
+\DoxyCodeLine{00093 \}}
+
+\end{DoxyCode}

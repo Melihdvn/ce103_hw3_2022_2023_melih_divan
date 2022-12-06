@@ -1,0 +1,750 @@
+\doxysection{Library\+Manager.\+cs}
+\label{_library_manager_8cs_source}\index{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/LibraryManager.cs@{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/LibraryManager.cs}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using }System.Linq;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using }System.Text;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using }System.IO;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using }static System.Console;}
+\DoxyCodeLine{00007 \textcolor{keyword}{using }System.Threading.Tasks;}
+\DoxyCodeLine{00008 \textcolor{keyword}{using }System.Runtime.CompilerServices;}
+\DoxyCodeLine{00009 \textcolor{keyword}{using }System.Diagnostics;}
+\DoxyCodeLine{00010 }
+\DoxyCodeLine{00011 \textcolor{keyword}{namespace }LibraryManagement}
+\DoxyCodeLine{00012 \{}
+\DoxyCodeLine{00013     \textcolor{keyword}{public} \textcolor{keyword}{class }LibraryManager}
+\DoxyCodeLine{00014     \{}
+\DoxyCodeLine{00015         \textcolor{comment}{//Menus}}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017 \textcolor{preprocessor}{        \#region Menu}}
+\DoxyCodeLine{00018         \textcolor{keyword}{class }Menu}
+\DoxyCodeLine{00019         \{}
+\DoxyCodeLine{00020             \textcolor{keyword}{private} \textcolor{keywordtype}{int} SelectedIndex;}
+\DoxyCodeLine{00021             \textcolor{keyword}{private} \textcolor{keywordtype}{string}[] Options;}
+\DoxyCodeLine{00022             \textcolor{keyword}{private} \textcolor{keywordtype}{string} Prompt;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024             \textcolor{keyword}{public} Menu(\textcolor{keywordtype}{string} prompt, \textcolor{keywordtype}{string}[] options)}
+\DoxyCodeLine{00025             \{}
+\DoxyCodeLine{00026                 Prompt = prompt;}
+\DoxyCodeLine{00027                 Options = options;}
+\DoxyCodeLine{00028                 SelectedIndex = 0;}
+\DoxyCodeLine{00029             \}}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031             \textcolor{keyword}{private} \textcolor{keywordtype}{void} DisplayOptions()}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 BackgroundColor = ConsoleColor.DarkGray;}
+\DoxyCodeLine{00034                 ForegroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00035                 WriteLine(Prompt);}
+\DoxyCodeLine{00036                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Options.Length; i++)}
+\DoxyCodeLine{00037                 \{}
+\DoxyCodeLine{00038                     \textcolor{keywordtype}{string} currentOption = Options[i];}
+\DoxyCodeLine{00039                     \textcolor{keywordtype}{string} prefix;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041                     \textcolor{keywordflow}{if} (i == SelectedIndex)}
+\DoxyCodeLine{00042                     \{}
+\DoxyCodeLine{00043                         prefix = \textcolor{stringliteral}{"{}  ►"{}};}
+\DoxyCodeLine{00044                         ForegroundColor = ConsoleColor.Black;}
+\DoxyCodeLine{00045                         BackgroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00046                     \}}
+\DoxyCodeLine{00047                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00048                     \{}
+\DoxyCodeLine{00049                         prefix = \textcolor{stringliteral}{"{}  "{}};}
+\DoxyCodeLine{00050                         ForegroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00051                         BackgroundColor = ConsoleColor.Black;}
+\DoxyCodeLine{00052                     \}}
+\DoxyCodeLine{00053                     WriteLine(\$\textcolor{stringliteral}{"{}\{prefix\} << \{currentOption\} >>"{}});}
+\DoxyCodeLine{00054                 \}}
+\DoxyCodeLine{00055                 ResetColor();}
+\DoxyCodeLine{00056             \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058             \textcolor{keyword}{public} \textcolor{keywordtype}{int} Run()}
+\DoxyCodeLine{00059             \{}
+\DoxyCodeLine{00060                 ConsoleKey keyPressed;}
+\DoxyCodeLine{00061                 \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00062                 \{}
+\DoxyCodeLine{00063                     Clear();}
+\DoxyCodeLine{00064                     DisplayOptions();}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067                     ConsoleKeyInfo keyInfo = ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00068                     keyPressed = keyInfo.Key;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070                     \textcolor{comment}{//Update SelectedIndex based on arrow keys.}}
+\DoxyCodeLine{00071                     \textcolor{keywordflow}{if} (keyPressed == ConsoleKey.DownArrow)}
+\DoxyCodeLine{00072                     \{}
+\DoxyCodeLine{00073                         SelectedIndex++;}
+\DoxyCodeLine{00074                         \textcolor{keywordflow}{if} (SelectedIndex == Options.Length)}
+\DoxyCodeLine{00075                         \{}
+\DoxyCodeLine{00076                             SelectedIndex = 0;}
+\DoxyCodeLine{00077                         \}}
+\DoxyCodeLine{00078                     \}}
+\DoxyCodeLine{00079                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (keyPressed == ConsoleKey.UpArrow)}
+\DoxyCodeLine{00080                     \{}
+\DoxyCodeLine{00081                         SelectedIndex-\/-\/;}
+\DoxyCodeLine{00082                         \textcolor{keywordflow}{if} (SelectedIndex == -\/1)}
+\DoxyCodeLine{00083                         \{}
+\DoxyCodeLine{00084                             \{}
+\DoxyCodeLine{00085                                 SelectedIndex = Options.Length -\/ 1;}
+\DoxyCodeLine{00086                             \}}
+\DoxyCodeLine{00087                         \}}
+\DoxyCodeLine{00088                     \}}
+\DoxyCodeLine{00089                 \} \textcolor{keywordflow}{while} (keyPressed != ConsoleKey.Enter);}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091                 \textcolor{keywordflow}{return} SelectedIndex;}
+\DoxyCodeLine{00092             \}}
+\DoxyCodeLine{00093         \}}
+\DoxyCodeLine{00094 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00095 \textcolor{preprocessor}{        \#region Menu which has welcome text (Main Menu)}}
+\DoxyCodeLine{00096         \textcolor{keyword}{class }MainMenu}
+\DoxyCodeLine{00097         \{}
+\DoxyCodeLine{00098             \textcolor{keyword}{private} \textcolor{keywordtype}{int} SelectedIndex;}
+\DoxyCodeLine{00099             \textcolor{keyword}{private} \textcolor{keywordtype}{string}[] Options;}
+\DoxyCodeLine{00100             \textcolor{keyword}{private} \textcolor{keywordtype}{string} Prompt;}
+\DoxyCodeLine{00101             \textcolor{keyword}{private} \textcolor{keywordtype}{string} Welcome;}
+\DoxyCodeLine{00102 }
+\DoxyCodeLine{00103             \textcolor{keyword}{public} MainMenu(\textcolor{keywordtype}{string} prompt, \textcolor{keywordtype}{string}[] options, \textcolor{keywordtype}{string} welcome)}
+\DoxyCodeLine{00104             \{}
+\DoxyCodeLine{00105                 Prompt = prompt;}
+\DoxyCodeLine{00106                 Options = options;}
+\DoxyCodeLine{00107                 Welcome = welcome;}
+\DoxyCodeLine{00108                 SelectedIndex = 0;}
+\DoxyCodeLine{00109             \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111             \textcolor{keyword}{private} \textcolor{keywordtype}{void} DisplayOptions()}
+\DoxyCodeLine{00112             \{}
+\DoxyCodeLine{00113                 BackgroundColor = ConsoleColor.DarkGray;}
+\DoxyCodeLine{00114                 ForegroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00115                 WriteLine(Prompt);}
+\DoxyCodeLine{00116                 ResetColor();}
+\DoxyCodeLine{00117                 ForegroundColor = ConsoleColor.DarkRed;}
+\DoxyCodeLine{00118                 WriteLine(Welcome);}
+\DoxyCodeLine{00119                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < Options.Length; i++)}
+\DoxyCodeLine{00120                 \{}
+\DoxyCodeLine{00121                     \textcolor{keywordtype}{string} currentOption = Options[i];}
+\DoxyCodeLine{00122                     \textcolor{keywordtype}{string} prefix;}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124                     \textcolor{keywordflow}{if} (i == SelectedIndex)}
+\DoxyCodeLine{00125                     \{}
+\DoxyCodeLine{00126                         prefix = \textcolor{stringliteral}{"{}  ►"{}};}
+\DoxyCodeLine{00127                         ForegroundColor = ConsoleColor.Black;}
+\DoxyCodeLine{00128                         BackgroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00129                     \}}
+\DoxyCodeLine{00130                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00131                     \{}
+\DoxyCodeLine{00132                         prefix = \textcolor{stringliteral}{"{}  "{}};}
+\DoxyCodeLine{00133                         ForegroundColor = ConsoleColor.White;}
+\DoxyCodeLine{00134                         BackgroundColor = ConsoleColor.Black;}
+\DoxyCodeLine{00135                     \}}
+\DoxyCodeLine{00136                     WriteLine(\$\textcolor{stringliteral}{"{}\{prefix\} << \{currentOption\} >>"{}});}
+\DoxyCodeLine{00137                 \}}
+\DoxyCodeLine{00138                 ResetColor();}
+\DoxyCodeLine{00139             \}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141             \textcolor{keyword}{public} \textcolor{keywordtype}{int} Run()}
+\DoxyCodeLine{00142             \{}
+\DoxyCodeLine{00143                 ConsoleKey keyPressed;}
+\DoxyCodeLine{00144                 \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00145                 \{}
+\DoxyCodeLine{00146                     Clear();}
+\DoxyCodeLine{00147                     DisplayOptions();}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 }
+\DoxyCodeLine{00150                     ConsoleKeyInfo keyInfo = ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00151                     keyPressed = keyInfo.Key;}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153                     \textcolor{comment}{//Update SelectedIndex based on arrow keys.}}
+\DoxyCodeLine{00154                     \textcolor{keywordflow}{if} (keyPressed == ConsoleKey.DownArrow)}
+\DoxyCodeLine{00155                     \{}
+\DoxyCodeLine{00156                         SelectedIndex++;}
+\DoxyCodeLine{00157                         \textcolor{keywordflow}{if} (SelectedIndex == Options.Length)}
+\DoxyCodeLine{00158                         \{}
+\DoxyCodeLine{00159                             SelectedIndex = 0;}
+\DoxyCodeLine{00160                         \}}
+\DoxyCodeLine{00161                     \}}
+\DoxyCodeLine{00162                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (keyPressed == ConsoleKey.UpArrow)}
+\DoxyCodeLine{00163                     \{}
+\DoxyCodeLine{00164                         SelectedIndex-\/-\/;}
+\DoxyCodeLine{00165                         \textcolor{keywordflow}{if} (SelectedIndex == -\/1)}
+\DoxyCodeLine{00166                         \{}
+\DoxyCodeLine{00167                             \{}
+\DoxyCodeLine{00168                                 SelectedIndex = Options.Length -\/ 1;}
+\DoxyCodeLine{00169                             \}}
+\DoxyCodeLine{00170                         \}}
+\DoxyCodeLine{00171                     \}}
+\DoxyCodeLine{00172                 \} \textcolor{keywordflow}{while} (keyPressed != ConsoleKey.Enter);}
+\DoxyCodeLine{00173 }
+\DoxyCodeLine{00174                 \textcolor{keywordflow}{return} SelectedIndex;}
+\DoxyCodeLine{00175             \}}
+\DoxyCodeLine{00176         \}}
+\DoxyCodeLine{00177 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00178         \textcolor{comment}{//App}}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180         \textcolor{keyword}{public} \textcolor{keyword}{class }App}
+\DoxyCodeLine{00181         \{}
+\DoxyCodeLine{00182 \textcolor{preprocessor}{            \#region Start section}}
+\DoxyCodeLine{00183             \textcolor{keyword}{public} \textcolor{keywordtype}{void} Start()}
+\DoxyCodeLine{00184             \{}
+\DoxyCodeLine{00185                 Title = \textcolor{stringliteral}{"{}Librarian App"{}};}
+\DoxyCodeLine{00186                 RunMainMenu();}
+\DoxyCodeLine{00187             \}}
+\DoxyCodeLine{00188 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00189 \textcolor{preprocessor}{            \#region Main menu}}
+\DoxyCodeLine{00190             \textcolor{keyword}{private} \textcolor{keywordtype}{void} RunMainMenu()}
+\DoxyCodeLine{00191             \{}
+\DoxyCodeLine{00192                 \textcolor{keywordtype}{string} prompt = \textcolor{stringliteral}{@"{}}}
+\DoxyCodeLine{00193 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00194 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00195 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00196 \textcolor{stringliteral}{██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00197 \textcolor{stringliteral}{██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00198 \textcolor{stringliteral}{██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00199 \textcolor{stringliteral}{██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00200 \textcolor{stringliteral}{██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00201 \textcolor{stringliteral}{██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00202 \textcolor{stringliteral}{██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00203 \textcolor{stringliteral}{██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00204 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00205 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00206 \textcolor{stringliteral}{"{}};}
+\DoxyCodeLine{00207                 ResetColor();}
+\DoxyCodeLine{00208                 \textcolor{keywordtype}{string} welcome = \textcolor{stringliteral}{"{}            Welcome to the Librarian app! What would you like to do? \(\backslash\)n       (Use Arrow Keys to cycle through options and press enter to select.)\(\backslash\)n"{}};}
+\DoxyCodeLine{00209                 \textcolor{keywordtype}{string}[] options = \{ \textcolor{stringliteral}{"{}Book Options"{}}, \textcolor{comment}{/*"{}Category Options"{},*/} \textcolor{stringliteral}{"{}About"{}}, \textcolor{stringliteral}{"{}Options"{}}, \textcolor{stringliteral}{"{}Exit"{}} \};}
+\DoxyCodeLine{00210                 MainMenu mainmenu = \textcolor{keyword}{new} MainMenu(prompt, options, welcome);}
+\DoxyCodeLine{00211                 \textcolor{keywordtype}{int} SelectedIndex = mainmenu.Run();}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213 }
+\DoxyCodeLine{00214                 \textcolor{keywordflow}{switch} (SelectedIndex)}
+\DoxyCodeLine{00215                 \{}
+\DoxyCodeLine{00216                     \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{00217                         DisplayBook();}
+\DoxyCodeLine{00218                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00219                     \textcolor{comment}{/* case 1:}}
+\DoxyCodeLine{00220 \textcolor{comment}{                         DisplayCtg();}}
+\DoxyCodeLine{00221 \textcolor{comment}{                         break;*/}}
+\DoxyCodeLine{00222                     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{00223                         DisplayAbout();}
+\DoxyCodeLine{00224                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00225                     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{00226                         DisplayOptions();}
+\DoxyCodeLine{00227                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00228                     \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{00229                         ExitApp();}
+\DoxyCodeLine{00230                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00231                 \}}
+\DoxyCodeLine{00232 }
+\DoxyCodeLine{00233             \}}
+\DoxyCodeLine{00234 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00235 \textcolor{preprocessor}{            \#region Book menu options}}
+\DoxyCodeLine{00236             \textcolor{keyword}{private} \textcolor{keywordtype}{void} DisplayBook()}
+\DoxyCodeLine{00237             \{}
+\DoxyCodeLine{00238                 \textcolor{keywordtype}{string} prompt = \textcolor{stringliteral}{@"{}}}
+\DoxyCodeLine{00239 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00240 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00241 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00242 \textcolor{stringliteral}{██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00243 \textcolor{stringliteral}{██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00244 \textcolor{stringliteral}{██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00245 \textcolor{stringliteral}{██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00246 \textcolor{stringliteral}{██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00247 \textcolor{stringliteral}{██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00248 \textcolor{stringliteral}{██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00249 \textcolor{stringliteral}{██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00250 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00251 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00252 \textcolor{stringliteral}{"{}};}
+\DoxyCodeLine{00253                 \textcolor{keywordtype}{string}[] options = \{ \textcolor{stringliteral}{"{}Add Book"{}}, \textcolor{stringliteral}{"{}Edit Book"{}}, \textcolor{stringliteral}{"{}Delete Book"{}}, \textcolor{stringliteral}{"{}List Books"{}}, \textcolor{stringliteral}{"{}List Borrowed Books"{}}, \textcolor{stringliteral}{"{}Search Books"{}}, \textcolor{stringliteral}{"{}Borrow Book"{}}, \textcolor{stringliteral}{"{}Return Book"{}}, \textcolor{stringliteral}{"{}Back to the main menu"{}} \};}
+\DoxyCodeLine{00254                 Menu bookMenu = \textcolor{keyword}{new} Menu(prompt, options);}
+\DoxyCodeLine{00255                 \textcolor{keywordtype}{int} SelectedIndex = bookMenu.Run();}
+\DoxyCodeLine{00256 }
+\DoxyCodeLine{00257                 \textcolor{keywordflow}{switch} (SelectedIndex)}
+\DoxyCodeLine{00258                 \{}
+\DoxyCodeLine{00259                     \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{00260                         AddBook();}
+\DoxyCodeLine{00261                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00262                     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{00263                         EditBook();}
+\DoxyCodeLine{00264                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00265                     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{00266                         DeleteBook();}
+\DoxyCodeLine{00267                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00268                     \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{00269                         ListBook();}
+\DoxyCodeLine{00270                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00271                     \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{00272                         ListBorrowedBook();}
+\DoxyCodeLine{00273                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00274                     \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{00275                         SearchBook();}
+\DoxyCodeLine{00276                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00277                     \textcolor{keywordflow}{case} 6:}
+\DoxyCodeLine{00278                         BorrowBook();}
+\DoxyCodeLine{00279                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00280                     \textcolor{keywordflow}{case} 7:}
+\DoxyCodeLine{00281                         ReturnBook();}
+\DoxyCodeLine{00282                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00283                     \textcolor{keywordflow}{case} 8:}
+\DoxyCodeLine{00284                         RunMainMenu();}
+\DoxyCodeLine{00285                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00286                 \}}
+\DoxyCodeLine{00287 }
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289                 \textcolor{keywordtype}{void} AddBook()}
+\DoxyCodeLine{00290                 \{}
+\DoxyCodeLine{00291                     Clear();}
+\DoxyCodeLine{00292                     \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00293                     \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00294 }
+\DoxyCodeLine{00295                     Book book = \textcolor{keyword}{new} Book();}
+\DoxyCodeLine{00296                     Write(\textcolor{stringliteral}{"{}Please enter book id: "{}});}
+\DoxyCodeLine{00297                     book.Id = Convert.ToInt32(ReadLine());}
+\DoxyCodeLine{00298                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nPlease enter book title: "{}});}
+\DoxyCodeLine{00299                     book.Title = ReadLine();}
+\DoxyCodeLine{00300                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nPlease enter book description: "{}});}
+\DoxyCodeLine{00301                     book.Description = ReadLine();}
+\DoxyCodeLine{00302                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nPlease enter book author: "{}});}
+\DoxyCodeLine{00303                     book.Authors.Add(ReadLine());}
+\DoxyCodeLine{00304                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nPlease enter book category: "{}});}
+\DoxyCodeLine{00305                     book.Categories.Add(ReadLine());}
+\DoxyCodeLine{00306 }
+\DoxyCodeLine{00307                     \textcolor{keywordtype}{byte}[] bookBytes = Book.BookToByteArrayBlock(book);}
+\DoxyCodeLine{00308 }
+\DoxyCodeLine{00309                     FileUtility.AppendBlock(bookBytes, filename);}
+\DoxyCodeLine{00310                     DisplayBook();}
+\DoxyCodeLine{00311                 \}}
+\DoxyCodeLine{00312                 \textcolor{keywordtype}{void} EditBook()}
+\DoxyCodeLine{00313                 \{}
+\DoxyCodeLine{00314                     \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00315                     \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00316                     Clear();}
+\DoxyCodeLine{00317                     \textcolor{keywordtype}{int} booknumber;}
+\DoxyCodeLine{00318                     WriteLine(\textcolor{stringliteral}{"{}Please enter number of book which do you want to edit: "{}});}
+\DoxyCodeLine{00319                     booknumber = Convert.ToInt32(ReadLine());}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321                     \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00322                     \{}
+\DoxyCodeLine{00323                         \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
+\DoxyCodeLine{00324                         sr.Close();}
+\DoxyCodeLine{00325 }
+\DoxyCodeLine{00326                         Book book = \textcolor{keyword}{new} Book();}
+\DoxyCodeLine{00327                         WriteLine(\textcolor{stringliteral}{"{}Please enter new book id: "{}});}
+\DoxyCodeLine{00328                         book.Id = Convert.ToInt32(ReadLine());}
+\DoxyCodeLine{00329                         WriteLine(\textcolor{stringliteral}{"{}Please enter new book title: "{}});}
+\DoxyCodeLine{00330                         book.Title = ReadLine();}
+\DoxyCodeLine{00331                         WriteLine(\textcolor{stringliteral}{"{}Please enter new book description: "{}});}
+\DoxyCodeLine{00332                         book.Description = ReadLine();}
+\DoxyCodeLine{00333                         WriteLine(\textcolor{stringliteral}{"{}Please enter new book author: "{}});}
+\DoxyCodeLine{00334                         book.Authors.Add(ReadLine());}
+\DoxyCodeLine{00335                         WriteLine(\textcolor{stringliteral}{"{}Please enter new book category: "{}});}
+\DoxyCodeLine{00336                         book.Categories.Add(ReadLine());}
+\DoxyCodeLine{00337 }
+\DoxyCodeLine{00338                         \textcolor{keywordtype}{byte}[] bookBytes = Book.BookToByteArrayBlock(book);}
+\DoxyCodeLine{00339 }
+\DoxyCodeLine{00340                         FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00341                     \}}
+\DoxyCodeLine{00342 }
+\DoxyCodeLine{00343                     WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00344                     ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00345                     DisplayBook();}
+\DoxyCodeLine{00346                 \}}
+\DoxyCodeLine{00347                 \textcolor{keywordtype}{void} DeleteBook()}
+\DoxyCodeLine{00348                 \{}
+\DoxyCodeLine{00349                     \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00350                     \{}
+\DoxyCodeLine{00351                         \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
+\DoxyCodeLine{00352                         sr.Close();}
+\DoxyCodeLine{00353 }
+\DoxyCodeLine{00354                         \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00355                         \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00356                         Clear();}
+\DoxyCodeLine{00357                         \textcolor{keywordtype}{int} booknumber;}
+\DoxyCodeLine{00358                         WriteLine(\textcolor{stringliteral}{"{}Please enter number of book which do you want to delete: "{}});}
+\DoxyCodeLine{00359                         booknumber = Convert.ToInt32(ReadLine());}
+\DoxyCodeLine{00360                         FileUtility.DeleteBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00361 }
+\DoxyCodeLine{00362                         \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00363                         \{}
+\DoxyCodeLine{00364                             \textcolor{keywordtype}{byte}[] nextbookbytes = FileUtility.ReadBlock(booknumber + 1, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00365                             FileUtility.UpdateBlock(nextbookbytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00366                             booknumber++;}
+\DoxyCodeLine{00367                         \} \textcolor{keywordflow}{while} (booknumber <= (((datalength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) -\/ 1));}
+\DoxyCodeLine{00368 }
+\DoxyCodeLine{00369                         FileUtility.DeleteBlock(((datalength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)), Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00370                     \}}
+\DoxyCodeLine{00371                     DisplayBook();}
+\DoxyCodeLine{00372                 \}}
+\DoxyCodeLine{00373                 \textcolor{keywordtype}{void} ListBook()}
+\DoxyCodeLine{00374                 \{}
+\DoxyCodeLine{00375                     Clear();}
+\DoxyCodeLine{00376                     \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{00377                     \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00378                     \{}
+\DoxyCodeLine{00379                         \textcolor{keywordtype}{string} datlength = sr.ReadLine();}
+\DoxyCodeLine{00380                         sr.Close();}
+\DoxyCodeLine{00381                         \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00382                         \{}
+\DoxyCodeLine{00383                             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00384                             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00385 }
+\DoxyCodeLine{00386 }
+\DoxyCodeLine{00387                             \textcolor{keywordtype}{byte}[] bookWrittenBytes = FileUtility.ReadBlock(i, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00388                             Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytes);}
+\DoxyCodeLine{00389 }
+\DoxyCodeLine{00390                             \textcolor{keywordflow}{if} (bookWrittenObject != \textcolor{keyword}{null} \&\& !bookWrittenObject.Title.Contains(\textcolor{stringliteral}{"{}Borrowed"{}}))}
+\DoxyCodeLine{00391                             \{}
+\DoxyCodeLine{00392                                 WriteLine(i + \textcolor{stringliteral}{"{}. -\/ "{}} + bookWrittenObject.Id + \textcolor{stringliteral}{"{} | "{}} + bookWrittenObject.Title + \textcolor{stringliteral}{"{} | Description: "{}} + bookWrittenObject.Description + \textcolor{stringliteral}{"{} | Author: "{}} + bookWrittenObject.Authors[0] + \textcolor{stringliteral}{"{} | Category: "{}} + bookWrittenObject.Categories[0] + \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00393 }
+\DoxyCodeLine{00394                             \}}
+\DoxyCodeLine{00395                             i++;}
+\DoxyCodeLine{00396 }
+\DoxyCodeLine{00397                         \} \textcolor{keywordflow}{while} (i < (((datlength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) + 1));}
+\DoxyCodeLine{00398                         WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00399                         ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00400                         DisplayBook();}
+\DoxyCodeLine{00401                     \}}
+\DoxyCodeLine{00402                 \}}
+\DoxyCodeLine{00403                 \textcolor{keywordtype}{void} ListBorrowedBook()}
+\DoxyCodeLine{00404                 \{}
+\DoxyCodeLine{00405                     Clear();}
+\DoxyCodeLine{00406                     \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{00407                     \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00408                     \{}
+\DoxyCodeLine{00409                         \textcolor{keywordtype}{string} datlength = sr.ReadLine();}
+\DoxyCodeLine{00410                         sr.Close();}
+\DoxyCodeLine{00411                         \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00412                         \{}
+\DoxyCodeLine{00413                             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00414                             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00415 }
+\DoxyCodeLine{00416 }
+\DoxyCodeLine{00417                             \textcolor{keywordtype}{byte}[] bookWrittenBytes = FileUtility.ReadBlock(i, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00418                             Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytes);}
+\DoxyCodeLine{00419 }
+\DoxyCodeLine{00420                             \textcolor{keywordflow}{if} (bookWrittenObject != \textcolor{keyword}{null} \&\& bookWrittenObject.Title.Contains(\textcolor{stringliteral}{"{}Borrowed"{}}))}
+\DoxyCodeLine{00421                             \{}
+\DoxyCodeLine{00422                                 WriteLine(i + \textcolor{stringliteral}{"{}. -\/ "{}} + bookWrittenObject.Id + \textcolor{stringliteral}{"{} | "{}} + bookWrittenObject.Title + \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00423 }
+\DoxyCodeLine{00424                             \}}
+\DoxyCodeLine{00425                             i++;}
+\DoxyCodeLine{00426 }
+\DoxyCodeLine{00427                         \} \textcolor{keywordflow}{while} (i < (((datlength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) + 1));}
+\DoxyCodeLine{00428                         WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00429                         ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00430                         DisplayBook();}
+\DoxyCodeLine{00431                     \}}
+\DoxyCodeLine{00432                 \}}
+\DoxyCodeLine{00433                 \textcolor{keywordtype}{void} SearchBook()}
+\DoxyCodeLine{00434                 \{}
+\DoxyCodeLine{00435                     Clear();}
+\DoxyCodeLine{00436                     \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{00437                     Write(\textcolor{stringliteral}{"{}Please enter name or ID of the book which do you want to find: "{}});}
+\DoxyCodeLine{00438                     var search = ReadLine();}
+\DoxyCodeLine{00439                     \textcolor{keywordflow}{if} (ConversionUtility.IsNumeric(search) == \textcolor{keyword}{false})}
+\DoxyCodeLine{00440                     \{}
+\DoxyCodeLine{00441                         \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00442                         \{}
+\DoxyCodeLine{00443                             Clear();}
+\DoxyCodeLine{00444                             \textcolor{keywordtype}{string} datlength = sr.ReadLine();}
+\DoxyCodeLine{00445                             sr.Close();}
+\DoxyCodeLine{00446                             \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00447                             \{}
+\DoxyCodeLine{00448                                 \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00449                                 \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00450 }
+\DoxyCodeLine{00451 }
+\DoxyCodeLine{00452                                 \textcolor{keywordtype}{byte}[] bookWrittenBytes = FileUtility.ReadBlock(i, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00453                                 Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytes);}
+\DoxyCodeLine{00454 }
+\DoxyCodeLine{00455                                 \textcolor{keywordflow}{if} (bookWrittenObject != \textcolor{keyword}{null} \&\& (bookWrittenObject.Title.Contains(search)))}
+\DoxyCodeLine{00456                                 \{}
+\DoxyCodeLine{00457                                     WriteLine(i + \textcolor{stringliteral}{"{}. -\/ "{}} + bookWrittenObject.Id + \textcolor{stringliteral}{"{} | "{}} + bookWrittenObject.Title + \textcolor{stringliteral}{"{} | Description: "{}} + bookWrittenObject.Description + \textcolor{stringliteral}{"{} | Author: "{}} + bookWrittenObject.Authors[0] + \textcolor{stringliteral}{"{} | Category: "{}} + bookWrittenObject.Categories[0] + \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00458                                 \}}
+\DoxyCodeLine{00459                                 i++;}
+\DoxyCodeLine{00460 }
+\DoxyCodeLine{00461                             \} \textcolor{keywordflow}{while} (i < (((datlength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) + 1));}
+\DoxyCodeLine{00462                             WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00463                             ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00464                             DisplayBook();}
+\DoxyCodeLine{00465                         \}}
+\DoxyCodeLine{00466                     \}}
+\DoxyCodeLine{00467                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00468                     \{}
+\DoxyCodeLine{00469                         \textcolor{keywordtype}{int} searchint = Convert.ToInt32(search);}
+\DoxyCodeLine{00470 }
+\DoxyCodeLine{00471                         \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00472                         \{}
+\DoxyCodeLine{00473                             Clear();}
+\DoxyCodeLine{00474                             \textcolor{keywordtype}{string} datlength = sr.ReadLine();}
+\DoxyCodeLine{00475                             sr.Close();}
+\DoxyCodeLine{00476                             \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00477                             \{}
+\DoxyCodeLine{00478                                 \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00479                                 \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00480 }
+\DoxyCodeLine{00481 }
+\DoxyCodeLine{00482                                 \textcolor{keywordtype}{byte}[] bookWrittenBytes = FileUtility.ReadBlock(i, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00483                                 Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytes);}
+\DoxyCodeLine{00484 }
+\DoxyCodeLine{00485                                 \textcolor{keywordflow}{if} (bookWrittenObject != \textcolor{keyword}{null} \&\& (bookWrittenObject.Id.Equals(searchint)))}
+\DoxyCodeLine{00486                                 \{}
+\DoxyCodeLine{00487                                     WriteLine(i + \textcolor{stringliteral}{"{}. -\/ "{}} + bookWrittenObject.Id + \textcolor{stringliteral}{"{} | "{}} + bookWrittenObject.Title + \textcolor{stringliteral}{"{} | Description: "{}} + bookWrittenObject.Description + \textcolor{stringliteral}{"{} | Author: "{}} + bookWrittenObject.Authors[0] + \textcolor{stringliteral}{"{} | Category: "{}} + bookWrittenObject.Categories[0] + \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00488                                 \}}
+\DoxyCodeLine{00489                                 i++;}
+\DoxyCodeLine{00490 }
+\DoxyCodeLine{00491                             \} \textcolor{keywordflow}{while} (i < (((datlength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) + 1));}
+\DoxyCodeLine{00492                             WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00493                             ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00494                             DisplayBook();}
+\DoxyCodeLine{00495                         \}}
+\DoxyCodeLine{00496                     \}}
+\DoxyCodeLine{00497                 \}}
+\DoxyCodeLine{00498                 \textcolor{keywordtype}{void} BorrowBook()}
+\DoxyCodeLine{00499                 \{}
+\DoxyCodeLine{00500                     \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00501                     \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00502                     Clear();}
+\DoxyCodeLine{00503                     \textcolor{keywordtype}{int} booknumber;}
+\DoxyCodeLine{00504                     \textcolor{keywordtype}{string} student;}
+\DoxyCodeLine{00505                     \textcolor{keywordtype}{string} date;}
+\DoxyCodeLine{00506                     Write(\textcolor{stringliteral}{"{}Please enter number of book which do you want to borrow: "{}});}
+\DoxyCodeLine{00507                     booknumber = Convert.ToInt32(ReadLine());}
+\DoxyCodeLine{00508                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nWhat is the name of student who got the book: "{}});}
+\DoxyCodeLine{00509                     student = ReadLine();}
+\DoxyCodeLine{00510                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nDate: "{}});}
+\DoxyCodeLine{00511                     date = ReadLine();}
+\DoxyCodeLine{00512 }
+\DoxyCodeLine{00513 }
+\DoxyCodeLine{00514                     \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00515                     \{}
+\DoxyCodeLine{00516                         \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
+\DoxyCodeLine{00517                         sr.Close();}
+\DoxyCodeLine{00518 }
+\DoxyCodeLine{00519                         \textcolor{keywordtype}{byte}[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00520                         Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);}
+\DoxyCodeLine{00521 }
+\DoxyCodeLine{00522 }
+\DoxyCodeLine{00523 }
+\DoxyCodeLine{00524                         Book book = \textcolor{keyword}{new} Book();}
+\DoxyCodeLine{00525                         book.Id = bookWrittenObject.Id;}
+\DoxyCodeLine{00526                         book.Title = bookWrittenObject.Title + \textcolor{stringliteral}{"{}  (Borrowed by student: "{}} + student + \textcolor{stringliteral}{"{}  Date: "{}} + date + \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00527                         book.Description = bookWrittenObject.Description;}
+\DoxyCodeLine{00528                         book.Authors.Add(bookWrittenObject.Authors[0]);}
+\DoxyCodeLine{00529                         book.Categories.Add(bookWrittenObject.Categories[0]);}
+\DoxyCodeLine{00530 }
+\DoxyCodeLine{00531                         \textcolor{keywordtype}{byte}[] bookBytes = Book.BookToByteArrayBlock(book);}
+\DoxyCodeLine{00532 }
+\DoxyCodeLine{00533                         FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00534                     \}}
+\DoxyCodeLine{00535 }
+\DoxyCodeLine{00536                     WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00537                     ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00538                     DisplayBook();}
+\DoxyCodeLine{00539                 \}}
+\DoxyCodeLine{00540                 \textcolor{keywordtype}{void} ReturnBook()}
+\DoxyCodeLine{00541                 \{}
+\DoxyCodeLine{00542                     \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00543                     \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00544                     Clear();}
+\DoxyCodeLine{00545                     \textcolor{keywordtype}{int} booknumber;}
+\DoxyCodeLine{00546                     \textcolor{keywordtype}{string} bookname;}
+\DoxyCodeLine{00547                     Write(\textcolor{stringliteral}{"{}Please enter number of book which do you want to return: "{}});}
+\DoxyCodeLine{00548                     booknumber = Convert.ToInt32(ReadLine());}
+\DoxyCodeLine{00549                     Write(\textcolor{stringliteral}{"{}\(\backslash\)nWhat is book name: "{}});}
+\DoxyCodeLine{00550                     bookname = ReadLine();}
+\DoxyCodeLine{00551 }
+\DoxyCodeLine{00552 }
+\DoxyCodeLine{00553                     \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00554                     \{}
+\DoxyCodeLine{00555                         \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
+\DoxyCodeLine{00556                         sr.Close();}
+\DoxyCodeLine{00557 }
+\DoxyCodeLine{00558                         \textcolor{keywordtype}{byte}[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00559                         Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);}
+\DoxyCodeLine{00560 }
+\DoxyCodeLine{00561 }
+\DoxyCodeLine{00562 }
+\DoxyCodeLine{00563                         Book book = \textcolor{keyword}{new} Book();}
+\DoxyCodeLine{00564                         book.Id = bookWrittenObject.Id;}
+\DoxyCodeLine{00565                         book.Title = bookname;}
+\DoxyCodeLine{00566                         book.Description = bookWrittenObject.Description;}
+\DoxyCodeLine{00567                         book.Authors.Add(bookWrittenObject.Authors[0]);}
+\DoxyCodeLine{00568                         book.Categories.Add(bookWrittenObject.Categories[0]);}
+\DoxyCodeLine{00569 }
+\DoxyCodeLine{00570                         \textcolor{keywordtype}{byte}[] bookBytes = Book.BookToByteArrayBlock(book);}
+\DoxyCodeLine{00571 }
+\DoxyCodeLine{00572                         FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00573                     \}}
+\DoxyCodeLine{00574 }
+\DoxyCodeLine{00575                     WriteLine(\textcolor{stringliteral}{"{}Press any key to return..."{}});}
+\DoxyCodeLine{00576                     ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00577                     DisplayBook();}
+\DoxyCodeLine{00578                 \}}
+\DoxyCodeLine{00579 }
+\DoxyCodeLine{00580             \}}
+\DoxyCodeLine{00581 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00582             \textcolor{comment}{/* This part is removed}}
+\DoxyCodeLine{00583 \textcolor{comment}{             * private void DisplayCtg()}}
+\DoxyCodeLine{00584 \textcolor{comment}{              \{}}
+\DoxyCodeLine{00585 \textcolor{comment}{                  string prompt = @"{}}}
+\DoxyCodeLine{00586 \textcolor{comment}{}}
+\DoxyCodeLine{00587 \textcolor{comment}{  ████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00588 \textcolor{comment}{  ██                                                                                ██}}
+\DoxyCodeLine{00589 \textcolor{comment}{  ██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00590 \textcolor{comment}{  ██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00591 \textcolor{comment}{  ██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00592 \textcolor{comment}{  ██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00593 \textcolor{comment}{  ██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00594 \textcolor{comment}{  ██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00595 \textcolor{comment}{  ██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00596 \textcolor{comment}{  ██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00597 \textcolor{comment}{  ██                                                                                ██}}
+\DoxyCodeLine{00598 \textcolor{comment}{  ████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00599 \textcolor{comment}{  "{};}}
+\DoxyCodeLine{00600 \textcolor{comment}{                  string[] options = \{ "{}Add Category"{}, "{}Edit Category"{}, "{}Delete Category"{}, "{}Back to the main menu"{} \};}}
+\DoxyCodeLine{00601 \textcolor{comment}{                  Menu ctgMenu = new Menu(prompt, options);}}
+\DoxyCodeLine{00602 \textcolor{comment}{                  int SelectedIndex = ctgMenu.Run();}}
+\DoxyCodeLine{00603 \textcolor{comment}{}}
+\DoxyCodeLine{00604 \textcolor{comment}{                  switch (SelectedIndex)}}
+\DoxyCodeLine{00605 \textcolor{comment}{                  \{}}
+\DoxyCodeLine{00606 \textcolor{comment}{                      case 0:}}
+\DoxyCodeLine{00607 \textcolor{comment}{                          RunMainMenu();}}
+\DoxyCodeLine{00608 \textcolor{comment}{                          break;}}
+\DoxyCodeLine{00609 \textcolor{comment}{                      case 1:}}
+\DoxyCodeLine{00610 \textcolor{comment}{                          RunMainMenu();}}
+\DoxyCodeLine{00611 \textcolor{comment}{                          break;}}
+\DoxyCodeLine{00612 \textcolor{comment}{                      case 2:}}
+\DoxyCodeLine{00613 \textcolor{comment}{                          RunMainMenu();}}
+\DoxyCodeLine{00614 \textcolor{comment}{                          break;}}
+\DoxyCodeLine{00615 \textcolor{comment}{                      case 3:}}
+\DoxyCodeLine{00616 \textcolor{comment}{                          RunMainMenu();}}
+\DoxyCodeLine{00617 \textcolor{comment}{                          break;}}
+\DoxyCodeLine{00618 \textcolor{comment}{                  \}}}
+\DoxyCodeLine{00619 \textcolor{comment}{}}
+\DoxyCodeLine{00620 \textcolor{comment}{              \}*/}}
+\DoxyCodeLine{00621 \textcolor{preprocessor}{            \#region About menu}}
+\DoxyCodeLine{00622             \textcolor{keyword}{private} \textcolor{keywordtype}{void} DisplayAbout()}
+\DoxyCodeLine{00623             \{}
+\DoxyCodeLine{00624                 Clear();}
+\DoxyCodeLine{00625                 BackgroundColor = ConsoleColor.DarkGray;}
+\DoxyCodeLine{00626                 ForegroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00627                 WriteLine(\textcolor{stringliteral}{@"{}}}
+\DoxyCodeLine{00628 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00629 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00630 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00631 \textcolor{stringliteral}{██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00632 \textcolor{stringliteral}{██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00633 \textcolor{stringliteral}{██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00634 \textcolor{stringliteral}{██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00635 \textcolor{stringliteral}{██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00636 \textcolor{stringliteral}{██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00637 \textcolor{stringliteral}{██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00638 \textcolor{stringliteral}{██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00639 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00640 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00641 \textcolor{stringliteral}{"{}});}
+\DoxyCodeLine{00642                 ResetColor();}
+\DoxyCodeLine{00643                 WriteLine(\textcolor{stringliteral}{"{}This app was created by Melih Divan"{}});}
+\DoxyCodeLine{00644                 WriteLine(\textcolor{stringliteral}{"{}This is an app for librarians"{}});}
+\DoxyCodeLine{00645                 WriteLine(\textcolor{stringliteral}{"{}This app is developed for ce homework"{}});}
+\DoxyCodeLine{00646                 WriteLine(\textcolor{stringliteral}{"{}\(\backslash\)nPress any key to return to the menu..."{}});}
+\DoxyCodeLine{00647                 ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00648                 RunMainMenu();}
+\DoxyCodeLine{00649             \}}
+\DoxyCodeLine{00650 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00651 \textcolor{preprocessor}{            \#region Options menu}}
+\DoxyCodeLine{00652             \textcolor{keyword}{private} \textcolor{keywordtype}{void} DisplayOptions()}
+\DoxyCodeLine{00653             \{}
+\DoxyCodeLine{00654                 \textcolor{keywordtype}{string} prompt = \textcolor{stringliteral}{@"{}}}
+\DoxyCodeLine{00655 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00656 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00657 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00658 \textcolor{stringliteral}{██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00659 \textcolor{stringliteral}{██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00660 \textcolor{stringliteral}{██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00661 \textcolor{stringliteral}{██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00662 \textcolor{stringliteral}{██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00663 \textcolor{stringliteral}{██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00664 \textcolor{stringliteral}{██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00665 \textcolor{stringliteral}{██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00666 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00667 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00668 \textcolor{stringliteral}{"{}};}
+\DoxyCodeLine{00669                 \textcolor{keywordtype}{string}[] options = \{ \textcolor{stringliteral}{"{}Change Password"{}}, \textcolor{stringliteral}{"{}Back to the main menu"{}} \};}
+\DoxyCodeLine{00670                 Menu optMenu = \textcolor{keyword}{new} Menu(prompt, options);}
+\DoxyCodeLine{00671                 \textcolor{keywordtype}{int} SelectedIndex = optMenu.Run();}
+\DoxyCodeLine{00672 }
+\DoxyCodeLine{00673                 \textcolor{keywordflow}{switch} (SelectedIndex)}
+\DoxyCodeLine{00674                 \{}
+\DoxyCodeLine{00675                     \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{00676                         changePassword();}
+\DoxyCodeLine{00677                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00678                     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{00679                         RunMainMenu();}
+\DoxyCodeLine{00680                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00681                 \}}
+\DoxyCodeLine{00682 }
+\DoxyCodeLine{00683                 \textcolor{keywordtype}{void} changePassword()}
+\DoxyCodeLine{00684                 \{}
+\DoxyCodeLine{00685                     Clear();}
+\DoxyCodeLine{00686                     File.Delete(\textcolor{stringliteral}{"{}password.txt"{}});}
+\DoxyCodeLine{00687                     \textcolor{keywordtype}{string} password = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00688                     Write(\textcolor{stringliteral}{"{}Please enter new password: "{}});}
+\DoxyCodeLine{00689                     password = ReadLine();}
+\DoxyCodeLine{00690                     \textcolor{keyword}{using} (StreamWriter sw = \textcolor{keyword}{new} StreamWriter(File.Create(\textcolor{stringliteral}{"{}password.txt"{}})))}
+\DoxyCodeLine{00691                     \{}
+\DoxyCodeLine{00692                         sw.Write(password);}
+\DoxyCodeLine{00693                         sw.Close();}
+\DoxyCodeLine{00694                     \}}
+\DoxyCodeLine{00695 }
+\DoxyCodeLine{00696                     WriteLine(\textcolor{stringliteral}{"{}Done..."{}});}
+\DoxyCodeLine{00697                     ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00698                     DisplayOptions();}
+\DoxyCodeLine{00699                 \}}
+\DoxyCodeLine{00700             \}}
+\DoxyCodeLine{00701 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00702 \textcolor{preprocessor}{            \#region Exit app section}}
+\DoxyCodeLine{00703             \textcolor{keyword}{private} \textcolor{keywordtype}{void} ExitApp()}
+\DoxyCodeLine{00704             \{}
+\DoxyCodeLine{00705                 Clear();}
+\DoxyCodeLine{00706                 BackgroundColor = ConsoleColor.DarkGray;}
+\DoxyCodeLine{00707                 ForegroundColor = ConsoleColor.Yellow;}
+\DoxyCodeLine{00708                 WriteLine(\textcolor{stringliteral}{@"{}}}
+\DoxyCodeLine{00709 \textcolor{stringliteral}{}}
+\DoxyCodeLine{00710 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00711 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00712 \textcolor{stringliteral}{██  \_       \_  \_                        \_                        By Melih Divan   ██}}
+\DoxyCodeLine{00713 \textcolor{stringliteral}{██ | |     (\_)| |                      (\_)                   /\(\backslash\)                   ██}}
+\DoxyCodeLine{00714 \textcolor{stringliteral}{██ | |      \_ | |\_\_   \_ \_\_  \_\_ \_  \_ \_\_  \_   \_\_ \_  \_ \_\_      /  \(\backslash\)    \_ \_\_   \_ \_\_   ██}}
+\DoxyCodeLine{00715 \textcolor{stringliteral}{██ | |     | || '\_ \(\backslash\) | '\_\_|/ \_` || '\_\_|| | / \_` || '\_ \(\backslash\)    / /\(\backslash\) \(\backslash\)  | '\_ \(\backslash\) | '\_ \(\backslash\)  ██}}
+\DoxyCodeLine{00716 \textcolor{stringliteral}{██ | |\_\_\_\_ | || |\_) || |  | (\_| || |   | || (\_| || | | |  / \_\_\_\_ \(\backslash\) | |\_) || |\_) | ██}}
+\DoxyCodeLine{00717 \textcolor{stringliteral}{██ |\_\_\_\_\_\_||\_||\_.\_\_/ |\_|   \(\backslash\)\_\_,\_||\_|   |\_| \(\backslash\)\_\_,\_||\_| |\_| /\_/    \(\backslash\)\_\(\backslash\)| .\_\_/ | .\_\_/  ██}}
+\DoxyCodeLine{00718 \textcolor{stringliteral}{██                                                                 | |    | |     ██}}
+\DoxyCodeLine{00719 \textcolor{stringliteral}{██                                                                 |\_|    |\_|     ██}}
+\DoxyCodeLine{00720 \textcolor{stringliteral}{██                                                                                ██}}
+\DoxyCodeLine{00721 \textcolor{stringliteral}{████████████████████████████████████████████████████████████████████████████████████}}
+\DoxyCodeLine{00722 \textcolor{stringliteral}{"{}});}
+\DoxyCodeLine{00723                 ResetColor();}
+\DoxyCodeLine{00724 }
+\DoxyCodeLine{00725                 WriteLine(\textcolor{stringliteral}{"{}Are you sure you want to exit? (Enter to confirm or Backspace to return)"{}});}
+\DoxyCodeLine{00726                 ConsoleKey keyPressed;}
+\DoxyCodeLine{00727                 ConsoleKeyInfo keyInfo = ReadKey(\textcolor{keyword}{true});}
+\DoxyCodeLine{00728                 keyPressed = keyInfo.Key;}
+\DoxyCodeLine{00729 }
+\DoxyCodeLine{00730 }
+\DoxyCodeLine{00731                 \textcolor{keywordflow}{if} (keyPressed == ConsoleKey.Enter)}
+\DoxyCodeLine{00732                 \{}
+\DoxyCodeLine{00733                     Environment.Exit(0);}
+\DoxyCodeLine{00734                 \}}
+\DoxyCodeLine{00735                 \textcolor{keywordflow}{if} (keyPressed == ConsoleKey.Backspace)}
+\DoxyCodeLine{00736                 \{}
+\DoxyCodeLine{00737                     RunMainMenu();}
+\DoxyCodeLine{00738                 \}}
+\DoxyCodeLine{00739 }
+\DoxyCodeLine{00740             \}}
+\DoxyCodeLine{00741 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00742         \}}
+\DoxyCodeLine{00743     \}}
+\DoxyCodeLine{00744 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\doxysection{File\+Utility.\+cs}
+\label{_file_utility_8cs_source}\index{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/FileUtility.cs@{ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/FileUtility.cs}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{00003 \textcolor{keyword}{using }System.IO;}
+\DoxyCodeLine{00004 \textcolor{keyword}{using }System.Linq;}
+\DoxyCodeLine{00005 \textcolor{keyword}{using }System.Text;}
+\DoxyCodeLine{00006 \textcolor{keyword}{using }System.Threading.Tasks;}
+\DoxyCodeLine{00007 }
+\DoxyCodeLine{00008 \textcolor{keyword}{namespace }LibraryManagement}
+\DoxyCodeLine{00009 \{}
+\DoxyCodeLine{00010     \textcolor{keyword}{public} \textcolor{keyword}{class }FileUtility}
+\DoxyCodeLine{00011     \{}
+\DoxyCodeLine{00012         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} DeleteFile(\textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00013         \{}
+\DoxyCodeLine{00014             \textcolor{keywordflow}{if} (File.Exists(path))}
+\DoxyCodeLine{00015                 File.Delete(path);}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00018         \}}
+\DoxyCodeLine{00019         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] ReadBlock(\textcolor{keywordtype}{int} count, \textcolor{keywordtype}{int} blocksize, \textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00020         \{}
+\DoxyCodeLine{00021 }
+\DoxyCodeLine{00022             \textcolor{keywordtype}{byte}[] buffer = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[blocksize];}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024             \textcolor{keyword}{using} (FileStream fileStream = \textcolor{keyword}{new} FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))}
+\DoxyCodeLine{00025             \{}
+\DoxyCodeLine{00026                 fileStream.Seek((count -\/ 1) * blocksize, SeekOrigin.Begin);}
+\DoxyCodeLine{00027                 fileStream.Read(buffer, 0, buffer.Length);}
+\DoxyCodeLine{00028             \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00030             \textcolor{keywordflow}{return} buffer;}
+\DoxyCodeLine{00031         \}}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} AppendBlock(\textcolor{keywordtype}{byte}[] data, \textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00034         \{}
+\DoxyCodeLine{00035             \textcolor{keyword}{using} (FileStream fileStream = \textcolor{keyword}{new} FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))}
+\DoxyCodeLine{00036             \{}
+\DoxyCodeLine{00037                 fileStream.Seek(0, SeekOrigin.End);}
+\DoxyCodeLine{00038                 fileStream.Write(data, 0, data.Length);}
+\DoxyCodeLine{00039             \}}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00042         \}}
+\DoxyCodeLine{00043 }
+\DoxyCodeLine{00044         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} UpdateBlock(\textcolor{keywordtype}{byte}[] data, \textcolor{keywordtype}{int} count, \textcolor{keywordtype}{int} blocksize, \textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00045         \{}
+\DoxyCodeLine{00046             \textcolor{keyword}{using} (FileStream fileStream = \textcolor{keyword}{new} FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))}
+\DoxyCodeLine{00047             \{}
+\DoxyCodeLine{00048                 fileStream.Seek((count -\/ 1) * blocksize, SeekOrigin.Begin);}
+\DoxyCodeLine{00049                 fileStream.Write(data, 0, data.Length);}
+\DoxyCodeLine{00050             \}}
+\DoxyCodeLine{00051 }
+\DoxyCodeLine{00052             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00053         \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{bool} DeleteBlock(\textcolor{keywordtype}{int} count, \textcolor{keywordtype}{int} blocksize, \textcolor{keywordtype}{string} path)}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keywordtype}{byte}[] data = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[blocksize];}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059             \textcolor{keyword}{using} (FileStream fileStream = \textcolor{keyword}{new} FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))}
+\DoxyCodeLine{00060             \{}
+\DoxyCodeLine{00061                 fileStream.Seek((count -\/ 1) * blocksize, SeekOrigin.Begin);}
+\DoxyCodeLine{00062                 fileStream.Write(data, 0, data.Length);}
+\DoxyCodeLine{00063             \}}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00066         \}}
+\DoxyCodeLine{00067     \}}
+\DoxyCodeLine{00068 \}}
+
+\end{DoxyCode}
