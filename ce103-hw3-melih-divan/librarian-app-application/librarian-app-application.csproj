@@ -7,7 +7,7 @@
     <ProjectGuid>{16FAA83C-6AA4-4C79-A647-C6B21906D441}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>librarian_app_application</RootNamespace>
-    <AssemblyName>librarian_app_application</AssemblyName>
+    <AssemblyName>librarianApp</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\librarian-app-dll\librarian-app-dll.csproj">
+      <Project>{259c6d0c-f571-4630-b103-b31064c7d4c8}</Project>
+      <Name>librarian-app-dll</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
