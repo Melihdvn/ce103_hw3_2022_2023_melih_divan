@@ -3,9 +3,9 @@
 	<?define CompanyName="melihdvn" ?>
 
 	<!-- Full version number to display -->
-	<?define VersionNumber="!(bind.FileVersion.librarianApp.exe)" ?>
+	<?define VersionNumber="1.0" ?>
 	<?define ProductName="librarian-app"?>
-	<?define SourceFolder="..\librarian-app-app\bin\"?>
+	<?define SourceFolder="..\librarian-app-application\bin"?>
 
 
 	<!-- The URL for add/remove programs -->

@@ -36,9 +36,9 @@
   <Fragment>
     <ComponentGroup Id="AppComponents">
       <Component Id="AppComponents" Guid="$(var.AppComponentsGuid)" Directory="versionFolder">
-        <File Id="libraryManagerApp.exe.config" Name="libraryManagerApp.exe.config" Source="$(var.SourceFolder)\$(var.Configuration)\libraryManagerApp.exe.config" Vital="yes" KeyPath="no" DiskId="1" />
-        <File Id="libraryManagerDLL.dll" Name="libraryManagerDLL.dll" Source="$(var.SourceFolder)\$(var.Configuration)\libraryManagerDLL.dll" Vital="yes" KeyPath="no" DiskId="1" />
-        <File Id="libraryManagerApp.exe" Name="libraryManagerApp.exe" Source="$(var.SourceFolder)\$(var.Configuration)\libraryManagerApp.exe" Vital="yes" KeyPath="yes" DiskId="1" Checksum="yes" />
+        <File Id="libraryManagerApp.exe.config" Name="librarian-app-application.exe.config" Source="$(var.SourceFolder)\$(var.Configuration)\librarian-app-application.exe.config" Vital="yes" KeyPath="no" DiskId="1" />
+        <File Id="libraryManagerDLL.dll" Name="librarian-app-dll.dll" Source="$(var.SourceFolder)\$(var.Configuration)\librarian-app-dll.dll" Vital="yes" KeyPath="no" DiskId="1" />
+        <File Id="libraryManagerApp.exe" Name="librarian-app-application.exe" Source="$(var.SourceFolder)\$(var.Configuration)\librarian-app-application.exe" Vital="yes" KeyPath="yes" DiskId="1" Checksum="yes" />
       </Component>
       <Component Id="AppShortcut" Guid="$(var.AppShortcutGuid)" Directory="ApplicationProgramsFolder">
         <Shortcut Id="AppStartMenuShortcut" Name="$(var.ProductName) $(var.VersionNumber) $(var.Configuration)" Description="$(var.ProductName) $(var.VersionNumber) $(var.Configuration)" Target="[#libraryManagerApp.exe]" WorkingDirectory="versionFolder" />
