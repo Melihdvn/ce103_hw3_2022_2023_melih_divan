@@ -1,4 +1,11 @@
 var searchData=
 [
-  ['start_0',['Start',['../class_library_management_1_1_library_manager_1_1_app.html#a9cddf0c8076077450b3198cad288354f',1,'LibraryManagement::LibraryManager::App']]]
+  ['pages_0',['Pages',['../class_library_management_1_1_book.html#a05d2ec6e56c087b56ec0a89ebfafad2e',1,'LibraryManagement::Book']]],
+  ['pages_5flength_1',['PAGES_LENGTH',['../class_library_management_1_1_book.html#a91066f877db64b4ac5dd62cc65bbae53',1,'LibraryManagement::Book']]],
+  ['price_2',['Price',['../class_library_management_1_1_book.html#af05f22253c674fc6f033adf962bcd22f',1,'LibraryManagement::Book']]],
+  ['price_5flength_3',['PRICE_LENGTH',['../class_library_management_1_1_book.html#a6374f1a5b8a9a1eb6d67ef0db770e37d',1,'LibraryManagement::Book']]],
+  ['program_4',['Program',['../classlibrarian_app_1_1_program.html',1,'librarianApp']]],
+  ['program_2ecs_5',['Program.cs',['../_program_8cs.html',1,'']]],
+  ['publisher_6',['Publisher',['../class_library_management_1_1_book.html#ac37b9c4e9de5e0aeeae9c789267bddf8',1,'LibraryManagement::Book']]],
+  ['publisher_5flength_7',['PUBLISHER_LENGTH',['../class_library_management_1_1_book.html#a5d654aa6265bd96f8032d9bbaeba6270',1,'LibraryManagement::Book']]]
 ];

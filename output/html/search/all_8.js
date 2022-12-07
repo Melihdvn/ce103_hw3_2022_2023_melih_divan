@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['readblock_0',['ReadBlock',['../class_library_management_1_1_file_utility.html#a49a5140b26df1664813c020f9a4bacfc',1,'LibraryManagement::FileUtility']]]
+  ['librarianapp_0',['librarianApp',['../namespacelibrarian_app.html',1,'']]],
+  ['librarymanagement_1',['LibraryManagement',['../namespace_library_management.html',1,'']]],
+  ['librarymanager_2',['LibraryManager',['../classlibrarian_app_1_1_library_manager.html',1,'librarianApp']]],
+  ['librarymanager_2ecs_3',['LibraryManager.cs',['../_library_manager_8cs.html',1,'']]]
 ];

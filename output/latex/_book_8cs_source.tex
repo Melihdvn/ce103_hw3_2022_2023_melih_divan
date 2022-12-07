@@ -16,176 +16,498 @@
 \DoxyCodeLine{00012 }
 \DoxyCodeLine{00013         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} DESCRIPTION\_MAX\_LENGTH = 300;}
 \DoxyCodeLine{00014 }
-\DoxyCodeLine{00015         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} AUTHORS\_MAX\_COUNT = 5;}
-\DoxyCodeLine{00016         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} AUTHORS\_NAME\_MAX\_LENGTH = 100;}
-\DoxyCodeLine{00017 }
-\DoxyCodeLine{00018         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CATEGORY\_MAX\_COUNT = 5;}
-\DoxyCodeLine{00019         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CATEGORY\_NAME\_MAX\_LENGTH = 100;}
+\DoxyCodeLine{00015         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} YEAR\_LENGTH = 20;}
+\DoxyCodeLine{00016 }
+\DoxyCodeLine{00017         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} PAGES\_LENGTH = 15;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} ABSTRACT\_LENGTH = 500;}
 \DoxyCodeLine{00020 }
-\DoxyCodeLine{00021         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} BOOK\_DATA\_BLOCK\_SIZE = ID\_LENGTH +}
-\DoxyCodeLine{00022                                                 TITLE\_MAX\_LENGTH +}
-\DoxyCodeLine{00023                                                 DESCRIPTION\_MAX\_LENGTH +}
-\DoxyCodeLine{00024                                                 (AUTHORS\_MAX\_COUNT * AUTHORS\_NAME\_MAX\_LENGTH) +}
-\DoxyCodeLine{00025                                                 (CATEGORY\_MAX\_COUNT * CATEGORY\_NAME\_MAX\_LENGTH);}
-\DoxyCodeLine{00026 \textcolor{preprocessor}{        \#endregion}}
-\DoxyCodeLine{00027 }
-\DoxyCodeLine{00028 \textcolor{preprocessor}{        \#region Private Fields}}
-\DoxyCodeLine{00029         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_id;}
-\DoxyCodeLine{00030         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_title;}
-\DoxyCodeLine{00031         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_description;}
-\DoxyCodeLine{00032         \textcolor{keyword}{private} List<string> \_authors;}
-\DoxyCodeLine{00033         \textcolor{keyword}{private} List<string> \_categories;}
-\DoxyCodeLine{00034 \textcolor{preprocessor}{        \#endregion}}
-\DoxyCodeLine{00035 }
-\DoxyCodeLine{00036 \textcolor{preprocessor}{        \#region Public Properties}}
-\DoxyCodeLine{00037         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Id \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_id; \} \textcolor{keyword}{set} \{ \_id = value; \} \}}
-\DoxyCodeLine{00038         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Title \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_title; \} \textcolor{keyword}{set} \{ \_title = value; \} \}}
-\DoxyCodeLine{00039         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Description \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_description; \} \textcolor{keyword}{set} \{ \_description = value; \} \}}
-\DoxyCodeLine{00040         \textcolor{keyword}{public} List<string> Authors \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_authors; \} \textcolor{keyword}{set} \{ \_authors = value; \} \}}
-\DoxyCodeLine{00041         \textcolor{keyword}{public} List<string> Categories \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_categories; \} \textcolor{keyword}{set} \{ \_categories = value; \} \}}
-\DoxyCodeLine{00042 \textcolor{preprocessor}{        \#endregion}}
-\DoxyCodeLine{00043 }
-\DoxyCodeLine{00044 \textcolor{preprocessor}{        \#region Constructors}}
-\DoxyCodeLine{00045         \textcolor{keyword}{public} Book()}
-\DoxyCodeLine{00046         \{}
-\DoxyCodeLine{00047             \_authors = \textcolor{keyword}{new} List<string>();}
-\DoxyCodeLine{00048             \_categories = \textcolor{keyword}{new} List<string>();}
-\DoxyCodeLine{00049         \}}
-\DoxyCodeLine{00050 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00021         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CITY\_LENGTH = 60;}
+\DoxyCodeLine{00022 }
+\DoxyCodeLine{00023         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} EDITION\_LENGTH = 40;}
+\DoxyCodeLine{00024 }
+\DoxyCodeLine{00025         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} PUBLISHER\_LENGTH = 60;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} URL\_LENGTH = 160;}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CATALOGID\_LENGTH = 110;}
+\DoxyCodeLine{00030 }
+\DoxyCodeLine{00031         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} PRICE\_LENGTH = 20;}
+\DoxyCodeLine{00032 }
+\DoxyCodeLine{00033         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} RACKNO\_LENGTH = 15;}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} ROWNO\_LENGTH = 15;}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} STATUS\_LENGTH = 40;}
+\DoxyCodeLine{00038 }
+\DoxyCodeLine{00039         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} RETURN\_LENGTH = 50;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} GIVEN\_LENGTH = 50;}
+\DoxyCodeLine{00042 }
+\DoxyCodeLine{00043         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} AUTHORS\_MAX\_COUNT = 5;}
+\DoxyCodeLine{00044         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} AUTHORS\_NAME\_MAX\_LENGTH = 100;}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} TAG\_MAX\_COUNT = 5;}
+\DoxyCodeLine{00047         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} TAG\_NAME\_MAX\_LENGTH = 100;}
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} EDITORS\_MAX\_COUNT = 5;}
+\DoxyCodeLine{00050         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} EDITORS\_NAME\_MAX\_LENGTH = 100;}
 \DoxyCodeLine{00051 }
-\DoxyCodeLine{00052 \textcolor{preprocessor}{        \#region Utility Methods}}
-\DoxyCodeLine{00053         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] BookToByteArrayBlock(Book book)}
-\DoxyCodeLine{00054         \{}
-\DoxyCodeLine{00055             \textcolor{keywordtype}{int} index = 0;}
-\DoxyCodeLine{00056 }
-\DoxyCodeLine{00057             \textcolor{keywordtype}{byte}[] dataBuffer = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[BOOK\_DATA\_BLOCK\_SIZE];}
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00059 \textcolor{preprocessor}{            \#region copy book id}}
-\DoxyCodeLine{00060             \textcolor{keywordtype}{byte}[] idBytes = ConversionUtility.IntegerToByteArray(book.Id);}
-\DoxyCodeLine{00061             Array.Copy(idBytes, 0, dataBuffer, index, idBytes.Length);}
-\DoxyCodeLine{00062             index += Book.ID\_LENGTH;}
-\DoxyCodeLine{00063 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00064 }
-\DoxyCodeLine{00065 \textcolor{preprocessor}{            \#region copy book title}}
-\DoxyCodeLine{00066             \textcolor{keywordtype}{byte}[] titleBytes = ConversionUtility.StringToByteArray(book.Title);}
-\DoxyCodeLine{00067             Array.Copy(titleBytes, 0, dataBuffer, index, titleBytes.Length);}
-\DoxyCodeLine{00068             index += Book.TITLE\_MAX\_LENGTH;}
-\DoxyCodeLine{00069 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071 \textcolor{preprocessor}{            \#region copy book description}}
-\DoxyCodeLine{00072             \textcolor{keywordtype}{byte}[] descBytes = ConversionUtility.StringToByteArray(book.Description);}
-\DoxyCodeLine{00073             Array.Copy(descBytes, 0, dataBuffer, index, descBytes.Length);}
-\DoxyCodeLine{00074             index += Book.DESCRIPTION\_MAX\_LENGTH;}
-\DoxyCodeLine{00075 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00076 }
-\DoxyCodeLine{00077 \textcolor{preprocessor}{            \#region copy book authors}}
-\DoxyCodeLine{00078             \textcolor{keywordtype}{byte}[] authorBytes = ConversionUtility.StringListToByteArray(book.Authors,}
-\DoxyCodeLine{00079                                                                             Book.AUTHORS\_MAX\_COUNT,}
-\DoxyCodeLine{00080                                                                             Book.AUTHORS\_NAME\_MAX\_LENGTH);}
-\DoxyCodeLine{00081             Array.Copy(authorBytes, 0, dataBuffer, index, authorBytes.Length);}
-\DoxyCodeLine{00082             index += authorBytes.Length; \textcolor{comment}{//Here we can use also Book.AUTHORS\_MAX\_COUNT * Book.AUTHORS\_NAME\_MAX\_LENGTH}}
-\DoxyCodeLine{00083 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00084 }
-\DoxyCodeLine{00085 }
-\DoxyCodeLine{00086 \textcolor{preprocessor}{            \#region copy book categories}}
-\DoxyCodeLine{00087             \textcolor{keywordtype}{byte}[] categoryBytes = ConversionUtility.StringListToByteArray(book.Categories,}
-\DoxyCodeLine{00088                                                                             Book.CATEGORY\_MAX\_COUNT,}
-\DoxyCodeLine{00089                                                                             Book.CATEGORY\_NAME\_MAX\_LENGTH);}
-\DoxyCodeLine{00090             Array.Copy(categoryBytes, 0, dataBuffer, index, categoryBytes.Length);}
-\DoxyCodeLine{00091             index += categoryBytes.Length; \textcolor{comment}{//Here we can use also Book.CATEGORY\_MAX\_COUNT * Book.CATEGORY\_NAME\_MAX\_LENGTH}}
-\DoxyCodeLine{00092 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00093 }
-\DoxyCodeLine{00094             \textcolor{keywordflow}{if} (index != dataBuffer.Length)}
-\DoxyCodeLine{00095             \{}
-\DoxyCodeLine{00096                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Index and DataBuffer Size Not Matched"{}});}
-\DoxyCodeLine{00097             \}}
-\DoxyCodeLine{00098 }
-\DoxyCodeLine{00099             \textcolor{keywordflow}{return} dataBuffer;}
-\DoxyCodeLine{00100         \}}
+\DoxyCodeLine{00052         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CATEGORY\_MAX\_COUNT = 5;}
+\DoxyCodeLine{00053         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} CATEGORY\_NAME\_MAX\_LENGTH = 100;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055         \textcolor{keyword}{public} \textcolor{keyword}{const} \textcolor{keywordtype}{int} BOOK\_DATA\_BLOCK\_SIZE = ID\_LENGTH +}
+\DoxyCodeLine{00056                                                 TITLE\_MAX\_LENGTH +}
+\DoxyCodeLine{00057                                                 DESCRIPTION\_MAX\_LENGTH +}
+\DoxyCodeLine{00058                                                 YEAR\_LENGTH + }
+\DoxyCodeLine{00059                                                 PAGES\_LENGTH +}
+\DoxyCodeLine{00060                                                 ABSTRACT\_LENGTH +}
+\DoxyCodeLine{00061                                                 CITY\_LENGTH +}
+\DoxyCodeLine{00062                                                 EDITION\_LENGTH +}
+\DoxyCodeLine{00063                                                 PUBLISHER\_LENGTH + }
+\DoxyCodeLine{00064                                                 URL\_LENGTH + }
+\DoxyCodeLine{00065                                                 CATALOGID\_LENGTH + }
+\DoxyCodeLine{00066                                                 PRICE\_LENGTH +}
+\DoxyCodeLine{00067                                                 RACKNO\_LENGTH +}
+\DoxyCodeLine{00068                                                 ROWNO\_LENGTH +}
+\DoxyCodeLine{00069                                                 STATUS\_LENGTH + }
+\DoxyCodeLine{00070                                                 RETURN\_LENGTH + }
+\DoxyCodeLine{00071                                                 GIVEN\_LENGTH +}
+\DoxyCodeLine{00072                                                 (TAG\_MAX\_COUNT * TAG\_NAME\_MAX\_LENGTH) + }
+\DoxyCodeLine{00073                                                 (EDITORS\_MAX\_COUNT * EDITORS\_NAME\_MAX\_LENGTH) +}
+\DoxyCodeLine{00074                                                 (AUTHORS\_MAX\_COUNT * AUTHORS\_NAME\_MAX\_LENGTH) +}
+\DoxyCodeLine{00075                                                 (CATEGORY\_MAX\_COUNT * CATEGORY\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00076 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078 \textcolor{preprocessor}{        \#region Private Fields}}
+\DoxyCodeLine{00079         \textcolor{keyword}{private} \textcolor{keywordtype}{int} \_id;}
+\DoxyCodeLine{00080         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_title;}
+\DoxyCodeLine{00081         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_description;}
+\DoxyCodeLine{00082         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_year;}
+\DoxyCodeLine{00083         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_pages;}
+\DoxyCodeLine{00084         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_abstract;}
+\DoxyCodeLine{00085         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_city;}
+\DoxyCodeLine{00086         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_edition;}
+\DoxyCodeLine{00087         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_publisher;}
+\DoxyCodeLine{00088         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_catalogid;}
+\DoxyCodeLine{00089         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_price;}
+\DoxyCodeLine{00090         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_rackno;}
+\DoxyCodeLine{00091         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_rowno;}
+\DoxyCodeLine{00092         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_status;}
+\DoxyCodeLine{00093         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_return;}
+\DoxyCodeLine{00094         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_given;}
+\DoxyCodeLine{00095         \textcolor{keyword}{private} \textcolor{keywordtype}{string} \_url;}
+\DoxyCodeLine{00096         \textcolor{keyword}{private} List<string> \_authors;}
+\DoxyCodeLine{00097         \textcolor{keyword}{private} List<string> \_tags;}
+\DoxyCodeLine{00098         \textcolor{keyword}{private} List<string> \_editors;}
+\DoxyCodeLine{00099         \textcolor{keyword}{private} List<string> \_categories;}
+\DoxyCodeLine{00100 \textcolor{preprocessor}{        \#endregion}}
 \DoxyCodeLine{00101 }
-\DoxyCodeLine{00102         \textcolor{keyword}{public} \textcolor{keyword}{static} Book ByteArrayBlockToBook(\textcolor{keywordtype}{byte}[] byteArray)}
-\DoxyCodeLine{00103         \{}
-\DoxyCodeLine{00104 }
-\DoxyCodeLine{00105             Book book = \textcolor{keyword}{new} Book();}
-\DoxyCodeLine{00106 }
-\DoxyCodeLine{00107             \textcolor{keywordflow}{if} (byteArray.Length != BOOK\_DATA\_BLOCK\_SIZE)}
-\DoxyCodeLine{00108             \{}
-\DoxyCodeLine{00109                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Byte Array Size Not Match with Constant Data Block Size"{}});}
-\DoxyCodeLine{00110             \}}
-\DoxyCodeLine{00111 }
-\DoxyCodeLine{00112             \textcolor{keywordtype}{int} index = 0;}
-\DoxyCodeLine{00113 }
-\DoxyCodeLine{00114             \textcolor{comment}{//byte[] dataBuffer = new byte[BOOK\_DATA\_BLOCK\_SIZE];}}
-\DoxyCodeLine{00115 }
-\DoxyCodeLine{00116 \textcolor{preprocessor}{            \#region copy book id}}
-\DoxyCodeLine{00117             \textcolor{keywordtype}{byte}[] idBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.ID\_LENGTH];}
-\DoxyCodeLine{00118             Array.Copy(byteArray, index, idBytes, 0, idBytes.Length);}
-\DoxyCodeLine{00119             book.Id = ConversionUtility.ByteArrayToInteger(idBytes);}
-\DoxyCodeLine{00120 }
-\DoxyCodeLine{00121             index += Book.ID\_LENGTH;}
-\DoxyCodeLine{00122 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00123 }
-\DoxyCodeLine{00124 \textcolor{preprocessor}{            \#region copy book title}}
-\DoxyCodeLine{00125             \textcolor{keywordtype}{byte}[] titleBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.TITLE\_MAX\_LENGTH];}
-\DoxyCodeLine{00126             Array.Copy(byteArray, index, titleBytes, 0, titleBytes.Length);}
-\DoxyCodeLine{00127             book.Title = ConversionUtility.ByteArrayToString(titleBytes);}
-\DoxyCodeLine{00128 }
-\DoxyCodeLine{00129             index += Book.TITLE\_MAX\_LENGTH;}
-\DoxyCodeLine{00130 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00131 }
-\DoxyCodeLine{00132 \textcolor{preprocessor}{            \#region copy book description}}
-\DoxyCodeLine{00133             \textcolor{keywordtype}{byte}[] descBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.DESCRIPTION\_MAX\_LENGTH];}
-\DoxyCodeLine{00134             Array.Copy(byteArray, index, descBytes, 0, descBytes.Length);}
-\DoxyCodeLine{00135             book.Description = ConversionUtility.ByteArrayToString(descBytes);}
-\DoxyCodeLine{00136 }
-\DoxyCodeLine{00137             index += Book.DESCRIPTION\_MAX\_LENGTH;}
-\DoxyCodeLine{00138 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00139 }
-\DoxyCodeLine{00140 \textcolor{preprocessor}{            \#region copy book authors}}
-\DoxyCodeLine{00141 }
-\DoxyCodeLine{00142             \textcolor{keywordtype}{byte}[] authorBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.AUTHORS\_MAX\_COUNT * Book.AUTHORS\_NAME\_MAX\_LENGTH];}
-\DoxyCodeLine{00143 }
-\DoxyCodeLine{00144             Array.Copy(byteArray, index, authorBytes, 0, authorBytes.Length);}
-\DoxyCodeLine{00145 }
-\DoxyCodeLine{00146             book.Authors = ConversionUtility.ByteArrayToStringList(authorBytes,}
-\DoxyCodeLine{00147                                                                             Book.AUTHORS\_MAX\_COUNT,}
-\DoxyCodeLine{00148                                                                             Book.AUTHORS\_NAME\_MAX\_LENGTH);}
-\DoxyCodeLine{00149 }
-\DoxyCodeLine{00150             index += authorBytes.Length;}
-\DoxyCodeLine{00151 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00152 }
-\DoxyCodeLine{00153 }
-\DoxyCodeLine{00154 \textcolor{preprocessor}{            \#region copy book categories}}
-\DoxyCodeLine{00155             \textcolor{keywordtype}{byte}[] categoryBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.CATEGORY\_MAX\_COUNT * Book.CATEGORY\_NAME\_MAX\_LENGTH];}
-\DoxyCodeLine{00156 }
-\DoxyCodeLine{00157             Array.Copy(byteArray, index, categoryBytes, 0, categoryBytes.Length);}
-\DoxyCodeLine{00158 }
-\DoxyCodeLine{00159             book.Categories = ConversionUtility.ByteArrayToStringList(categoryBytes,}
-\DoxyCodeLine{00160                                                                             Book.CATEGORY\_MAX\_COUNT,}
-\DoxyCodeLine{00161                                                                             Book.CATEGORY\_NAME\_MAX\_LENGTH);}
-\DoxyCodeLine{00162 }
-\DoxyCodeLine{00163             index += categoryBytes.Length;}
-\DoxyCodeLine{00164 \textcolor{preprocessor}{            \#endregion}}
-\DoxyCodeLine{00165 }
-\DoxyCodeLine{00166             \textcolor{keywordflow}{if} (index != byteArray.Length)}
-\DoxyCodeLine{00167             \{}
-\DoxyCodeLine{00168                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Index and DataBuffer Size Not Matched"{}});}
-\DoxyCodeLine{00169             \}}
-\DoxyCodeLine{00170 }
-\DoxyCodeLine{00171             \textcolor{keywordflow}{if} (book.Id == 0)}
-\DoxyCodeLine{00172             \{}
-\DoxyCodeLine{00173                 \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
-\DoxyCodeLine{00174             \}}
-\DoxyCodeLine{00175             \textcolor{keywordflow}{else}}
-\DoxyCodeLine{00176             \{}
-\DoxyCodeLine{00177                 \textcolor{keywordflow}{return} book;}
-\DoxyCodeLine{00178             \}}
-\DoxyCodeLine{00179 }
-\DoxyCodeLine{00180         \}}
-\DoxyCodeLine{00181 \textcolor{preprocessor}{        \#endregion}}
-\DoxyCodeLine{00182 }
-\DoxyCodeLine{00183     \}}
+\DoxyCodeLine{00102 \textcolor{preprocessor}{        \#region Public Properties}}
+\DoxyCodeLine{00103         \textcolor{keyword}{public} \textcolor{keywordtype}{int} Id \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_id; \} \textcolor{keyword}{set} \{ \_id = value; \} \}}
+\DoxyCodeLine{00104         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Title \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_title; \} \textcolor{keyword}{set} \{ \_title = value; \} \}}
+\DoxyCodeLine{00105         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Description \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_description; \} \textcolor{keyword}{set} \{ \_description = value; \} \}}
+\DoxyCodeLine{00106         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Year \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_year; \} \textcolor{keyword}{set} \{ \_year = value; \} \}}
+\DoxyCodeLine{00107         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Pages \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_pages; \} \textcolor{keyword}{set} \{ \_pages = value; \} \}}
+\DoxyCodeLine{00108         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Abstract \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_abstract; \} \textcolor{keyword}{set} \{ \_abstract = value; \} \}}
+\DoxyCodeLine{00109         \textcolor{keyword}{public} \textcolor{keywordtype}{string} City \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_city; \} \textcolor{keyword}{set} \{ \_city = value; \} \}}
+\DoxyCodeLine{00110         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Edition \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_edition; \} \textcolor{keyword}{set} \{ \_edition = value; \} \}}
+\DoxyCodeLine{00111         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Publisher \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_publisher; \} \textcolor{keyword}{set} \{ \_publisher = value; \} \}}
+\DoxyCodeLine{00112         \textcolor{keyword}{public} \textcolor{keywordtype}{string} CatalogId \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_catalogid; \} \textcolor{keyword}{set} \{ \_catalogid = value; \} \}}
+\DoxyCodeLine{00113         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Price \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_price; \} \textcolor{keyword}{set} \{ \_price = value; \} \}}
+\DoxyCodeLine{00114         \textcolor{keyword}{public} \textcolor{keywordtype}{string} RackNo \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_rackno; \} \textcolor{keyword}{set} \{ \_rackno = value; \} \}}
+\DoxyCodeLine{00115         \textcolor{keyword}{public} \textcolor{keywordtype}{string} RowNo \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_rowno; \} \textcolor{keyword}{set} \{ \_rowno = value; \} \}}
+\DoxyCodeLine{00116         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Status \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_status; \} \textcolor{keyword}{set} \{ \_status = value; \} \}}
+\DoxyCodeLine{00117         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Return \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_return; \} \textcolor{keyword}{set} \{ \_return = value; \} \}}
+\DoxyCodeLine{00118         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Given \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_given; \} \textcolor{keyword}{set} \{ \_given = value; \} \}}
+\DoxyCodeLine{00119         \textcolor{keyword}{public} \textcolor{keywordtype}{string} Url \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_url; \} \textcolor{keyword}{set} \{ \_url = value; \} \}}
+\DoxyCodeLine{00120         \textcolor{keyword}{public} List<string> Authors \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_authors; \} \textcolor{keyword}{set} \{ \_authors = value; \} \}}
+\DoxyCodeLine{00121         \textcolor{keyword}{public} List<string> Tags \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_tags; \} \textcolor{keyword}{set} \{ \_tags = value; \} \}}
+\DoxyCodeLine{00122         \textcolor{keyword}{public} List<string> Editors \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_editors; \} \textcolor{keyword}{set} \{ \_editors = value; \} \}}
+\DoxyCodeLine{00123         \textcolor{keyword}{public} List<string> Categories \{ \textcolor{keyword}{get} \{ \textcolor{keywordflow}{return} \_categories; \} \textcolor{keyword}{set} \{ \_categories = value; \} \}}
+\DoxyCodeLine{00124 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126 \textcolor{preprocessor}{        \#region Constructors}}
+\DoxyCodeLine{00127         \textcolor{keyword}{public} Book()}
+\DoxyCodeLine{00128         \{}
+\DoxyCodeLine{00129             \_authors = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00130             \_tags = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00131             \_editors = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00132             \_categories = \textcolor{keyword}{new} List<string>();}
+\DoxyCodeLine{00133         \}}
+\DoxyCodeLine{00134 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00135 }
+\DoxyCodeLine{00136 \textcolor{preprocessor}{        \#region Utility Methods}}
+\DoxyCodeLine{00137         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{byte}[] BookToByteArrayBlock(Book book)}
+\DoxyCodeLine{00138         \{}
+\DoxyCodeLine{00139             \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141             \textcolor{keywordtype}{byte}[] dataBuffer = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[BOOK\_DATA\_BLOCK\_SIZE];}
+\DoxyCodeLine{00142 }
+\DoxyCodeLine{00143 \textcolor{preprocessor}{            \#region copy book id}}
+\DoxyCodeLine{00144             \textcolor{keywordtype}{byte}[] idBytes = ConversionUtility.IntegerToByteArray(book.Id);}
+\DoxyCodeLine{00145             Array.Copy(idBytes, 0, dataBuffer, index, idBytes.Length);}
+\DoxyCodeLine{00146             index += Book.ID\_LENGTH;}
+\DoxyCodeLine{00147 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00148 }
+\DoxyCodeLine{00149 \textcolor{preprocessor}{            \#region copy book title}}
+\DoxyCodeLine{00150             \textcolor{keywordtype}{byte}[] titleBytes = ConversionUtility.StringToByteArray(book.Title);}
+\DoxyCodeLine{00151             Array.Copy(titleBytes, 0, dataBuffer, index, titleBytes.Length);}
+\DoxyCodeLine{00152             index += Book.TITLE\_MAX\_LENGTH;}
+\DoxyCodeLine{00153 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00154 }
+\DoxyCodeLine{00155 \textcolor{preprocessor}{            \#region copy book description}}
+\DoxyCodeLine{00156             \textcolor{keywordtype}{byte}[] descBytes = ConversionUtility.StringToByteArray(book.Description);}
+\DoxyCodeLine{00157             Array.Copy(descBytes, 0, dataBuffer, index, descBytes.Length);}
+\DoxyCodeLine{00158             index += Book.DESCRIPTION\_MAX\_LENGTH;}
+\DoxyCodeLine{00159 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00160 }
+\DoxyCodeLine{00161 \textcolor{preprocessor}{            \#region copy book year}}
+\DoxyCodeLine{00162             \textcolor{keywordtype}{byte}[] yearBytes = ConversionUtility.StringToByteArray(book.Year);}
+\DoxyCodeLine{00163             Array.Copy(yearBytes, 0, dataBuffer, index, yearBytes.Length);}
+\DoxyCodeLine{00164             index += Book.YEAR\_LENGTH;}
+\DoxyCodeLine{00165 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167 \textcolor{preprocessor}{            \#region copy book pages}}
+\DoxyCodeLine{00168             \textcolor{keywordtype}{byte}[] pageBytes = ConversionUtility.StringToByteArray(book.Pages);}
+\DoxyCodeLine{00169             Array.Copy(pageBytes, 0, dataBuffer, index, pageBytes.Length);}
+\DoxyCodeLine{00170             index += Book.PAGES\_LENGTH;}
+\DoxyCodeLine{00171 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00172 }
+\DoxyCodeLine{00173 \textcolor{preprocessor}{            \#region copy book abstract}}
+\DoxyCodeLine{00174             \textcolor{keywordtype}{byte}[] abstractBytes = ConversionUtility.StringToByteArray(book.Abstract);}
+\DoxyCodeLine{00175             Array.Copy(abstractBytes, 0, dataBuffer, index, abstractBytes.Length);}
+\DoxyCodeLine{00176             index += Book.ABSTRACT\_LENGTH;}
+\DoxyCodeLine{00177 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179 \textcolor{preprocessor}{            \#region copy book city}}
+\DoxyCodeLine{00180             \textcolor{keywordtype}{byte}[] cityBytes = ConversionUtility.StringToByteArray(book.City);}
+\DoxyCodeLine{00181             Array.Copy(cityBytes, 0, dataBuffer, index, cityBytes.Length);}
+\DoxyCodeLine{00182             index += Book.CITY\_LENGTH;}
+\DoxyCodeLine{00183 \textcolor{preprocessor}{            \#endregion}}
 \DoxyCodeLine{00184 }
-\DoxyCodeLine{00185 \}}
+\DoxyCodeLine{00185 \textcolor{preprocessor}{            \#region copy book edition}}
+\DoxyCodeLine{00186             \textcolor{keywordtype}{byte}[] editionBytes = ConversionUtility.StringToByteArray(book.Edition);}
+\DoxyCodeLine{00187             Array.Copy(editionBytes, 0, dataBuffer, index, editionBytes.Length);}
+\DoxyCodeLine{00188             index += Book.EDITION\_LENGTH;}
+\DoxyCodeLine{00189 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00190 }
+\DoxyCodeLine{00191 \textcolor{preprocessor}{            \#region copy book publisher}}
+\DoxyCodeLine{00192             \textcolor{keywordtype}{byte}[] publisherBytes = ConversionUtility.StringToByteArray(book.Publisher);}
+\DoxyCodeLine{00193             Array.Copy(publisherBytes, 0, dataBuffer, index, publisherBytes.Length);}
+\DoxyCodeLine{00194             index += Book.PUBLISHER\_LENGTH;}
+\DoxyCodeLine{00195 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197 \textcolor{preprocessor}{            \#region copy book catalogid}}
+\DoxyCodeLine{00198             \textcolor{keywordtype}{byte}[] catalogBytes = ConversionUtility.StringToByteArray(book.CatalogId);}
+\DoxyCodeLine{00199             Array.Copy(catalogBytes, 0, dataBuffer, index, catalogBytes.Length);}
+\DoxyCodeLine{00200             index += Book.CATALOGID\_LENGTH;}
+\DoxyCodeLine{00201 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203 \textcolor{preprocessor}{            \#region copy book price}}
+\DoxyCodeLine{00204             \textcolor{keywordtype}{byte}[] priceBytes = ConversionUtility.StringToByteArray(book.Price);}
+\DoxyCodeLine{00205             Array.Copy(priceBytes, 0, dataBuffer, index, priceBytes.Length);}
+\DoxyCodeLine{00206             index += Book.PRICE\_LENGTH;}
+\DoxyCodeLine{00207 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00208 }
+\DoxyCodeLine{00209 \textcolor{preprocessor}{            \#region copy book rack}}
+\DoxyCodeLine{00210             \textcolor{keywordtype}{byte}[] rackBytes = ConversionUtility.StringToByteArray(book.RackNo);}
+\DoxyCodeLine{00211             Array.Copy(rackBytes, 0, dataBuffer, index, rackBytes.Length);}
+\DoxyCodeLine{00212             index += Book.RACKNO\_LENGTH;}
+\DoxyCodeLine{00213 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00214 }
+\DoxyCodeLine{00215 \textcolor{preprocessor}{            \#region copy book row}}
+\DoxyCodeLine{00216             \textcolor{keywordtype}{byte}[] rowBytes = ConversionUtility.StringToByteArray(book.RowNo);}
+\DoxyCodeLine{00217             Array.Copy(rowBytes, 0, dataBuffer, index, rowBytes.Length);}
+\DoxyCodeLine{00218             index += Book.ROWNO\_LENGTH;}
+\DoxyCodeLine{00219 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221 \textcolor{preprocessor}{            \#region copy book status}}
+\DoxyCodeLine{00222             \textcolor{keywordtype}{byte}[] statusBytes = ConversionUtility.StringToByteArray(book.Status);}
+\DoxyCodeLine{00223             Array.Copy(statusBytes, 0, dataBuffer, index, statusBytes.Length);}
+\DoxyCodeLine{00224             index += Book.STATUS\_LENGTH;}
+\DoxyCodeLine{00225 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227 \textcolor{preprocessor}{            \#region copy book return date}}
+\DoxyCodeLine{00228             \textcolor{keywordtype}{byte}[] returnBytes = ConversionUtility.StringToByteArray(book.Return);}
+\DoxyCodeLine{00229             Array.Copy(returnBytes, 0, dataBuffer, index, returnBytes.Length);}
+\DoxyCodeLine{00230             index += Book.RETURN\_LENGTH;}
+\DoxyCodeLine{00231 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00232 }
+\DoxyCodeLine{00233 \textcolor{preprocessor}{            \#region copy book given date}}
+\DoxyCodeLine{00234             \textcolor{keywordtype}{byte}[] givenBytes = ConversionUtility.StringToByteArray(book.Given);}
+\DoxyCodeLine{00235             Array.Copy(givenBytes, 0, dataBuffer, index, givenBytes.Length);}
+\DoxyCodeLine{00236             index += Book.GIVEN\_LENGTH;}
+\DoxyCodeLine{00237 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00238 }
+\DoxyCodeLine{00239 \textcolor{preprocessor}{            \#region copy book url}}
+\DoxyCodeLine{00240             \textcolor{keywordtype}{byte}[] urlBytes = ConversionUtility.StringToByteArray(book.Url);}
+\DoxyCodeLine{00241             Array.Copy(urlBytes, 0, dataBuffer, index, urlBytes.Length);}
+\DoxyCodeLine{00242             index += Book.URL\_LENGTH;}
+\DoxyCodeLine{00243 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00244 }
+\DoxyCodeLine{00245 \textcolor{preprocessor}{            \#region copy book authors}}
+\DoxyCodeLine{00246             \textcolor{keywordtype}{byte}[] authorBytes = ConversionUtility.StringListToByteArray(book.Authors,}
+\DoxyCodeLine{00247                                                                             Book.AUTHORS\_MAX\_COUNT,}
+\DoxyCodeLine{00248                                                                             Book.AUTHORS\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00249             Array.Copy(authorBytes, 0, dataBuffer, index, authorBytes.Length);}
+\DoxyCodeLine{00250             index += authorBytes.Length;}
+\DoxyCodeLine{00251 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00252 }
+\DoxyCodeLine{00253 \textcolor{preprocessor}{            \#region copy book tags}}
+\DoxyCodeLine{00254             \textcolor{keywordtype}{byte}[] tagBytes = ConversionUtility.StringListToByteArray(book.Tags,}
+\DoxyCodeLine{00255                                                                             Book.TAG\_MAX\_COUNT,}
+\DoxyCodeLine{00256                                                                             Book.TAG\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00257             Array.Copy(tagBytes, 0, dataBuffer, index, tagBytes.Length);}
+\DoxyCodeLine{00258             index += tagBytes.Length;}
+\DoxyCodeLine{00259 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{00261 \textcolor{preprocessor}{            \#region copy book editors}}
+\DoxyCodeLine{00262             \textcolor{keywordtype}{byte}[] editorBytes = ConversionUtility.StringListToByteArray(book.Editors,}
+\DoxyCodeLine{00263                                                                             Book.EDITORS\_MAX\_COUNT,}
+\DoxyCodeLine{00264                                                                             Book.EDITORS\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00265             Array.Copy(editorBytes, 0, dataBuffer, index, editorBytes.Length);}
+\DoxyCodeLine{00266             index += editorBytes.Length;}
+\DoxyCodeLine{00267 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269 }
+\DoxyCodeLine{00270 \textcolor{preprocessor}{            \#region copy book categories}}
+\DoxyCodeLine{00271             \textcolor{keywordtype}{byte}[] categoryBytes = ConversionUtility.StringListToByteArray(book.Categories,}
+\DoxyCodeLine{00272                                                                             Book.CATEGORY\_MAX\_COUNT,}
+\DoxyCodeLine{00273                                                                             Book.CATEGORY\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00274             Array.Copy(categoryBytes, 0, dataBuffer, index, categoryBytes.Length);}
+\DoxyCodeLine{00275             index += categoryBytes.Length;}
+\DoxyCodeLine{00276 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00277 }
+\DoxyCodeLine{00278             \textcolor{keywordflow}{if} (index != dataBuffer.Length)}
+\DoxyCodeLine{00279             \{}
+\DoxyCodeLine{00280                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Index and DataBuffer Size Not Matched"{}});}
+\DoxyCodeLine{00281             \}}
+\DoxyCodeLine{00282 }
+\DoxyCodeLine{00283             \textcolor{keywordflow}{return} dataBuffer;}
+\DoxyCodeLine{00284         \}}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286         \textcolor{keyword}{public} \textcolor{keyword}{static} Book ByteArrayBlockToBook(\textcolor{keywordtype}{byte}[] byteArray)}
+\DoxyCodeLine{00287         \{}
+\DoxyCodeLine{00288 }
+\DoxyCodeLine{00289             Book book = \textcolor{keyword}{new} Book();}
+\DoxyCodeLine{00290 }
+\DoxyCodeLine{00291             \textcolor{keywordflow}{if} (byteArray.Length != BOOK\_DATA\_BLOCK\_SIZE)}
+\DoxyCodeLine{00292             \{}
+\DoxyCodeLine{00293                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Byte Array Size Not Match with Constant Data Block Size"{}});}
+\DoxyCodeLine{00294             \}}
+\DoxyCodeLine{00295 }
+\DoxyCodeLine{00296             \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{00297 }
+\DoxyCodeLine{00298             \textcolor{comment}{//byte[] dataBuffer = new byte[BOOK\_DATA\_BLOCK\_SIZE];}}
+\DoxyCodeLine{00299 }
+\DoxyCodeLine{00300 \textcolor{preprocessor}{            \#region copy book id}}
+\DoxyCodeLine{00301             \textcolor{keywordtype}{byte}[] idBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.ID\_LENGTH];}
+\DoxyCodeLine{00302             Array.Copy(byteArray, index, idBytes, 0, idBytes.Length);}
+\DoxyCodeLine{00303             book.Id = ConversionUtility.ByteArrayToInteger(idBytes);}
+\DoxyCodeLine{00304 }
+\DoxyCodeLine{00305             index += Book.ID\_LENGTH;}
+\DoxyCodeLine{00306 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00307 }
+\DoxyCodeLine{00308 \textcolor{preprocessor}{            \#region copy book title}}
+\DoxyCodeLine{00309             \textcolor{keywordtype}{byte}[] titleBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.TITLE\_MAX\_LENGTH];}
+\DoxyCodeLine{00310             Array.Copy(byteArray, index, titleBytes, 0, titleBytes.Length);}
+\DoxyCodeLine{00311             book.Title = ConversionUtility.ByteArrayToString(titleBytes);}
+\DoxyCodeLine{00312 }
+\DoxyCodeLine{00313             index += Book.TITLE\_MAX\_LENGTH;}
+\DoxyCodeLine{00314 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00315 }
+\DoxyCodeLine{00316 \textcolor{preprocessor}{            \#region copy book description}}
+\DoxyCodeLine{00317             \textcolor{keywordtype}{byte}[] descBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.DESCRIPTION\_MAX\_LENGTH];}
+\DoxyCodeLine{00318             Array.Copy(byteArray, index, descBytes, 0, descBytes.Length);}
+\DoxyCodeLine{00319             book.Description = ConversionUtility.ByteArrayToString(descBytes);}
+\DoxyCodeLine{00320 }
+\DoxyCodeLine{00321             index += Book.DESCRIPTION\_MAX\_LENGTH;}
+\DoxyCodeLine{00322 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00323 }
+\DoxyCodeLine{00324 \textcolor{preprocessor}{            \#region copy book year}}
+\DoxyCodeLine{00325             \textcolor{keywordtype}{byte}[] yearBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.YEAR\_LENGTH];}
+\DoxyCodeLine{00326             Array.Copy(byteArray, index, yearBytes, 0, yearBytes.Length);}
+\DoxyCodeLine{00327             book.Year = ConversionUtility.ByteArrayToString(yearBytes);}
+\DoxyCodeLine{00328 }
+\DoxyCodeLine{00329             index += Book.YEAR\_LENGTH;}
+\DoxyCodeLine{00330 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00331 }
+\DoxyCodeLine{00332 \textcolor{preprocessor}{            \#region copy book pages}}
+\DoxyCodeLine{00333             \textcolor{keywordtype}{byte}[] pageBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.PAGES\_LENGTH];}
+\DoxyCodeLine{00334             Array.Copy(byteArray, index, pageBytes, 0, pageBytes.Length);}
+\DoxyCodeLine{00335             book.Pages = ConversionUtility.ByteArrayToString(pageBytes);}
+\DoxyCodeLine{00336 }
+\DoxyCodeLine{00337             index += Book.PAGES\_LENGTH;}
+\DoxyCodeLine{00338 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00339 }
+\DoxyCodeLine{00340 \textcolor{preprocessor}{            \#region copy book abstract}}
+\DoxyCodeLine{00341             \textcolor{keywordtype}{byte}[] abstractBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.ABSTRACT\_LENGTH];}
+\DoxyCodeLine{00342             Array.Copy(byteArray, index, abstractBytes, 0, abstractBytes.Length);}
+\DoxyCodeLine{00343             book.Abstract = ConversionUtility.ByteArrayToString(abstractBytes);}
+\DoxyCodeLine{00344 }
+\DoxyCodeLine{00345             index += Book.ABSTRACT\_LENGTH;}
+\DoxyCodeLine{00346 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00347 }
+\DoxyCodeLine{00348 \textcolor{preprocessor}{            \#region copy book city}}
+\DoxyCodeLine{00349             \textcolor{keywordtype}{byte}[] cityBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.CITY\_LENGTH];}
+\DoxyCodeLine{00350             Array.Copy(byteArray, index, cityBytes, 0, cityBytes.Length);}
+\DoxyCodeLine{00351             book.City = ConversionUtility.ByteArrayToString(cityBytes);}
+\DoxyCodeLine{00352 }
+\DoxyCodeLine{00353             index += Book.CITY\_LENGTH;}
+\DoxyCodeLine{00354 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00355 }
+\DoxyCodeLine{00356 \textcolor{preprocessor}{            \#region copy book edition}}
+\DoxyCodeLine{00357             \textcolor{keywordtype}{byte}[] editionBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.EDITION\_LENGTH];}
+\DoxyCodeLine{00358             Array.Copy(byteArray, index, editionBytes, 0, editionBytes.Length);}
+\DoxyCodeLine{00359             book.Edition = ConversionUtility.ByteArrayToString(editionBytes);}
+\DoxyCodeLine{00360 }
+\DoxyCodeLine{00361             index += Book.EDITION\_LENGTH;}
+\DoxyCodeLine{00362 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00363 }
+\DoxyCodeLine{00364 \textcolor{preprocessor}{            \#region copy book publisher}}
+\DoxyCodeLine{00365             \textcolor{keywordtype}{byte}[] publisherBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.PUBLISHER\_LENGTH];}
+\DoxyCodeLine{00366             Array.Copy(byteArray, index, publisherBytes, 0, publisherBytes.Length);}
+\DoxyCodeLine{00367             book.Publisher = ConversionUtility.ByteArrayToString(publisherBytes);}
+\DoxyCodeLine{00368 }
+\DoxyCodeLine{00369             index += Book.PUBLISHER\_LENGTH;}
+\DoxyCodeLine{00370 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00371 }
+\DoxyCodeLine{00372 \textcolor{preprocessor}{            \#region copy book catalogid}}
+\DoxyCodeLine{00373             \textcolor{keywordtype}{byte}[] catalogBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.CATALOGID\_LENGTH];}
+\DoxyCodeLine{00374             Array.Copy(byteArray, index, catalogBytes, 0, catalogBytes.Length);}
+\DoxyCodeLine{00375             book.CatalogId = ConversionUtility.ByteArrayToString(catalogBytes);}
+\DoxyCodeLine{00376 }
+\DoxyCodeLine{00377             index += Book.CATALOGID\_LENGTH;}
+\DoxyCodeLine{00378 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00379 }
+\DoxyCodeLine{00380 \textcolor{preprocessor}{            \#region copy book price}}
+\DoxyCodeLine{00381             \textcolor{keywordtype}{byte}[] priceBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.PRICE\_LENGTH];}
+\DoxyCodeLine{00382             Array.Copy(byteArray, index, priceBytes, 0, priceBytes.Length);}
+\DoxyCodeLine{00383             book.Price = ConversionUtility.ByteArrayToString(priceBytes);}
+\DoxyCodeLine{00384 }
+\DoxyCodeLine{00385             index += Book.PRICE\_LENGTH;}
+\DoxyCodeLine{00386 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00387 }
+\DoxyCodeLine{00388 \textcolor{preprocessor}{            \#region copy book rackno}}
+\DoxyCodeLine{00389             \textcolor{keywordtype}{byte}[] rackBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.RACKNO\_LENGTH];}
+\DoxyCodeLine{00390             Array.Copy(byteArray, index, rackBytes, 0, rackBytes.Length);}
+\DoxyCodeLine{00391             book.RackNo = ConversionUtility.ByteArrayToString(rackBytes);}
+\DoxyCodeLine{00392 }
+\DoxyCodeLine{00393             index += Book.RACKNO\_LENGTH;}
+\DoxyCodeLine{00394 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00395 }
+\DoxyCodeLine{00396 \textcolor{preprocessor}{            \#region copy book rowno}}
+\DoxyCodeLine{00397             \textcolor{keywordtype}{byte}[] rowBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.ROWNO\_LENGTH];}
+\DoxyCodeLine{00398             Array.Copy(byteArray, index, rowBytes, 0, rowBytes.Length);}
+\DoxyCodeLine{00399             book.RowNo = ConversionUtility.ByteArrayToString(rowBytes);}
+\DoxyCodeLine{00400 }
+\DoxyCodeLine{00401             index += Book.ROWNO\_LENGTH;}
+\DoxyCodeLine{00402 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00403 }
+\DoxyCodeLine{00404 \textcolor{preprocessor}{            \#region copy book status}}
+\DoxyCodeLine{00405             \textcolor{keywordtype}{byte}[] statusBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.STATUS\_LENGTH];}
+\DoxyCodeLine{00406             Array.Copy(byteArray, index, statusBytes, 0, statusBytes.Length);}
+\DoxyCodeLine{00407             book.Status = ConversionUtility.ByteArrayToString(statusBytes);}
+\DoxyCodeLine{00408 }
+\DoxyCodeLine{00409             index += Book.STATUS\_LENGTH;}
+\DoxyCodeLine{00410 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00411 }
+\DoxyCodeLine{00412 \textcolor{preprocessor}{            \#region copy book returndate}}
+\DoxyCodeLine{00413             \textcolor{keywordtype}{byte}[] returnBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.RETURN\_LENGTH];}
+\DoxyCodeLine{00414             Array.Copy(byteArray, index, returnBytes, 0, returnBytes.Length);}
+\DoxyCodeLine{00415             book.Return = ConversionUtility.ByteArrayToString(returnBytes);}
+\DoxyCodeLine{00416 }
+\DoxyCodeLine{00417             index += Book.RETURN\_LENGTH;}
+\DoxyCodeLine{00418 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00419 }
+\DoxyCodeLine{00420 \textcolor{preprocessor}{            \#region copy book givendate}}
+\DoxyCodeLine{00421             \textcolor{keywordtype}{byte}[] givenBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.GIVEN\_LENGTH];}
+\DoxyCodeLine{00422             Array.Copy(byteArray, index, givenBytes, 0, givenBytes.Length);}
+\DoxyCodeLine{00423             book.Given = ConversionUtility.ByteArrayToString(givenBytes);}
+\DoxyCodeLine{00424 }
+\DoxyCodeLine{00425             index += Book.GIVEN\_LENGTH;}
+\DoxyCodeLine{00426 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00427 }
+\DoxyCodeLine{00428 \textcolor{preprocessor}{            \#region copy book url}}
+\DoxyCodeLine{00429             \textcolor{keywordtype}{byte}[] urlBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.URL\_LENGTH];}
+\DoxyCodeLine{00430             Array.Copy(byteArray, index, urlBytes, 0, urlBytes.Length);}
+\DoxyCodeLine{00431             book.Url = ConversionUtility.ByteArrayToString(urlBytes);}
+\DoxyCodeLine{00432 }
+\DoxyCodeLine{00433             index += Book.URL\_LENGTH;}
+\DoxyCodeLine{00434 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00435 }
+\DoxyCodeLine{00436 \textcolor{preprocessor}{            \#region copy book authors}}
+\DoxyCodeLine{00437 }
+\DoxyCodeLine{00438             \textcolor{keywordtype}{byte}[] authorBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.AUTHORS\_MAX\_COUNT * Book.AUTHORS\_NAME\_MAX\_LENGTH];}
+\DoxyCodeLine{00439 }
+\DoxyCodeLine{00440             Array.Copy(byteArray, index, authorBytes, 0, authorBytes.Length);}
+\DoxyCodeLine{00441 }
+\DoxyCodeLine{00442             book.Authors = ConversionUtility.ByteArrayToStringList(authorBytes,}
+\DoxyCodeLine{00443                                                                             Book.AUTHORS\_MAX\_COUNT,}
+\DoxyCodeLine{00444                                                                             Book.AUTHORS\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00445 }
+\DoxyCodeLine{00446             index += authorBytes.Length;}
+\DoxyCodeLine{00447 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00448 }
+\DoxyCodeLine{00449 \textcolor{preprocessor}{            \#region copy book tags}}
+\DoxyCodeLine{00450 }
+\DoxyCodeLine{00451             \textcolor{keywordtype}{byte}[] tagBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.TAG\_MAX\_COUNT * Book.TAG\_NAME\_MAX\_LENGTH];}
+\DoxyCodeLine{00452 }
+\DoxyCodeLine{00453             Array.Copy(byteArray, index, tagBytes, 0, tagBytes.Length);}
+\DoxyCodeLine{00454 }
+\DoxyCodeLine{00455             book.Tags = ConversionUtility.ByteArrayToStringList(tagBytes,}
+\DoxyCodeLine{00456                                                                             Book.TAG\_MAX\_COUNT,}
+\DoxyCodeLine{00457                                                                             Book.TAG\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00458 }
+\DoxyCodeLine{00459             index += tagBytes.Length;}
+\DoxyCodeLine{00460 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00461 }
+\DoxyCodeLine{00462 \textcolor{preprocessor}{            \#region copy book editors}}
+\DoxyCodeLine{00463 }
+\DoxyCodeLine{00464             \textcolor{keywordtype}{byte}[] editorBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.EDITORS\_MAX\_COUNT * Book.EDITORS\_NAME\_MAX\_LENGTH];}
+\DoxyCodeLine{00465 }
+\DoxyCodeLine{00466             Array.Copy(byteArray, index, editorBytes, 0, editorBytes.Length);}
+\DoxyCodeLine{00467 }
+\DoxyCodeLine{00468             book.Editors = ConversionUtility.ByteArrayToStringList(editorBytes,}
+\DoxyCodeLine{00469                                                                             Book.EDITORS\_MAX\_COUNT,}
+\DoxyCodeLine{00470                                                                             Book.EDITORS\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00471 }
+\DoxyCodeLine{00472             index += editorBytes.Length;}
+\DoxyCodeLine{00473 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00474 }
+\DoxyCodeLine{00475 }
+\DoxyCodeLine{00476 \textcolor{preprocessor}{            \#region copy book categories}}
+\DoxyCodeLine{00477             \textcolor{keywordtype}{byte}[] categoryBytes = \textcolor{keyword}{new} \textcolor{keywordtype}{byte}[Book.CATEGORY\_MAX\_COUNT * Book.CATEGORY\_NAME\_MAX\_LENGTH];}
+\DoxyCodeLine{00478 }
+\DoxyCodeLine{00479             Array.Copy(byteArray, index, categoryBytes, 0, categoryBytes.Length);}
+\DoxyCodeLine{00480 }
+\DoxyCodeLine{00481             book.Categories = ConversionUtility.ByteArrayToStringList(categoryBytes,}
+\DoxyCodeLine{00482                                                                             Book.CATEGORY\_MAX\_COUNT,}
+\DoxyCodeLine{00483                                                                             Book.CATEGORY\_NAME\_MAX\_LENGTH);}
+\DoxyCodeLine{00484 }
+\DoxyCodeLine{00485             index += categoryBytes.Length;}
+\DoxyCodeLine{00486 \textcolor{preprocessor}{            \#endregion}}
+\DoxyCodeLine{00487 }
+\DoxyCodeLine{00488             \textcolor{keywordflow}{if} (index != byteArray.Length)}
+\DoxyCodeLine{00489             \{}
+\DoxyCodeLine{00490                 \textcolor{keywordflow}{throw} \textcolor{keyword}{new} ArgumentException(\textcolor{stringliteral}{"{}Index and DataBuffer Size Not Matched"{}});}
+\DoxyCodeLine{00491             \}}
+\DoxyCodeLine{00492 }
+\DoxyCodeLine{00493             \textcolor{keywordflow}{if} (book.Id == 0)}
+\DoxyCodeLine{00494             \{}
+\DoxyCodeLine{00495                 \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00496             \}}
+\DoxyCodeLine{00497             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00498             \{}
+\DoxyCodeLine{00499                 \textcolor{keywordflow}{return} book;}
+\DoxyCodeLine{00500             \}}
+\DoxyCodeLine{00501 }
+\DoxyCodeLine{00502         \}}
+\DoxyCodeLine{00503 \textcolor{preprocessor}{        \#endregion}}
+\DoxyCodeLine{00504 }
+\DoxyCodeLine{00505     \}}
+\DoxyCodeLine{00506 }
+\DoxyCodeLine{00507 \}}
 
 \end{DoxyCode}

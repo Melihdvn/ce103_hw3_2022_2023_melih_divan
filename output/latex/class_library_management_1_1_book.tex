@@ -21,9 +21,45 @@ const int \textbf{ TITLE\+\_\+\+MAX\+\_\+\+LENGTH} = 100
 \item 
 const int \textbf{ DESCRIPTION\+\_\+\+MAX\+\_\+\+LENGTH} = 300
 \item 
+const int \textbf{ YEAR\+\_\+\+LENGTH} = 20
+\item 
+const int \textbf{ PAGES\+\_\+\+LENGTH} = 15
+\item 
+const int \textbf{ ABSTRACT\+\_\+\+LENGTH} = 500
+\item 
+const int \textbf{ CITY\+\_\+\+LENGTH} = 60
+\item 
+const int \textbf{ EDITION\+\_\+\+LENGTH} = 40
+\item 
+const int \textbf{ PUBLISHER\+\_\+\+LENGTH} = 60
+\item 
+const int \textbf{ URL\+\_\+\+LENGTH} = 160
+\item 
+const int \textbf{ CATALOGID\+\_\+\+LENGTH} = 110
+\item 
+const int \textbf{ PRICE\+\_\+\+LENGTH} = 20
+\item 
+const int \textbf{ RACKNO\+\_\+\+LENGTH} = 15
+\item 
+const int \textbf{ ROWNO\+\_\+\+LENGTH} = 15
+\item 
+const int \textbf{ STATUS\+\_\+\+LENGTH} = 40
+\item 
+const int \textbf{ RETURN\+\_\+\+LENGTH} = 50
+\item 
+const int \textbf{ GIVEN\+\_\+\+LENGTH} = 50
+\item 
 const int \textbf{ AUTHORS\+\_\+\+MAX\+\_\+\+COUNT} = 5
 \item 
 const int \textbf{ AUTHORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH} = 100
+\item 
+const int \textbf{ TAG\+\_\+\+MAX\+\_\+\+COUNT} = 5
+\item 
+const int \textbf{ TAG\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH} = 100
+\item 
+const int \textbf{ EDITORS\+\_\+\+MAX\+\_\+\+COUNT} = 5
+\item 
+const int \textbf{ EDITORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH} = 100
 \item 
 const int \textbf{ CATEGORY\+\_\+\+MAX\+\_\+\+COUNT} = 5
 \item 
@@ -40,7 +76,39 @@ string \textbf{ Title}\hspace{0.3cm}{\ttfamily  [get, set]}
 \item 
 string \textbf{ Description}\hspace{0.3cm}{\ttfamily  [get, set]}
 \item 
+string \textbf{ Year}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Pages}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Abstract}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ City}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Edition}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Publisher}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Catalog\+Id}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Price}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Rack\+No}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Row\+No}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Status}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Return}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Given}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+string \textbf{ Url}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
 List$<$ string $>$ \textbf{ Authors}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+List$<$ string $>$ \textbf{ Tags}\hspace{0.3cm}{\ttfamily  [get, set]}
+\item 
+List$<$ string $>$ \textbf{ Editors}\hspace{0.3cm}{\ttfamily  [get, set]}
 \item 
 List$<$ string $>$ \textbf{ Categories}\hspace{0.3cm}{\ttfamily  [get, set]}
 \end{DoxyCompactItemize}
@@ -62,7 +130,7 @@ Definition at line \textbf{ 6} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 45} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 127} of file \textbf{ Book.\+cs}.
 
 
 
@@ -75,7 +143,7 @@ Definition at line \textbf{ 45} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 53} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 137} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_ac2bcf7b67eefae8e85c4c784d7f017e4}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!ByteArrayBlockToBook@{ByteArrayBlockToBook}}
@@ -85,11 +153,21 @@ Definition at line \textbf{ 53} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 102} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 286} of file \textbf{ Book.\+cs}.
 
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\label{class_library_management_1_1_book_afdfafc7013aa151969dc546d9c847650}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!ABSTRACT\_LENGTH@{ABSTRACT\_LENGTH}}
+\index{ABSTRACT\_LENGTH@{ABSTRACT\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{ABSTRACT\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+ABSTRACT\+\_\+\+LENGTH = 500\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 19} of file \textbf{ Book.\+cs}.
+
 \mbox{\label{class_library_management_1_1_book_a47d869a61f4c8288f5ab0cc12549c17f}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!AUTHORS\_MAX\_COUNT@{AUTHORS\_MAX\_COUNT}}
 \index{AUTHORS\_MAX\_COUNT@{AUTHORS\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
@@ -98,7 +176,7 @@ Definition at line \textbf{ 102} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 15} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 43} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_ac8fd8ae9ee00627be2a7953fb02167b2}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!AUTHORS\_NAME\_MAX\_LENGTH@{AUTHORS\_NAME\_MAX\_LENGTH}}
@@ -108,7 +186,7 @@ Definition at line \textbf{ 15} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 16} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 44} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_a3fbfd6b02f10410081ee64dfad86acf9}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!BOOK\_DATA\_BLOCK\_SIZE@{BOOK\_DATA\_BLOCK\_SIZE}}
@@ -121,13 +199,39 @@ Definition at line \textbf{ 16} of file \textbf{ Book.\+cs}.
 \DoxyCodeLine{= ID\_LENGTH +}
 \DoxyCodeLine{                                                TITLE\_MAX\_LENGTH +}
 \DoxyCodeLine{                                                DESCRIPTION\_MAX\_LENGTH +}
+\DoxyCodeLine{                                                YEAR\_LENGTH + }
+\DoxyCodeLine{                                                PAGES\_LENGTH +}
+\DoxyCodeLine{                                                ABSTRACT\_LENGTH +}
+\DoxyCodeLine{                                                CITY\_LENGTH +}
+\DoxyCodeLine{                                                EDITION\_LENGTH +}
+\DoxyCodeLine{                                                PUBLISHER\_LENGTH + }
+\DoxyCodeLine{                                                URL\_LENGTH + }
+\DoxyCodeLine{                                                CATALOGID\_LENGTH + }
+\DoxyCodeLine{                                                PRICE\_LENGTH +}
+\DoxyCodeLine{                                                RACKNO\_LENGTH +}
+\DoxyCodeLine{                                                ROWNO\_LENGTH +}
+\DoxyCodeLine{                                                STATUS\_LENGTH + }
+\DoxyCodeLine{                                                RETURN\_LENGTH + }
+\DoxyCodeLine{                                                GIVEN\_LENGTH +}
+\DoxyCodeLine{                                                (TAG\_MAX\_COUNT * TAG\_NAME\_MAX\_LENGTH) + }
+\DoxyCodeLine{                                                (EDITORS\_MAX\_COUNT * EDITORS\_NAME\_MAX\_LENGTH) +}
 \DoxyCodeLine{                                                (AUTHORS\_MAX\_COUNT * AUTHORS\_NAME\_MAX\_LENGTH) +}
 \DoxyCodeLine{                                                (CATEGORY\_MAX\_COUNT * CATEGORY\_NAME\_MAX\_LENGTH)}
 
 \end{DoxyCode}
 
 
-Definition at line \textbf{ 21} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 55} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a9d035b084c1d11e084b09e10e94afc5e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CATALOGID\_LENGTH@{CATALOGID\_LENGTH}}
+\index{CATALOGID\_LENGTH@{CATALOGID\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{CATALOGID\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+CATALOGID\+\_\+\+LENGTH = 110\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 29} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_ac28d28aff8264d3b40b98cc8e4f8acab}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!CATEGORY\_MAX\_COUNT@{CATEGORY\_MAX\_COUNT}}
@@ -137,7 +241,7 @@ Definition at line \textbf{ 21} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 18} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 52} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_a20658fb8f331ab40f8954142f51613b7}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!CATEGORY\_NAME\_MAX\_LENGTH@{CATEGORY\_NAME\_MAX\_LENGTH}}
@@ -147,7 +251,17 @@ Definition at line \textbf{ 18} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 19} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 53} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a51bbdde1764e944cc1af4a9f9df9a50f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CITY\_LENGTH@{CITY\_LENGTH}}
+\index{CITY\_LENGTH@{CITY\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{CITY\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+CITY\+\_\+\+LENGTH = 60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 21} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_a8ae417a6f30398e857887bd1780e95ee}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!DESCRIPTION\_MAX\_LENGTH@{DESCRIPTION\_MAX\_LENGTH}}
@@ -159,6 +273,46 @@ Definition at line \textbf{ 19} of file \textbf{ Book.\+cs}.
 
 Definition at line \textbf{ 13} of file \textbf{ Book.\+cs}.
 
+\mbox{\label{class_library_management_1_1_book_a014dee4fbb51f54d9ecd6caa3d3f108f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!EDITION\_LENGTH@{EDITION\_LENGTH}}
+\index{EDITION\_LENGTH@{EDITION\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{EDITION\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+EDITION\+\_\+\+LENGTH = 40\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 23} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_ac183bd9a6ba98ba52df0b99f552c5d8f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!EDITORS\_MAX\_COUNT@{EDITORS\_MAX\_COUNT}}
+\index{EDITORS\_MAX\_COUNT@{EDITORS\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{EDITORS\_MAX\_COUNT}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+EDITORS\+\_\+\+MAX\+\_\+\+COUNT = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 49} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a7f97611f561f5ea9221bc91c249449af}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!EDITORS\_NAME\_MAX\_LENGTH@{EDITORS\_NAME\_MAX\_LENGTH}}
+\index{EDITORS\_NAME\_MAX\_LENGTH@{EDITORS\_NAME\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{EDITORS\_NAME\_MAX\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+EDITORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 50} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a20bdc24f320a3ce25f619c326f679a9d}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!GIVEN\_LENGTH@{GIVEN\_LENGTH}}
+\index{GIVEN\_LENGTH@{GIVEN\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{GIVEN\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+GIVEN\+\_\+\+LENGTH = 50\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 41} of file \textbf{ Book.\+cs}.
+
 \mbox{\label{class_library_management_1_1_book_a03579ed7c960b88aa426cbbfdb7207d2}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!ID\_LENGTH@{ID\_LENGTH}}
 \index{ID\_LENGTH@{ID\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
@@ -168,6 +322,96 @@ Definition at line \textbf{ 13} of file \textbf{ Book.\+cs}.
 
 
 Definition at line \textbf{ 9} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a91066f877db64b4ac5dd62cc65bbae53}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!PAGES\_LENGTH@{PAGES\_LENGTH}}
+\index{PAGES\_LENGTH@{PAGES\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{PAGES\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+PAGES\+\_\+\+LENGTH = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a6374f1a5b8a9a1eb6d67ef0db770e37d}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!PRICE\_LENGTH@{PRICE\_LENGTH}}
+\index{PRICE\_LENGTH@{PRICE\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{PRICE\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+PRICE\+\_\+\+LENGTH = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 31} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a5d654aa6265bd96f8032d9bbaeba6270}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!PUBLISHER\_LENGTH@{PUBLISHER\_LENGTH}}
+\index{PUBLISHER\_LENGTH@{PUBLISHER\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{PUBLISHER\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+PUBLISHER\+\_\+\+LENGTH = 60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 25} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_afc7bbfc4155a20f61d3ce0b5c4926cff}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RACKNO\_LENGTH@{RACKNO\_LENGTH}}
+\index{RACKNO\_LENGTH@{RACKNO\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{RACKNO\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+RACKNO\+\_\+\+LENGTH = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 33} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_aa3abd5dc0e8befb7a89a909bda2f6f33}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RETURN\_LENGTH@{RETURN\_LENGTH}}
+\index{RETURN\_LENGTH@{RETURN\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{RETURN\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+RETURN\+\_\+\+LENGTH = 50\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 39} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a6471e9b4668b55d53e355ba41cfcaa76}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!ROWNO\_LENGTH@{ROWNO\_LENGTH}}
+\index{ROWNO\_LENGTH@{ROWNO\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{ROWNO\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+ROWNO\+\_\+\+LENGTH = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 35} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a65a9b24104069217577d77de9e73a53c}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!STATUS\_LENGTH@{STATUS\_LENGTH}}
+\index{STATUS\_LENGTH@{STATUS\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{STATUS\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+STATUS\+\_\+\+LENGTH = 40\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 37} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_af5ad209feebfcc4ef5300f97f8fe14ac}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!TAG\_MAX\_COUNT@{TAG\_MAX\_COUNT}}
+\index{TAG\_MAX\_COUNT@{TAG\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{TAG\_MAX\_COUNT}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+TAG\+\_\+\+MAX\+\_\+\+COUNT = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 46} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_aea76d1308d76cc6655150d8662e55abd}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!TAG\_NAME\_MAX\_LENGTH@{TAG\_NAME\_MAX\_LENGTH}}
+\index{TAG\_NAME\_MAX\_LENGTH@{TAG\_NAME\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{TAG\_NAME\_MAX\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+TAG\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 47} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_abfb68ac441903a8beb13b83dbe2603f5}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!TITLE\_MAX\_LENGTH@{TITLE\_MAX\_LENGTH}}
@@ -179,9 +423,39 @@ Definition at line \textbf{ 9} of file \textbf{ Book.\+cs}.
 
 Definition at line \textbf{ 11} of file \textbf{ Book.\+cs}.
 
+\mbox{\label{class_library_management_1_1_book_ad44123e0d288f509514e7982d4f3093f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!URL\_LENGTH@{URL\_LENGTH}}
+\index{URL\_LENGTH@{URL\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{URL\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+URL\+\_\+\+LENGTH = 160\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 27} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a9d06cba865198481599befc71d9a8dae}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!YEAR\_LENGTH@{YEAR\_LENGTH}}
+\index{YEAR\_LENGTH@{YEAR\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{YEAR\_LENGTH}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+YEAR\+\_\+\+LENGTH = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \textbf{ 15} of file \textbf{ Book.\+cs}.
+
 
 
 \doxysubsection{Property Documentation}
+\mbox{\label{class_library_management_1_1_book_acb956c309f00709a1c3aa85d2b126c23}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Abstract@{Abstract}}
+\index{Abstract@{Abstract}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Abstract}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Abstract\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 108} of file \textbf{ Book.\+cs}.
+
 \mbox{\label{class_library_management_1_1_book_aae8530351bf3bb91add7062f2e9ead26}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!Authors@{Authors}}
 \index{Authors@{Authors}!LibraryManagement.Book@{LibraryManagement.Book}}
@@ -190,7 +464,17 @@ Definition at line \textbf{ 11} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 40} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 120} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_ade2a5dfd636de2011e35d283460fdb69}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CatalogId@{CatalogId}}
+\index{CatalogId@{CatalogId}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{CatalogId}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Catalog\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 112} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_ad00a56399b7a6b4b8a0eff52a6145073}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!Categories@{Categories}}
@@ -200,7 +484,17 @@ Definition at line \textbf{ 40} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 41} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 123} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a0fbc199ae3fca5c6742ed05417d280cb}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!City@{City}}
+\index{City@{City}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{City}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+City\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 109} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_a7a1e70b658b968325c0638f7da154779}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!Description@{Description}}
@@ -210,7 +504,37 @@ Definition at line \textbf{ 41} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 39} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 105} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_ab19d1b4192f0f587ae704c3c523780e7}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Edition@{Edition}}
+\index{Edition@{Edition}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Edition}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Edition\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 110} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_acd311897b4abb9963405cfc34b154252}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Editors@{Editors}}
+\index{Editors@{Editors}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Editors}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+Editors\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 122} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a1425637c4b73a4ace38247c8069a5941}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Given@{Given}}
+\index{Given@{Given}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Given}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Given\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 118} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_aed9897bfb7c5b3554529ccdee61bfb53}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!Id@{Id}}
@@ -220,7 +544,87 @@ Definition at line \textbf{ 39} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 37} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 103} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a05d2ec6e56c087b56ec0a89ebfafad2e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Pages@{Pages}}
+\index{Pages@{Pages}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Pages}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Pages\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 107} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_af05f22253c674fc6f033adf962bcd22f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Price@{Price}}
+\index{Price@{Price}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Price}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Price\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 113} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_ac37b9c4e9de5e0aeeae9c789267bddf8}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Publisher@{Publisher}}
+\index{Publisher@{Publisher}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Publisher}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Publisher\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 111} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a781f1daf802fdd17158797814d32475c}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RackNo@{RackNo}}
+\index{RackNo@{RackNo}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{RackNo}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Rack\+No\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 114} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_af1d18469243b8eda45cc6e6f02e3507e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Return@{Return}}
+\index{Return@{Return}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Return}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Return\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 117} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a6cfec54affa1865cb2ee842b1794bf0b}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RowNo@{RowNo}}
+\index{RowNo@{RowNo}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{RowNo}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Row\+No\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 115} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a27ca0f6d625eef9bed02e9272fbbf0eb}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Status@{Status}}
+\index{Status@{Status}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Status}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 116} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_af65fac517952d9daff3d17bbf4212b8e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Tags@{Tags}}
+\index{Tags@{Tags}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Tags}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+Tags\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 121} of file \textbf{ Book.\+cs}.
 
 \mbox{\label{class_library_management_1_1_book_a31774b08fe723ee6393fcdd587e9a0c0}} 
 \index{LibraryManagement.Book@{LibraryManagement.Book}!Title@{Title}}
@@ -230,7 +634,27 @@ Definition at line \textbf{ 37} of file \textbf{ Book.\+cs}.
 
 
 
-Definition at line \textbf{ 38} of file \textbf{ Book.\+cs}.
+Definition at line \textbf{ 104} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a9be0f36e7ad659ab5454411c1ba6c8db}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Url@{Url}}
+\index{Url@{Url}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Url}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 119} of file \textbf{ Book.\+cs}.
+
+\mbox{\label{class_library_management_1_1_book_a55a0e4e4003984d362e07e9abdf07848}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Year@{Year}}
+\index{Year@{Year}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{Year}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Year\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \textbf{ 106} of file \textbf{ Book.\+cs}.
 
 
 
