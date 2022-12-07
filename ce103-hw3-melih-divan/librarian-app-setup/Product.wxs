@@ -19,7 +19,7 @@
     <WixVariable Id="WixUIBannerBmp" Value="$(var.ProjectDir)img\banner.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value="$(var.ProjectDir)img\app_bg.bmp" />
     <!-- Define icons (ID should not be longer than 18 chars and must end with ".exe") -->
-    <Icon Id="Icon.exe" SourceFile="$(var.ProjectDir)img\app.ico" />
+    <Icon Id="Icon.exe" SourceFile="$(var.ProjectDir)\img\app.ico" />
     <!-- Set properties for add/remove programs -->
     <Property Id="ARPPRODUCTICON" Value="Icon.exe" />
     <Property Id="ARPHELPLINK" Value="$(var.InfoURL)" />
