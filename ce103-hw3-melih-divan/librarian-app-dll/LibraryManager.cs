@@ -315,30 +315,35 @@ namespace LibraryManagement
                     string filename = Path.Combine(path, "library.dat");
                     Clear();
                     int booknumber;
-                    WriteLine("Please enter number of book which do you want to edit: ");
+                    if (File.Exists("library.dat"))
+                    {
+                        WriteLine("Please enter number of book which do you want to edit: ");
                     booknumber = Convert.ToInt32(ReadLine());
 
-                    using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
-                    {
-                        string datalength = sr.ReadLine();
-                        sr.Close();
 
-                        Book book = new Book();
-                        WriteLine("Please enter new book id: ");
-                        book.Id = Convert.ToInt32(ReadLine());
-                        WriteLine("Please enter new book title: ");
-                        book.Title = ReadLine();
-                        WriteLine("Please enter new book description: ");
-                        book.Description = ReadLine();
-                        WriteLine("Please enter new book author: ");
-                        book.Authors.Add(ReadLine());
-                        WriteLine("Please enter new book category: ");
-                        book.Categories.Add(ReadLine());
+                        using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
+                        {
+                            string datalength = sr.ReadLine();
+                            sr.Close();
 
-                        byte[] bookBytes = Book.BookToByteArrayBlock(book);
+                            Book book = new Book();
+                            WriteLine("Please enter new book id: ");
+                            book.Id = Convert.ToInt32(ReadLine());
+                            WriteLine("Please enter new book title: ");
+                            book.Title = ReadLine();
+                            WriteLine("Please enter new book description: ");
+                            book.Description = ReadLine();
+                            WriteLine("Please enter new book author: ");
+                            book.Authors.Add(ReadLine());
+                            WriteLine("Please enter new book category: ");
+                            book.Categories.Add(ReadLine());
 
-                        FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                            byte[] bookBytes = Book.BookToByteArrayBlock(book);
+
+                            FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                        }
                     }
+                    else { WriteLine("Library file couldn't found."); }
 
                     WriteLine("Press any key to return...");
                     ReadKey(true);
@@ -346,7 +351,9 @@ namespace LibraryManagement
                 }
                 void DeleteBook()
                 {
-                    using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
+                    if (File.Exists("library.dat"))
+                    {
+                        using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
                     {
                         string datalength = sr.ReadLine();
                         sr.Close();
@@ -368,12 +375,18 @@ namespace LibraryManagement
 
                         FileUtility.DeleteBlock(((datalength.Length) / (Book.BOOK_DATA_BLOCK_SIZE)), Book.BOOK_DATA_BLOCK_SIZE, filename);
                     }
+                    }
+                    else { Clear(); WriteLine("Library file couldn't found."); }
+                    WriteLine("Press any key to return...");
+                    ReadKey(true);
                     DisplayBook();
                 }
                 void ListBook()
                 {
                     Clear();
-                    int i = 1;
+                    if (File.Exists("library.dat"))
+                    {
+                        int i = 1;
                     using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
                     {
                         string datlength = sr.ReadLine();
@@ -395,15 +408,24 @@ namespace LibraryManagement
                             i++;
 
                         } while (i < (((datlength.Length) / (Book.BOOK_DATA_BLOCK_SIZE)) + 1));
+
                         WriteLine("Press any key to return...");
                         ReadKey(true);
                         DisplayBook();
                     }
+                    }
+                    else { Clear(); WriteLine("Library file couldn't found."); }
+
+                    WriteLine("Press any key to return...");
+                    ReadKey(true);
+                    DisplayBook();
                 }
                 void ListBorrowedBook()
                 {
                     Clear();
-                    int i = 1;
+                    if (File.Exists("library.dat"))
+                    {
+                        int i = 1;
                     using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
                     {
                         string datlength = sr.ReadLine();
@@ -430,10 +452,18 @@ namespace LibraryManagement
                         DisplayBook();
                     }
                 }
+                    else { Clear(); WriteLine("Library file couldn't found."); }
+
+                    WriteLine("Press any key to return...");
+                ReadKey(true);
+                DisplayBook();
+            }
                 void SearchBook()
                 {
                     Clear();
                     int i = 1;
+                                        if (File.Exists("library.dat"))
+                    {
                     Write("Please enter name or ID of the book which do you want to find: ");
                     var search = ReadLine();
                     if (ConversionUtility.IsNumeric(search) == false)
@@ -494,88 +524,109 @@ namespace LibraryManagement
                             DisplayBook();
                         }
                     }
-                }
+                    }
+                    else { Clear(); WriteLine("Library file couldn't found."); }
+
+                    WriteLine("Press any key to return...");
+                    ReadKey(true);
+                    DisplayBook();
+            }
                 void BorrowBook()
                 {
-                    string path = AppDomain.CurrentDomain.BaseDirectory;
-                    string filename = Path.Combine(path, "library.dat");
-                    Clear();
-                    int booknumber;
-                    string student;
-                    string date;
-                    Write("Please enter number of book which do you want to borrow: ");
-                    booknumber = Convert.ToInt32(ReadLine());
-                    Write("\nWhat is the name of student who got the book: ");
-                    student = ReadLine();
-                    Write("\nDate: ");
-                    date = ReadLine();
-
-
-                    using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
+                    if (File.Exists("library.dat"))
                     {
-                        string datalength = sr.ReadLine();
-                        sr.Close();
+                        string path = AppDomain.CurrentDomain.BaseDirectory;
+                        string filename = Path.Combine(path, "library.dat");
+                        Clear();
+                        int booknumber;
+                        string student;
+                        string date;
+                        Write("Please enter number of book which do you want to borrow: ");
+                        booknumber = Convert.ToInt32(ReadLine());
+                        Write("\nWhat is the name of student who got the book: ");
+                        student = ReadLine();
+                        Write("\nDate: ");
+                        date = ReadLine();
 
-                        byte[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
-                        Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);
+
+                        using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
+                        {
+                            string datalength = sr.ReadLine();
+                            sr.Close();
+
+                            byte[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                            Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);
 
 
+                            if (bookWrittenObject != null)
+                            { 
+                            Book book = new Book();
+                            book.Id = bookWrittenObject.Id;
+                            book.Title = bookWrittenObject.Title + "  (Borrowed by student: " + student + "  Date: " + date + ")";
+                            book.Description = bookWrittenObject.Description;
+                            book.Authors.Add(bookWrittenObject.Authors[0]);
+                            book.Categories.Add(bookWrittenObject.Categories[0]);
 
-                        Book book = new Book();
-                        book.Id = bookWrittenObject.Id;
-                        book.Title = bookWrittenObject.Title + "  (Borrowed by student: " + student + "  Date: " + date + ")";
-                        book.Description = bookWrittenObject.Description;
-                        book.Authors.Add(bookWrittenObject.Authors[0]);
-                        book.Categories.Add(bookWrittenObject.Categories[0]);
+                            byte[] bookBytes = Book.BookToByteArrayBlock(book);
 
-                        byte[] bookBytes = Book.BookToByteArrayBlock(book);
+                            FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                        }
 
-                        FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
-                    }
-
+                        WriteLine("Press any key to return...");
+                        ReadKey(true);
+                        DisplayBook();
+                    }}
+                    else { Clear(); WriteLine("Library file couldn't found."); }
                     WriteLine("Press any key to return...");
                     ReadKey(true);
                     DisplayBook();
                 }
                 void ReturnBook()
                 {
-                    string path = AppDomain.CurrentDomain.BaseDirectory;
-                    string filename = Path.Combine(path, "library.dat");
-                    Clear();
-                    int booknumber;
-                    string bookname;
-                    Write("Please enter number of book which do you want to return: ");
-                    booknumber = Convert.ToInt32(ReadLine());
-                    Write("\nWhat is book name: ");
-                    bookname = ReadLine();
-
-
-                    using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
+                    if (File.Exists("library.dat"))
                     {
-                        string datalength = sr.ReadLine();
-                        sr.Close();
+                        string path = AppDomain.CurrentDomain.BaseDirectory;
+                        string filename = Path.Combine(path, "library.dat");
+                        Clear();
+                        int booknumber;
+                        string bookname;
+                        Write("Please enter number of book which do you want to return: ");
+                        booknumber = Convert.ToInt32(ReadLine());
+                        Write("\nWhat is book name: ");
+                        bookname = ReadLine();
 
-                        byte[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
-                        Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);
+
+                        using (StreamReader sr = new StreamReader(File.Open("library.dat", FileMode.Open)))
+                        {
+                            string datalength = sr.ReadLine();
+                            sr.Close();
+
+                            byte[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                            Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);
 
 
 
-                        Book book = new Book();
-                        book.Id = bookWrittenObject.Id;
-                        book.Title = bookname;
-                        book.Description = bookWrittenObject.Description;
-                        book.Authors.Add(bookWrittenObject.Authors[0]);
-                        book.Categories.Add(bookWrittenObject.Categories[0]);
+                            Book book = new Book();
+                            book.Id = bookWrittenObject.Id;
+                            book.Title = bookname;
+                            book.Description = bookWrittenObject.Description;
+                            book.Authors.Add(bookWrittenObject.Authors[0]);
+                            book.Categories.Add(bookWrittenObject.Categories[0]);
 
-                        byte[] bookBytes = Book.BookToByteArrayBlock(book);
+                            byte[] bookBytes = Book.BookToByteArrayBlock(book);
 
-                        FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                            FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+                        }
+
+                        WriteLine("Press any key to return...");
+                        ReadKey(true);
+                        DisplayBook();
                     }
-
+                    else { Clear(); WriteLine("Library file couldn't found."); }
                     WriteLine("Press any key to return...");
-                    ReadKey(true);
-                    DisplayBook();
-                }
+                ReadKey(true);
+                DisplayBook();
+            }
 
             }
             #endregion

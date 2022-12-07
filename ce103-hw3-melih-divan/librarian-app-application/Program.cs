@@ -36,56 +36,76 @@ namespace librarianApp
             WriteLine("Welcome to the Librarian App");
             ResetColor();
             ForegroundColor = ConsoleColor.DarkRed;
+
+
+            if (File.Exists("password.txt"))
+            {
             Write("Please enter password: ");
             ForegroundColor = ConsoleColor.White;
             passwordAttempt = ReadLine();
+            
+                using (StreamReader sr = new StreamReader(File.Open("password.txt", FileMode.Open)))
+                {
+                    password = sr.ReadLine();
+                    sr.Close();
+                }
 
-            using (StreamReader sr = new StreamReader(File.Open("password.txt", FileMode.Open)))
-            {
-                password = sr.ReadLine();
-                sr.Close();
-            }
+                if (passwordAttempt == password)
+                {
+                    ForegroundColor = ConsoleColor.Green;
+                    WriteLine("Login Success.");
+                    ForegroundColor = ConsoleColor.White;
+                    WriteLine("Press any key to continue...");
+                    ReadKey(true);
+                    libraryApp.Start();
+                }
+                else
+                {
+                    int i = 3;
+                    while (i > 0)
+                    {
+                        ForegroundColor = ConsoleColor.Red;
+                        WriteLine("Wrong password. \n You have " + (i) + " attempts left.");
+                        ForegroundColor = ConsoleColor.DarkRed;
+                        Write("Please enter password: ");
+                        ForegroundColor = ConsoleColor.White;
+                        passwordAttempt = ReadLine();
+                        if (passwordAttempt == password)
+                        {
+                            ForegroundColor = ConsoleColor.Green;
+                            WriteLine("Login Success.");
+                            ForegroundColor = ConsoleColor.White;
+                            WriteLine("Press any key to continue...");
+                            ReadKey(true);
+                            libraryApp.Start();
+                        }
+                        --i;
+                    }
+                    if (i == 0)
+                    {
+                        ForegroundColor = ConsoleColor.Red;
+                        WriteLine("Login Failed. \n App will close.");
+                        ReadKey(true);
 
-            if (passwordAttempt == password)
-            {
-                ForegroundColor = ConsoleColor.Green;
-                WriteLine("Login Success.");
-                ForegroundColor = ConsoleColor.White;
-                WriteLine("Press any key to continue...");
-                ReadKey(true);
-                libraryApp.Start();
+                    }
+                }
             }
             else
             {
-                int i = 3;
-                while (i > 0)
+                Write("Please create a password: ");
+                ForegroundColor = ConsoleColor.White;
+                password = ReadLine();
+                using (StreamWriter sw = new StreamWriter(File.Create("password.txt")))
                 {
-                    ForegroundColor = ConsoleColor.Red;
-                    WriteLine("Wrong password. \n You have " + (i) + " attempts left.");
-                    ForegroundColor = ConsoleColor.DarkRed;
-                    Write("Please enter password: ");
-                    ForegroundColor = ConsoleColor.White;
-                    passwordAttempt = ReadLine();
-                    if (passwordAttempt == password)
-                    {
-                        ForegroundColor = ConsoleColor.Green;
-                        WriteLine("Login Success.");
-                        ForegroundColor = ConsoleColor.White;
-                        WriteLine("Press any key to continue...");
-                        ReadKey(true);
-                        libraryApp.Start();
-                    }
-                    --i;
+                    sw.Write(password);
+                    sw.Close();
                 }
-                if (i == 0)
-                {
-                    ForegroundColor = ConsoleColor.Red;
-                    WriteLine("Login Failed. \n App will close.");
-                    ReadKey(true);
-
-                }
+                ForegroundColor = ConsoleColor.Green;
+                WriteLine("Password successfully created. Press any key to continue...");
+                ResetColor();
+                ReadKey(true);
+                libraryApp.Start();
             }
-
 
         }
     }
