@@ -3,6 +3,7 @@ using System.IO;
 using static System.Console;
 using LibraryManagement;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace librarianApp
 {
@@ -11,6 +12,7 @@ namespace librarianApp
     {
         static void Main()
         {
+            CursorVisible = false;
             Title = "Librarian App - Login Screen";
             string passwordAttempt, password = string.Empty;
             LibraryManager.App libraryApp = new LibraryManager.App();
@@ -760,17 +762,21 @@ namespace librarianApp
             #region Borrow History Menu
             private void DisplayBorrowHistory()
             {
-                Clear();
-                string path = "borrowed.txt";
-                using (StreamReader sr = File.OpenText(path))
+                if (File.Exists("borrowed.txt"))
                 {
-                    string s = "";
-                    while ((s = sr.ReadLine()) != null)
+                    Clear();
+                    string path = "borrowed.txt";
+                    using (StreamReader sr = File.OpenText(path))
                     {
-                        Console.WriteLine(s);
+                        string s = "";
+                        while ((s = sr.ReadLine()) != null)
+                        {
+                            Console.WriteLine(s);
+                        }
+                        sr.Close();
                     }
-                    sr.Close();
                 }
+                else { Write("History is empty"); }
                 WriteLine("\nPress any key to return to the menu...");
                 ReadKey(true);
                 RunMainMenu();
@@ -799,6 +805,13 @@ namespace librarianApp
 ");
                 ResetColor();
                 WriteLine("This app was created by Melih Divan");
+                string request = "https://github.com/melihdvn/";
+                ProcessStartInfo ps = new ProcessStartInfo
+                {
+                    FileName = request,
+                    UseShellExecute = true
+                };
+                Process.Start(ps);
                 WriteLine("This is an app for librarians");
                 WriteLine("This app is developed for ce homework");
                 WriteLine("\nPress any key to return to the menu...");
