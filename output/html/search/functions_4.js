@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['start_0',['Start',['../classlibrarian_app_1_1_library_manager_1_1_app.html#ad4a2bf06e1fe3e83f1ede35396ca72a9',1,'librarianApp::LibraryManager::App']]]
+  ['editcategory_0',['EditCategory',['../d9/d73/a00060.html#afee0ce1bb591b1a9d2385eb5fffa8133',1,'librarianApp::LibraryManager::App']]],
+  ['exitapp_1',['ExitApp',['../d9/d73/a00060.html#ac617ca447fcd1c0bf68301b39887855b',1,'librarianApp::LibraryManager::App']]]
 ];

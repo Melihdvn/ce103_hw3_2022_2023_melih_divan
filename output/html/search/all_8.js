@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['librarianapp_0',['librarianApp',['../namespacelibrarian_app.html',1,'']]],
-  ['librarymanagement_1',['LibraryManagement',['../namespace_library_management.html',1,'']]],
-  ['librarymanager_2',['LibraryManager',['../classlibrarian_app_1_1_library_manager.html',1,'librarianApp']]],
-  ['librarymanager_2ecs_3',['LibraryManager.cs',['../_library_manager_8cs.html',1,'']]]
+  ['getint_0',['GetInt',['../d6/d2c/a00072.html#ab2843e1d7e0755ddb599562edce8f5ee',1,'LibraryManagement::ConversionUtility']]],
+  ['given_1',['Given',['../df/d5f/a00064.html#a1425637c4b73a4ace38247c8069a5941',1,'LibraryManagement::Book']]],
+  ['given_5flength_2',['GIVEN_LENGTH',['../df/d5f/a00064.html#a20bdc24f320a3ce25f619c326f679a9d',1,'LibraryManagement::Book']]]
 ];

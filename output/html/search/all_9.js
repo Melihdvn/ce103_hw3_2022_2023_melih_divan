@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['pages_0',['Pages',['../class_library_management_1_1_book.html#a05d2ec6e56c087b56ec0a89ebfafad2e',1,'LibraryManagement::Book']]],
-  ['pages_5flength_1',['PAGES_LENGTH',['../class_library_management_1_1_book.html#a91066f877db64b4ac5dd62cc65bbae53',1,'LibraryManagement::Book']]],
-  ['price_2',['Price',['../class_library_management_1_1_book.html#af05f22253c674fc6f033adf962bcd22f',1,'LibraryManagement::Book']]],
-  ['price_5flength_3',['PRICE_LENGTH',['../class_library_management_1_1_book.html#a6374f1a5b8a9a1eb6d67ef0db770e37d',1,'LibraryManagement::Book']]],
-  ['program_4',['Program',['../classlibrarian_app_1_1_program.html',1,'librarianApp']]],
-  ['program_2ecs_5',['Program.cs',['../_program_8cs.html',1,'']]],
-  ['publisher_6',['Publisher',['../class_library_management_1_1_book.html#ac37b9c4e9de5e0aeeae9c789267bddf8',1,'LibraryManagement::Book']]],
-  ['publisher_5flength_7',['PUBLISHER_LENGTH',['../class_library_management_1_1_book.html#a5d654aa6265bd96f8032d9bbaeba6270',1,'LibraryManagement::Book']]]
+  ['id_0',['Id',['../df/d5f/a00064.html#aed9897bfb7c5b3554529ccdee61bfb53',1,'LibraryManagement::Book']]],
+  ['id_5flength_1',['ID_LENGTH',['../df/d5f/a00064.html#a03579ed7c960b88aa426cbbfdb7207d2',1,'LibraryManagement::Book']]],
+  ['insertbook_2',['InsertBook',['../da/dec/a00080.html#a832e166dbdb6c647dc4bdb320a2965d2',1,'LibraryManagement::LibraryManager']]],
+  ['insertcategory_3',['InsertCategory',['../da/dec/a00080.html#a474ffd521b3a280452ad50ae91f80a2a',1,'LibraryManagement::LibraryManager']]],
+  ['integertobytearray_4',['IntegerToByteArray',['../d6/d2c/a00072.html#ae2bca2db4cfda3722e596af30d58968c',1,'LibraryManagement::ConversionUtility']]],
+  ['ishex_5',['IsHex',['../d6/d2c/a00072.html#ab27f0271f9ae56fa0111e215dc9aa004',1,'LibraryManagement::ConversionUtility']]],
+  ['isnumeric_6',['IsNumeric',['../da/dec/a00080.html#ac749f7c4d0f8f66b03190962fef9f158',1,'LibraryManagement::LibraryManager']]]
 ];

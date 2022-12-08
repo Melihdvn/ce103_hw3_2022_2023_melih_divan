@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+     <key>CFBundleName</key>
+     <string>LibraryManagement</string>
+     <key>CFBundleIdentifier</key>
+     <string>LibraryManagement</string>
+     <key>CFBundleVersion</key>
+     <string>v1.0.0</string>
+     <key>DocSetFeedName</key>
+     <string>LibraryManagement</string>
+     <key>DocSetFeedUrl</key>
+     <string>FeedUrl</string>
+     <key>DocSetPublisherIdentifier</key>
+     <string>LibraryManagement</string>
+     <key>DocSetPublisherName</key>
+     <string>LibraryManagement</string>
+     <key>DashDocSetFamily</key>
+     <string>doxy</string>
+     <key>DocSetPlatformFamily</key>
+     <string>doxygen</string>
+</dict>
+</plist>

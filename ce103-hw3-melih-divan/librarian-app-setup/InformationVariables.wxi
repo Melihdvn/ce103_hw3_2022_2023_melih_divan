@@ -3,7 +3,7 @@
 	<?define CompanyName="melihdvn" ?>
 
 	<!-- Full version number to display -->
-	<?define VersionNumber="1.0" ?>
+	<?define VersionNumber="1.1" ?>
 	<?define ProductName="librarian-app"?>
 	<?define SourceFolder="..\librarian-app-application\bin"?>
 

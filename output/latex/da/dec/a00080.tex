@@ -1,0 +1,272 @@
+\hypertarget{a00080}{}\doxysection{Library\+Management.\+Library\+Manager Class Reference}
+\label{a00080}\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{a00080_ac749f7c4d0f8f66b03190962fef9f158}{Is\+Numeric}} (object Expression)
+\item 
+static void \mbox{\hyperlink{a00080_a832e166dbdb6c647dc4bdb320a2965d2}{Insert\+Book}} (\mbox{\hyperlink{a00064}{Book}} book)
+\item 
+static void \mbox{\hyperlink{a00080_a474ffd521b3a280452ad50ae91f80a2a}{Insert\+Category}} (\mbox{\hyperlink{a00068}{Category}} category)
+\item 
+static void \mbox{\hyperlink{a00080_aeb3ae635931ae96749d36a18c2c10635}{Update\+Book}} (\mbox{\hyperlink{a00064}{Book}} book, int booknumber)
+\item 
+static void \mbox{\hyperlink{a00080_ab1ace17abe515089642273d76e983b8d}{Update\+Category}} (\mbox{\hyperlink{a00068}{Category}} category, int catnumber)
+\item 
+static void \mbox{\hyperlink{a00080_ab48291e4615f870edb7f3d866f07dced}{Delete\+Book}} (int booknumber)
+\item 
+static void \mbox{\hyperlink{a00080_ad5be93c95cd661c560773b1dad9e80c4}{Delete\+Category}} (int catnumber)
+\item 
+static \mbox{\hyperlink{a00064}{Book}} \mbox{\hyperlink{a00080_ad84c4ab2483efe0ef93a352c7a0514eb}{Read\+Book}} (int booknumber)
+\item 
+static \mbox{\hyperlink{a00068}{Category}} \mbox{\hyperlink{a00080_a373b8c08d256da3e3b32c0732b199794}{Read\+Category}} (int catnumber)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a00080_ab48291e4615f870edb7f3d866f07dced}\label{a00080_ab48291e4615f870edb7f3d866f07dced}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!DeleteBook@{DeleteBook}}
+\index{DeleteBook@{DeleteBook}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{DeleteBook()}{DeleteBook()}}
+{\footnotesize\ttfamily static void Library\+Management.\+Library\+Manager.\+Delete\+Book (\begin{DoxyParamCaption}\item[{int}]{booknumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00064_a3fbfd6b02f10410081ee64dfad86acf9}{Library\+Management.\+Book.\+BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE}}, \mbox{\hyperlink{a00076_abdbd3f3d7492f5a4298c3916e6a21b2b}{Library\+Management.\+File\+Utility.\+Delete\+Block()}}, \mbox{\hyperlink{a00076_a49a5140b26df1664813c020f9a4bacfc}{Library\+Management.\+File\+Utility.\+Read\+Block()}}, and \mbox{\hyperlink{a00076_ad91e1bc27f822e742178dc87e418c948}{Library\+Management.\+File\+Utility.\+Update\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ab48291e4615f870edb7f3d866f07dced_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ab48291e4615f870edb7f3d866f07dced_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_ad5be93c95cd661c560773b1dad9e80c4}\label{a00080_ad5be93c95cd661c560773b1dad9e80c4}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!DeleteCategory@{DeleteCategory}}
+\index{DeleteCategory@{DeleteCategory}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{DeleteCategory()}{DeleteCategory()}}
+{\footnotesize\ttfamily static void Library\+Management.\+Library\+Manager.\+Delete\+Category (\begin{DoxyParamCaption}\item[{int}]{catnumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00068_aa907441705e9adde6298927840922dd2}{Library\+Management.\+Category.\+CATEGORY\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00076_abdbd3f3d7492f5a4298c3916e6a21b2b}{Library\+Management.\+File\+Utility.\+Delete\+Block()}}, \mbox{\hyperlink{a00076_a49a5140b26df1664813c020f9a4bacfc}{Library\+Management.\+File\+Utility.\+Read\+Block()}}, and \mbox{\hyperlink{a00076_ad91e1bc27f822e742178dc87e418c948}{Library\+Management.\+File\+Utility.\+Update\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_ac8184c4489bbab37247bb9f50bdc6e58}{librarian\+App.\+Library\+Manager.\+App.\+Delete\+Category()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ad5be93c95cd661c560773b1dad9e80c4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ad5be93c95cd661c560773b1dad9e80c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_a832e166dbdb6c647dc4bdb320a2965d2}\label{a00080_a832e166dbdb6c647dc4bdb320a2965d2}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!InsertBook@{InsertBook}}
+\index{InsertBook@{InsertBook}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{InsertBook()}{InsertBook()}}
+{\footnotesize\ttfamily static void Library\+Management.\+Library\+Manager.\+Insert\+Book (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00064}{Book}}}]{book }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00076_a3ec7140a0e147a7213a259a86cbf4b52}{Library\+Management.\+File\+Utility.\+Append\+Block()}}, and \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_a832e166dbdb6c647dc4bdb320a2965d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_a832e166dbdb6c647dc4bdb320a2965d2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_a474ffd521b3a280452ad50ae91f80a2a}\label{a00080_a474ffd521b3a280452ad50ae91f80a2a}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!InsertCategory@{InsertCategory}}
+\index{InsertCategory@{InsertCategory}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{InsertCategory()}{InsertCategory()}}
+{\footnotesize\ttfamily static void Library\+Management.\+Library\+Manager.\+Insert\+Category (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00068}{Category}}}]{category }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00076_a3ec7140a0e147a7213a259a86cbf4b52}{Library\+Management.\+File\+Utility.\+Append\+Block()}}, and \mbox{\hyperlink{a00068_a83a43c6eebe36be5fd0ade89a879f633}{Library\+Management.\+Category.\+Category\+To\+Byte\+Array\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_acdac8043212d45f31383ec667cd7f966}{librarian\+App.\+Library\+Manager.\+App.\+Add\+Category()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_a474ffd521b3a280452ad50ae91f80a2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_a474ffd521b3a280452ad50ae91f80a2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_ac749f7c4d0f8f66b03190962fef9f158}\label{a00080_ac749f7c4d0f8f66b03190962fef9f158}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!IsNumeric@{IsNumeric}}
+\index{IsNumeric@{IsNumeric}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{IsNumeric()}{IsNumeric()}}
+{\footnotesize\ttfamily static bool Library\+Management.\+Library\+Manager.\+Is\+Numeric (\begin{DoxyParamCaption}\item[{object}]{Expression }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ac749f7c4d0f8f66b03190962fef9f158_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_ad84c4ab2483efe0ef93a352c7a0514eb}\label{a00080_ad84c4ab2483efe0ef93a352c7a0514eb}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!ReadBook@{ReadBook}}
+\index{ReadBook@{ReadBook}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{ReadBook()}{ReadBook()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00064}{Book}} Library\+Management.\+Library\+Manager.\+Read\+Book (\begin{DoxyParamCaption}\item[{int}]{booknumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00064_a3fbfd6b02f10410081ee64dfad86acf9}{Library\+Management.\+Book.\+BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE}}, \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}, and \mbox{\hyperlink{a00076_a49a5140b26df1664813c020f9a4bacfc}{Library\+Management.\+File\+Utility.\+Read\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ad84c4ab2483efe0ef93a352c7a0514eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ad84c4ab2483efe0ef93a352c7a0514eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_a373b8c08d256da3e3b32c0732b199794}\label{a00080_a373b8c08d256da3e3b32c0732b199794}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!ReadCategory@{ReadCategory}}
+\index{ReadCategory@{ReadCategory}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{ReadCategory()}{ReadCategory()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00068}{Category}} Library\+Management.\+Library\+Manager.\+Read\+Category (\begin{DoxyParamCaption}\item[{int}]{catnumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00068_aab58d98fd44a112e2c51b28b769ed210}{Library\+Management.\+Category.\+Byte\+Array\+Block\+To\+Category()}}, \mbox{\hyperlink{a00068_aa907441705e9adde6298927840922dd2}{Library\+Management.\+Category.\+CATEGORY\+\_\+\+MAX\+\_\+\+LENGTH}}, and \mbox{\hyperlink{a00076_a49a5140b26df1664813c020f9a4bacfc}{Library\+Management.\+File\+Utility.\+Read\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}, \mbox{\hyperlink{a00060_a938926cf1d4738f233191bfb5fdd25a2}{librarian\+App.\+Library\+Manager.\+App.\+List\+Category()}}, and \mbox{\hyperlink{a00060_a42c66273de9eeaa8029761b94a2cacc9}{librarian\+App.\+Library\+Manager.\+App.\+List\+Category\+For\+Add\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_a373b8c08d256da3e3b32c0732b199794_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_a373b8c08d256da3e3b32c0732b199794_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_aeb3ae635931ae96749d36a18c2c10635}\label{a00080_aeb3ae635931ae96749d36a18c2c10635}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!UpdateBook@{UpdateBook}}
+\index{UpdateBook@{UpdateBook}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{UpdateBook()}{UpdateBook()}}
+{\footnotesize\ttfamily static void Library\+Management.\+Library\+Manager.\+Update\+Book (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00064}{Book}}}]{book,  }\item[{int}]{booknumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00064_a3fbfd6b02f10410081ee64dfad86acf9}{Library\+Management.\+Book.\+BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE}}, \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00076_ad91e1bc27f822e742178dc87e418c948}{Library\+Management.\+File\+Utility.\+Update\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_aeb3ae635931ae96749d36a18c2c10635_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_aeb3ae635931ae96749d36a18c2c10635_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00080_ab1ace17abe515089642273d76e983b8d}\label{a00080_ab1ace17abe515089642273d76e983b8d}} 
+\index{LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}!UpdateCategory@{UpdateCategory}}
+\index{UpdateCategory@{UpdateCategory}!LibraryManagement.LibraryManager@{LibraryManagement.LibraryManager}}
+\doxysubsubsection{\texorpdfstring{UpdateCategory()}{UpdateCategory()}}
+{\footnotesize\ttfamily static void Library\+Management.\+Library\+Manager.\+Update\+Category (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00068}{Category}}}]{category,  }\item[{int}]{catnumber }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00068_aa907441705e9adde6298927840922dd2}{Library\+Management.\+Category.\+CATEGORY\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00068_a83a43c6eebe36be5fd0ade89a879f633}{Library\+Management.\+Category.\+Category\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00076_ad91e1bc27f822e742178dc87e418c948}{Library\+Management.\+File\+Utility.\+Update\+Block()}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_afee0ce1bb591b1a9d2385eb5fffa8133}{librarian\+App.\+Library\+Manager.\+App.\+Edit\+Category()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ab1ace17abe515089642273d76e983b8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{da/dec/a00080_ab1ace17abe515089642273d76e983b8d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/\mbox{\hyperlink{a00023}{Library\+Manager.\+cs}}\end{DoxyCompactItemize}

@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['catalogid_0',['CatalogId',['../class_library_management_1_1_book.html#ade2a5dfd636de2011e35d283460fdb69',1,'LibraryManagement::Book']]],
-  ['catalogid_5flength_1',['CATALOGID_LENGTH',['../class_library_management_1_1_book.html#a9d035b084c1d11e084b09e10e94afc5e',1,'LibraryManagement::Book']]],
-  ['categories_2',['Categories',['../class_library_management_1_1_book.html#ad00a56399b7a6b4b8a0eff52a6145073',1,'LibraryManagement::Book']]],
-  ['category_5fmax_5fcount_3',['CATEGORY_MAX_COUNT',['../class_library_management_1_1_book.html#ac28d28aff8264d3b40b98cc8e4f8acab',1,'LibraryManagement::Book']]],
-  ['category_5fname_5fmax_5flength_4',['CATEGORY_NAME_MAX_LENGTH',['../class_library_management_1_1_book.html#a20658fb8f331ab40f8954142f51613b7',1,'LibraryManagement::Book']]],
-  ['city_5',['City',['../class_library_management_1_1_book.html#a0fbc199ae3fca5c6742ed05417d280cb',1,'LibraryManagement::Book']]],
-  ['city_5flength_6',['CITY_LENGTH',['../class_library_management_1_1_book.html#a51bbdde1764e944cc1af4a9f9df9a50f',1,'LibraryManagement::Book']]],
-  ['conversionutility_2ecs_7',['ConversionUtility.cs',['../_conversion_utility_8cs.html',1,'']]]
+  ['abstract_0',['Abstract',['../df/d5f/a00064.html#acb956c309f00709a1c3aa85d2b126c23',1,'LibraryManagement::Book']]],
+  ['abstract_5flength_1',['ABSTRACT_LENGTH',['../df/d5f/a00064.html#afdfafc7013aa151969dc546d9c847650',1,'LibraryManagement::Book']]],
+  ['addcategory_2',['AddCategory',['../d9/d73/a00060.html#acdac8043212d45f31383ec667cd7f966',1,'librarianApp::LibraryManager::App']]],
+  ['app_3',['App',['../d9/d73/a00060.html',1,'librarianApp::LibraryManager']]],
+  ['appendblock_4',['AppendBlock',['../db/df8/a00076.html#a3ec7140a0e147a7213a259a86cbf4b52',1,'LibraryManagement::FileUtility']]],
+  ['assemblyinfo_2ecs_5',['AssemblyInfo.cs',['../da/d1e/a00149.html',1,'(Global Namespace)'],['../d7/d9a/a00152.html',1,'(Global Namespace)']]],
+  ['authors_6',['Authors',['../df/d5f/a00064.html#aae8530351bf3bb91add7062f2e9ead26',1,'LibraryManagement::Book']]],
+  ['authors_5fmax_5fcount_7',['AUTHORS_MAX_COUNT',['../df/d5f/a00064.html#a47d869a61f4c8288f5ab0cc12549c17f',1,'LibraryManagement::Book']]],
+  ['authors_5fname_5fmax_5flength_8',['AUTHORS_NAME_MAX_LENGTH',['../df/d5f/a00064.html#ac8fd8ae9ee00627be2a7953fb02167b2',1,'LibraryManagement::Book']]]
 ];

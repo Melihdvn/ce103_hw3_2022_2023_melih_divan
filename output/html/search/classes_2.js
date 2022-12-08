@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['fileutility_0',['FileUtility',['../class_library_management_1_1_file_utility.html',1,'LibraryManagement']]]
+  ['category_0',['Category',['../da/d24/a00068.html',1,'LibraryManagement']]],
+  ['conversionutility_1',['ConversionUtility',['../d6/d2c/a00072.html',1,'LibraryManagement']]]
 ];

@@ -1,0 +1,890 @@
+\hypertarget{a00064}{}\doxysection{Library\+Management.\+Book Class Reference}
+\label{a00064}\index{LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00064_a138bfc22eb24bf1302954d24d01c8b16}{Book}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Book\+To\+Byte\+Array\+Block}} (\mbox{\hyperlink{a00064}{Book}} book)
+\item 
+static \mbox{\hyperlink{a00064}{Book}} \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Byte\+Array\+Block\+To\+Book}} (byte\mbox{[}$\,$\mbox{]} byte\+Array)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{a00064_a03579ed7c960b88aa426cbbfdb7207d2}{ID\+\_\+\+LENGTH}} = 4
+\item 
+const int \mbox{\hyperlink{a00064_abfb68ac441903a8beb13b83dbe2603f5}{TITLE\+\_\+\+MAX\+\_\+\+LENGTH}} = 100
+\item 
+const int \mbox{\hyperlink{a00064_a8ae417a6f30398e857887bd1780e95ee}{DESCRIPTION\+\_\+\+MAX\+\_\+\+LENGTH}} = 300
+\item 
+const int \mbox{\hyperlink{a00064_a9d06cba865198481599befc71d9a8dae}{YEAR\+\_\+\+LENGTH}} = 20
+\item 
+const int \mbox{\hyperlink{a00064_a91066f877db64b4ac5dd62cc65bbae53}{PAGES\+\_\+\+LENGTH}} = 15
+\item 
+const int \mbox{\hyperlink{a00064_afdfafc7013aa151969dc546d9c847650}{ABSTRACT\+\_\+\+LENGTH}} = 500
+\item 
+const int \mbox{\hyperlink{a00064_a51bbdde1764e944cc1af4a9f9df9a50f}{CITY\+\_\+\+LENGTH}} = 60
+\item 
+const int \mbox{\hyperlink{a00064_a014dee4fbb51f54d9ecd6caa3d3f108f}{EDITION\+\_\+\+LENGTH}} = 40
+\item 
+const int \mbox{\hyperlink{a00064_a5d654aa6265bd96f8032d9bbaeba6270}{PUBLISHER\+\_\+\+LENGTH}} = 60
+\item 
+const int \mbox{\hyperlink{a00064_ad44123e0d288f509514e7982d4f3093f}{URL\+\_\+\+LENGTH}} = 160
+\item 
+const int \mbox{\hyperlink{a00064_a9d035b084c1d11e084b09e10e94afc5e}{CATALOGID\+\_\+\+LENGTH}} = 110
+\item 
+const int \mbox{\hyperlink{a00064_a6374f1a5b8a9a1eb6d67ef0db770e37d}{PRICE\+\_\+\+LENGTH}} = 20
+\item 
+const int \mbox{\hyperlink{a00064_afc7bbfc4155a20f61d3ce0b5c4926cff}{RACKNO\+\_\+\+LENGTH}} = 15
+\item 
+const int \mbox{\hyperlink{a00064_a6471e9b4668b55d53e355ba41cfcaa76}{ROWNO\+\_\+\+LENGTH}} = 15
+\item 
+const int \mbox{\hyperlink{a00064_a65a9b24104069217577d77de9e73a53c}{STATUS\+\_\+\+LENGTH}} = 40
+\item 
+const int \mbox{\hyperlink{a00064_aa3abd5dc0e8befb7a89a909bda2f6f33}{RETURN\+\_\+\+LENGTH}} = 50
+\item 
+const int \mbox{\hyperlink{a00064_a20bdc24f320a3ce25f619c326f679a9d}{GIVEN\+\_\+\+LENGTH}} = 50
+\item 
+const int \mbox{\hyperlink{a00064_a47d869a61f4c8288f5ab0cc12549c17f}{AUTHORS\+\_\+\+MAX\+\_\+\+COUNT}} = 5
+\item 
+const int \mbox{\hyperlink{a00064_ac8fd8ae9ee00627be2a7953fb02167b2}{AUTHORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}} = 100
+\item 
+const int \mbox{\hyperlink{a00064_af5ad209feebfcc4ef5300f97f8fe14ac}{TAG\+\_\+\+MAX\+\_\+\+COUNT}} = 5
+\item 
+const int \mbox{\hyperlink{a00064_aea76d1308d76cc6655150d8662e55abd}{TAG\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}} = 100
+\item 
+const int \mbox{\hyperlink{a00064_ac183bd9a6ba98ba52df0b99f552c5d8f}{EDITORS\+\_\+\+MAX\+\_\+\+COUNT}} = 5
+\item 
+const int \mbox{\hyperlink{a00064_a7f97611f561f5ea9221bc91c249449af}{EDITORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}} = 100
+\item 
+const int \mbox{\hyperlink{a00064_ac28d28aff8264d3b40b98cc8e4f8acab}{CATEGORY\+\_\+\+MAX\+\_\+\+COUNT}} = 5
+\item 
+const int \mbox{\hyperlink{a00064_a20658fb8f331ab40f8954142f51613b7}{CATEGORY\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}} = 100
+\item 
+const int \mbox{\hyperlink{a00064_a3fbfd6b02f10410081ee64dfad86acf9}{BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a00064_aed9897bfb7c5b3554529ccdee61bfb53}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a31774b08fe723ee6393fcdd587e9a0c0}{Title}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a7a1e70b658b968325c0638f7da154779}{Description}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a55a0e4e4003984d362e07e9abdf07848}{Year}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a05d2ec6e56c087b56ec0a89ebfafad2e}{Pages}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_acb956c309f00709a1c3aa85d2b126c23}{Abstract}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a0fbc199ae3fca5c6742ed05417d280cb}{City}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_ab19d1b4192f0f587ae704c3c523780e7}{Edition}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_ac37b9c4e9de5e0aeeae9c789267bddf8}{Publisher}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_ade2a5dfd636de2011e35d283460fdb69}{Catalog\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_af05f22253c674fc6f033adf962bcd22f}{Price}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a781f1daf802fdd17158797814d32475c}{Rack\+No}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a6cfec54affa1865cb2ee842b1794bf0b}{Row\+No}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a27ca0f6d625eef9bed02e9272fbbf0eb}{Status}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_af1d18469243b8eda45cc6e6f02e3507e}{Return}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a1425637c4b73a4ace38247c8069a5941}{Given}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{a00064_a9be0f36e7ad659ab5454411c1ba6c8db}{Url}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_aae8530351bf3bb91add7062f2e9ead26}{Authors}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_af65fac517952d9daff3d17bbf4212b8e}{Tags}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_acd311897b4abb9963405cfc34b154252}{Editors}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_ad00a56399b7a6b4b8a0eff52a6145073}{Categories}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{a00064_a1fef12378b377d08ef566f24d1551ebd}{\+\_\+id}}
+\item 
+string \mbox{\hyperlink{a00064_a50f524948080ab8734a2d972e3223de8}{\+\_\+title}}
+\item 
+string \mbox{\hyperlink{a00064_a4609a43adec9a6c53b54ecc39ad5f350}{\+\_\+description}}
+\item 
+string \mbox{\hyperlink{a00064_ac08f8e4f4605177b1c59eb7df207c386}{\+\_\+year}}
+\item 
+string \mbox{\hyperlink{a00064_ad460930aed9b0f75ece74442a50bba0f}{\+\_\+pages}}
+\item 
+string \mbox{\hyperlink{a00064_a1a8c12bc3b1e094232f7a81f7b4c4cbf}{\+\_\+abstract}}
+\item 
+string \mbox{\hyperlink{a00064_ae79753e4375d701ac98b600db80f8127}{\+\_\+city}}
+\item 
+string \mbox{\hyperlink{a00064_a6bc76d0837f4ca446e618022c7c3d236}{\+\_\+edition}}
+\item 
+string \mbox{\hyperlink{a00064_a3d8230be58a8744f0aac28acef931307}{\+\_\+publisher}}
+\item 
+string \mbox{\hyperlink{a00064_aa18a77956e8cd7ab9e32f9d986e9e531}{\+\_\+catalogid}}
+\item 
+string \mbox{\hyperlink{a00064_aa092492859fbbc0d9fa314f2a6c86090}{\+\_\+price}}
+\item 
+string \mbox{\hyperlink{a00064_aed51e1e019856bf3cac2a5d5b6663902}{\+\_\+rackno}}
+\item 
+string \mbox{\hyperlink{a00064_ad9a186118c189c9b40f7dbf55a47fc3b}{\+\_\+rowno}}
+\item 
+string \mbox{\hyperlink{a00064_aefd4158c0fc52cb6f7f5457e57516ad2}{\+\_\+status}}
+\item 
+string \mbox{\hyperlink{a00064_aaf540ea0f36b3e632110ec02e5bf322a}{\+\_\+return}}
+\item 
+string \mbox{\hyperlink{a00064_a9cec9da04cfed92c7c77d52ca6c38769}{\+\_\+given}}
+\item 
+string \mbox{\hyperlink{a00064_a6e8c1f1707b3e4dcea5d797fecfef51a}{\+\_\+url}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_a5d58265811b58431663debcf9e6c3892}{\+\_\+authors}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_af6ea96d847017567598211f8870942cf}{\+\_\+tags}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_a2b0a5f9b877a5413bbc8cfc164c4e877}{\+\_\+editors}}
+\item 
+List$<$ string $>$ \mbox{\hyperlink{a00064_a4672f70e036060dfaf2d621db47daabf}{\+\_\+categories}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{a00064_a138bfc22eb24bf1302954d24d01c8b16}\label{a00064_a138bfc22eb24bf1302954d24d01c8b16}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Book@{Book}}
+\index{Book@{Book}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Book()}{Book()}}
+{\footnotesize\ttfamily Library\+Management.\+Book.\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+References \mbox{\hyperlink{a00064_a5d58265811b58431663debcf9e6c3892}{Library\+Management.\+Book.\+\_\+authors}}, \mbox{\hyperlink{a00064_a4672f70e036060dfaf2d621db47daabf}{Library\+Management.\+Book.\+\_\+categories}}, \mbox{\hyperlink{a00064_a2b0a5f9b877a5413bbc8cfc164c4e877}{Library\+Management.\+Book.\+\_\+editors}}, and \mbox{\hyperlink{a00064_af6ea96d847017567598211f8870942cf}{Library\+Management.\+Book.\+\_\+tags}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d5f/a00064_a138bfc22eb24bf1302954d24d01c8b16_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a00064_a9c96155553155ddb77ef541da3face81}\label{a00064_a9c96155553155ddb77ef541da3face81}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!BookToByteArrayBlock@{BookToByteArrayBlock}}
+\index{BookToByteArrayBlock@{BookToByteArrayBlock}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{BookToByteArrayBlock()}{BookToByteArrayBlock()}}
+{\footnotesize\ttfamily static byte\mbox{[}$\,$\mbox{]} Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00064}{Book}}}]{book }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00064_acb956c309f00709a1c3aa85d2b126c23}{Library\+Management.\+Book.\+Abstract}}, \mbox{\hyperlink{a00064_afdfafc7013aa151969dc546d9c847650}{Library\+Management.\+Book.\+ABSTRACT\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_aae8530351bf3bb91add7062f2e9ead26}{Library\+Management.\+Book.\+Authors}}, \mbox{\hyperlink{a00064_a47d869a61f4c8288f5ab0cc12549c17f}{Library\+Management.\+Book.\+AUTHORS\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_ac8fd8ae9ee00627be2a7953fb02167b2}{Library\+Management.\+Book.\+AUTHORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a3fbfd6b02f10410081ee64dfad86acf9}{Library\+Management.\+Book.\+BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE}}, \mbox{\hyperlink{a00064_ade2a5dfd636de2011e35d283460fdb69}{Library\+Management.\+Book.\+Catalog\+Id}}, \mbox{\hyperlink{a00064_a9d035b084c1d11e084b09e10e94afc5e}{Library\+Management.\+Book.\+CATALOGID\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_ad00a56399b7a6b4b8a0eff52a6145073}{Library\+Management.\+Book.\+Categories}}, \mbox{\hyperlink{a00064_ac28d28aff8264d3b40b98cc8e4f8acab}{Library\+Management.\+Book.\+CATEGORY\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_a20658fb8f331ab40f8954142f51613b7}{Library\+Management.\+Book.\+CATEGORY\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a0fbc199ae3fca5c6742ed05417d280cb}{Library\+Management.\+Book.\+City}}, \mbox{\hyperlink{a00064_a51bbdde1764e944cc1af4a9f9df9a50f}{Library\+Management.\+Book.\+CITY\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a7a1e70b658b968325c0638f7da154779}{Library\+Management.\+Book.\+Description}}, \mbox{\hyperlink{a00064_a8ae417a6f30398e857887bd1780e95ee}{Library\+Management.\+Book.\+DESCRIPTION\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_ab19d1b4192f0f587ae704c3c523780e7}{Library\+Management.\+Book.\+Edition}}, \mbox{\hyperlink{a00064_a014dee4fbb51f54d9ecd6caa3d3f108f}{Library\+Management.\+Book.\+EDITION\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_acd311897b4abb9963405cfc34b154252}{Library\+Management.\+Book.\+Editors}}, \mbox{\hyperlink{a00064_ac183bd9a6ba98ba52df0b99f552c5d8f}{Library\+Management.\+Book.\+EDITORS\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_a7f97611f561f5ea9221bc91c249449af}{Library\+Management.\+Book.\+EDITORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a1425637c4b73a4ace38247c8069a5941}{Library\+Management.\+Book.\+Given}}, \mbox{\hyperlink{a00064_a20bdc24f320a3ce25f619c326f679a9d}{Library\+Management.\+Book.\+GIVEN\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_aed9897bfb7c5b3554529ccdee61bfb53}{Library\+Management.\+Book.\+Id}}, \mbox{\hyperlink{a00064_a03579ed7c960b88aa426cbbfdb7207d2}{Library\+Management.\+Book.\+ID\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00072_ae2bca2db4cfda3722e596af30d58968c}{Library\+Management.\+Conversion\+Utility.\+Integer\+To\+Byte\+Array()}}, \mbox{\hyperlink{a00064_a05d2ec6e56c087b56ec0a89ebfafad2e}{Library\+Management.\+Book.\+Pages}}, \mbox{\hyperlink{a00064_a91066f877db64b4ac5dd62cc65bbae53}{Library\+Management.\+Book.\+PAGES\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_af05f22253c674fc6f033adf962bcd22f}{Library\+Management.\+Book.\+Price}}, \mbox{\hyperlink{a00064_a6374f1a5b8a9a1eb6d67ef0db770e37d}{Library\+Management.\+Book.\+PRICE\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_ac37b9c4e9de5e0aeeae9c789267bddf8}{Library\+Management.\+Book.\+Publisher}}, \mbox{\hyperlink{a00064_a5d654aa6265bd96f8032d9bbaeba6270}{Library\+Management.\+Book.\+PUBLISHER\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a781f1daf802fdd17158797814d32475c}{Library\+Management.\+Book.\+Rack\+No}}, \mbox{\hyperlink{a00064_afc7bbfc4155a20f61d3ce0b5c4926cff}{Library\+Management.\+Book.\+RACKNO\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_af1d18469243b8eda45cc6e6f02e3507e}{Library\+Management.\+Book.\+Return}}, \mbox{\hyperlink{a00064_aa3abd5dc0e8befb7a89a909bda2f6f33}{Library\+Management.\+Book.\+RETURN\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a6cfec54affa1865cb2ee842b1794bf0b}{Library\+Management.\+Book.\+Row\+No}}, \mbox{\hyperlink{a00064_a6471e9b4668b55d53e355ba41cfcaa76}{Library\+Management.\+Book.\+ROWNO\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a27ca0f6d625eef9bed02e9272fbbf0eb}{Library\+Management.\+Book.\+Status}}, \mbox{\hyperlink{a00064_a65a9b24104069217577d77de9e73a53c}{Library\+Management.\+Book.\+STATUS\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00072_ae3901efb347ef852b4d192d498d58fa9}{Library\+Management.\+Conversion\+Utility.\+String\+List\+To\+Byte\+Array()}}, \mbox{\hyperlink{a00072_ae3093e33301346ebcb8f3ab024e6a392}{Library\+Management.\+Conversion\+Utility.\+String\+To\+Byte\+Array()}}, \mbox{\hyperlink{a00064_af5ad209feebfcc4ef5300f97f8fe14ac}{Library\+Management.\+Book.\+TAG\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_aea76d1308d76cc6655150d8662e55abd}{Library\+Management.\+Book.\+TAG\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_af65fac517952d9daff3d17bbf4212b8e}{Library\+Management.\+Book.\+Tags}}, \mbox{\hyperlink{a00064_a31774b08fe723ee6393fcdd587e9a0c0}{Library\+Management.\+Book.\+Title}}, \mbox{\hyperlink{a00064_abfb68ac441903a8beb13b83dbe2603f5}{Library\+Management.\+Book.\+TITLE\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a9be0f36e7ad659ab5454411c1ba6c8db}{Library\+Management.\+Book.\+Url}}, \mbox{\hyperlink{a00064_ad44123e0d288f509514e7982d4f3093f}{Library\+Management.\+Book.\+URL\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a55a0e4e4003984d362e07e9abdf07848}{Library\+Management.\+Book.\+Year}}, and \mbox{\hyperlink{a00064_a9d06cba865198481599befc71d9a8dae}{Library\+Management.\+Book.\+YEAR\+\_\+\+LENGTH}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}, \mbox{\hyperlink{a00080_a832e166dbdb6c647dc4bdb320a2965d2}{Library\+Management.\+Library\+Manager.\+Insert\+Book()}}, and \mbox{\hyperlink{a00080_aeb3ae635931ae96749d36a18c2c10635}{Library\+Management.\+Library\+Manager.\+Update\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d5f/a00064_a9c96155553155ddb77ef541da3face81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d5f/a00064_a9c96155553155ddb77ef541da3face81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}\label{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!ByteArrayBlockToBook@{ByteArrayBlockToBook}}
+\index{ByteArrayBlockToBook@{ByteArrayBlockToBook}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{ByteArrayBlockToBook()}{ByteArrayBlockToBook()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00064}{Book}} Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{byte\+Array }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+References \mbox{\hyperlink{a00064_afdfafc7013aa151969dc546d9c847650}{Library\+Management.\+Book.\+ABSTRACT\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a47d869a61f4c8288f5ab0cc12549c17f}{Library\+Management.\+Book.\+AUTHORS\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_ac8fd8ae9ee00627be2a7953fb02167b2}{Library\+Management.\+Book.\+AUTHORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a138bfc22eb24bf1302954d24d01c8b16}{Library\+Management.\+Book.\+Book()}}, \mbox{\hyperlink{a00064_a3fbfd6b02f10410081ee64dfad86acf9}{Library\+Management.\+Book.\+BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE}}, \mbox{\hyperlink{a00072_a653ee3561a491b5f731c3e62b5256576}{Library\+Management.\+Conversion\+Utility.\+Byte\+Array\+To\+Integer()}}, \mbox{\hyperlink{a00072_a7ae1962a4fbb9b6fc81d985a817e7fc1}{Library\+Management.\+Conversion\+Utility.\+Byte\+Array\+To\+String()}}, \mbox{\hyperlink{a00072_aa9082f5ff302045fe1bd9dba7f24dffd}{Library\+Management.\+Conversion\+Utility.\+Byte\+Array\+To\+String\+List()}}, \mbox{\hyperlink{a00064_a9d035b084c1d11e084b09e10e94afc5e}{Library\+Management.\+Book.\+CATALOGID\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_ac28d28aff8264d3b40b98cc8e4f8acab}{Library\+Management.\+Book.\+CATEGORY\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_a20658fb8f331ab40f8954142f51613b7}{Library\+Management.\+Book.\+CATEGORY\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a51bbdde1764e944cc1af4a9f9df9a50f}{Library\+Management.\+Book.\+CITY\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a8ae417a6f30398e857887bd1780e95ee}{Library\+Management.\+Book.\+DESCRIPTION\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a014dee4fbb51f54d9ecd6caa3d3f108f}{Library\+Management.\+Book.\+EDITION\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_ac183bd9a6ba98ba52df0b99f552c5d8f}{Library\+Management.\+Book.\+EDITORS\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_a7f97611f561f5ea9221bc91c249449af}{Library\+Management.\+Book.\+EDITORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a20bdc24f320a3ce25f619c326f679a9d}{Library\+Management.\+Book.\+GIVEN\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_aed9897bfb7c5b3554529ccdee61bfb53}{Library\+Management.\+Book.\+Id}}, \mbox{\hyperlink{a00064_a03579ed7c960b88aa426cbbfdb7207d2}{Library\+Management.\+Book.\+ID\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a91066f877db64b4ac5dd62cc65bbae53}{Library\+Management.\+Book.\+PAGES\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a6374f1a5b8a9a1eb6d67ef0db770e37d}{Library\+Management.\+Book.\+PRICE\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a5d654aa6265bd96f8032d9bbaeba6270}{Library\+Management.\+Book.\+PUBLISHER\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_afc7bbfc4155a20f61d3ce0b5c4926cff}{Library\+Management.\+Book.\+RACKNO\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_aa3abd5dc0e8befb7a89a909bda2f6f33}{Library\+Management.\+Book.\+RETURN\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a6471e9b4668b55d53e355ba41cfcaa76}{Library\+Management.\+Book.\+ROWNO\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_a65a9b24104069217577d77de9e73a53c}{Library\+Management.\+Book.\+STATUS\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_af5ad209feebfcc4ef5300f97f8fe14ac}{Library\+Management.\+Book.\+TAG\+\_\+\+MAX\+\_\+\+COUNT}}, \mbox{\hyperlink{a00064_aea76d1308d76cc6655150d8662e55abd}{Library\+Management.\+Book.\+TAG\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_abfb68ac441903a8beb13b83dbe2603f5}{Library\+Management.\+Book.\+TITLE\+\_\+\+MAX\+\_\+\+LENGTH}}, \mbox{\hyperlink{a00064_ad44123e0d288f509514e7982d4f3093f}{Library\+Management.\+Book.\+URL\+\_\+\+LENGTH}}, and \mbox{\hyperlink{a00064_a9d06cba865198481599befc71d9a8dae}{Library\+Management.\+Book.\+YEAR\+\_\+\+LENGTH}}.
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}, and \mbox{\hyperlink{a00080_ad84c4ab2483efe0ef93a352c7a0514eb}{Library\+Management.\+Library\+Manager.\+Read\+Book()}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d5f/a00064_ac2bcf7b67eefae8e85c4c784d7f017e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d5f/a00064_ac2bcf7b67eefae8e85c4c784d7f017e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{a00064_a1a8c12bc3b1e094232f7a81f7b4c4cbf}\label{a00064_a1a8c12bc3b1e094232f7a81f7b4c4cbf}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_abstract@{\_abstract}}
+\index{\_abstract@{\_abstract}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_abstract}{\_abstract}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+abstract\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a5d58265811b58431663debcf9e6c3892}\label{a00064_a5d58265811b58431663debcf9e6c3892}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_authors@{\_authors}}
+\index{\_authors@{\_authors}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_authors}{\_authors}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+\_\+authors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a138bfc22eb24bf1302954d24d01c8b16}{Library\+Management.\+Book.\+Book()}}.
+
+\mbox{\Hypertarget{a00064_aa18a77956e8cd7ab9e32f9d986e9e531}\label{a00064_aa18a77956e8cd7ab9e32f9d986e9e531}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_catalogid@{\_catalogid}}
+\index{\_catalogid@{\_catalogid}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_catalogid}{\_catalogid}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+catalogid\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a4672f70e036060dfaf2d621db47daabf}\label{a00064_a4672f70e036060dfaf2d621db47daabf}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_categories@{\_categories}}
+\index{\_categories@{\_categories}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_categories}{\_categories}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+\_\+categories\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a138bfc22eb24bf1302954d24d01c8b16}{Library\+Management.\+Book.\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ae79753e4375d701ac98b600db80f8127}\label{a00064_ae79753e4375d701ac98b600db80f8127}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_city@{\_city}}
+\index{\_city@{\_city}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_city}{\_city}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+city\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a4609a43adec9a6c53b54ecc39ad5f350}\label{a00064_a4609a43adec9a6c53b54ecc39ad5f350}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_description@{\_description}}
+\index{\_description@{\_description}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_description}{\_description}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+description\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a6bc76d0837f4ca446e618022c7c3d236}\label{a00064_a6bc76d0837f4ca446e618022c7c3d236}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_edition@{\_edition}}
+\index{\_edition@{\_edition}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_edition}{\_edition}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+edition\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a2b0a5f9b877a5413bbc8cfc164c4e877}\label{a00064_a2b0a5f9b877a5413bbc8cfc164c4e877}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_editors@{\_editors}}
+\index{\_editors@{\_editors}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_editors}{\_editors}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+\_\+editors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a138bfc22eb24bf1302954d24d01c8b16}{Library\+Management.\+Book.\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a9cec9da04cfed92c7c77d52ca6c38769}\label{a00064_a9cec9da04cfed92c7c77d52ca6c38769}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_given@{\_given}}
+\index{\_given@{\_given}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_given}{\_given}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+given\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a1fef12378b377d08ef566f24d1551ebd}\label{a00064_a1fef12378b377d08ef566f24d1551ebd}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_id@{\_id}}
+\index{\_id@{\_id}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_id}{\_id}}
+{\footnotesize\ttfamily int Library\+Management.\+Book.\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_ad460930aed9b0f75ece74442a50bba0f}\label{a00064_ad460930aed9b0f75ece74442a50bba0f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_pages@{\_pages}}
+\index{\_pages@{\_pages}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_pages}{\_pages}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+pages\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_aa092492859fbbc0d9fa314f2a6c86090}\label{a00064_aa092492859fbbc0d9fa314f2a6c86090}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_price@{\_price}}
+\index{\_price@{\_price}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_price}{\_price}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+price\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a3d8230be58a8744f0aac28acef931307}\label{a00064_a3d8230be58a8744f0aac28acef931307}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_publisher@{\_publisher}}
+\index{\_publisher@{\_publisher}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_publisher}{\_publisher}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+publisher\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_aed51e1e019856bf3cac2a5d5b6663902}\label{a00064_aed51e1e019856bf3cac2a5d5b6663902}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_rackno@{\_rackno}}
+\index{\_rackno@{\_rackno}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_rackno}{\_rackno}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+rackno\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_aaf540ea0f36b3e632110ec02e5bf322a}\label{a00064_aaf540ea0f36b3e632110ec02e5bf322a}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_return@{\_return}}
+\index{\_return@{\_return}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_return}{\_return}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+return\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_ad9a186118c189c9b40f7dbf55a47fc3b}\label{a00064_ad9a186118c189c9b40f7dbf55a47fc3b}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_rowno@{\_rowno}}
+\index{\_rowno@{\_rowno}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_rowno}{\_rowno}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+rowno\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_aefd4158c0fc52cb6f7f5457e57516ad2}\label{a00064_aefd4158c0fc52cb6f7f5457e57516ad2}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_status@{\_status}}
+\index{\_status@{\_status}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_status}{\_status}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_af6ea96d847017567598211f8870942cf}\label{a00064_af6ea96d847017567598211f8870942cf}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_tags@{\_tags}}
+\index{\_tags@{\_tags}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_tags}{\_tags}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+\_\+tags\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a138bfc22eb24bf1302954d24d01c8b16}{Library\+Management.\+Book.\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a50f524948080ab8734a2d972e3223de8}\label{a00064_a50f524948080ab8734a2d972e3223de8}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_title@{\_title}}
+\index{\_title@{\_title}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_title}{\_title}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+title\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_a6e8c1f1707b3e4dcea5d797fecfef51a}\label{a00064_a6e8c1f1707b3e4dcea5d797fecfef51a}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_url@{\_url}}
+\index{\_url@{\_url}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_url}{\_url}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+url\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_ac08f8e4f4605177b1c59eb7df207c386}\label{a00064_ac08f8e4f4605177b1c59eb7df207c386}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!\_year@{\_year}}
+\index{\_year@{\_year}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{\_year}{\_year}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+\_\+year\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{a00064_afdfafc7013aa151969dc546d9c847650}\label{a00064_afdfafc7013aa151969dc546d9c847650}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!ABSTRACT\_LENGTH@{ABSTRACT\_LENGTH}}
+\index{ABSTRACT\_LENGTH@{ABSTRACT\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{ABSTRACT\_LENGTH}{ABSTRACT\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+ABSTRACT\+\_\+\+LENGTH = 500\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a47d869a61f4c8288f5ab0cc12549c17f}\label{a00064_a47d869a61f4c8288f5ab0cc12549c17f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!AUTHORS\_MAX\_COUNT@{AUTHORS\_MAX\_COUNT}}
+\index{AUTHORS\_MAX\_COUNT@{AUTHORS\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{AUTHORS\_MAX\_COUNT}{AUTHORS\_MAX\_COUNT}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+AUTHORS\+\_\+\+MAX\+\_\+\+COUNT = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ac8fd8ae9ee00627be2a7953fb02167b2}\label{a00064_ac8fd8ae9ee00627be2a7953fb02167b2}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!AUTHORS\_NAME\_MAX\_LENGTH@{AUTHORS\_NAME\_MAX\_LENGTH}}
+\index{AUTHORS\_NAME\_MAX\_LENGTH@{AUTHORS\_NAME\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{AUTHORS\_NAME\_MAX\_LENGTH}{AUTHORS\_NAME\_MAX\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+AUTHORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a3fbfd6b02f10410081ee64dfad86acf9}\label{a00064_a3fbfd6b02f10410081ee64dfad86acf9}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!BOOK\_DATA\_BLOCK\_SIZE@{BOOK\_DATA\_BLOCK\_SIZE}}
+\index{BOOK\_DATA\_BLOCK\_SIZE@{BOOK\_DATA\_BLOCK\_SIZE}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{BOOK\_DATA\_BLOCK\_SIZE}{BOOK\_DATA\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+BOOK\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+\+SIZE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \mbox{\hyperlink{a00064_a03579ed7c960b88aa426cbbfdb7207d2}{ID\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_abfb68ac441903a8beb13b83dbe2603f5}{TITLE\_MAX\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a8ae417a6f30398e857887bd1780e95ee}{DESCRIPTION\_MAX\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a9d06cba865198481599befc71d9a8dae}{YEAR\_LENGTH}} + }
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a91066f877db64b4ac5dd62cc65bbae53}{PAGES\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_afdfafc7013aa151969dc546d9c847650}{ABSTRACT\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a51bbdde1764e944cc1af4a9f9df9a50f}{CITY\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a014dee4fbb51f54d9ecd6caa3d3f108f}{EDITION\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a5d654aa6265bd96f8032d9bbaeba6270}{PUBLISHER\_LENGTH}} + }
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_ad44123e0d288f509514e7982d4f3093f}{URL\_LENGTH}} + }
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a9d035b084c1d11e084b09e10e94afc5e}{CATALOGID\_LENGTH}} + }
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a6374f1a5b8a9a1eb6d67ef0db770e37d}{PRICE\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_afc7bbfc4155a20f61d3ce0b5c4926cff}{RACKNO\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a6471e9b4668b55d53e355ba41cfcaa76}{ROWNO\_LENGTH}} +}
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a65a9b24104069217577d77de9e73a53c}{STATUS\_LENGTH}} + }
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_aa3abd5dc0e8befb7a89a909bda2f6f33}{RETURN\_LENGTH}} + }
+\DoxyCodeLine{                                                \mbox{\hyperlink{a00064_a20bdc24f320a3ce25f619c326f679a9d}{GIVEN\_LENGTH}} +}
+\DoxyCodeLine{                                                (\mbox{\hyperlink{a00064_af5ad209feebfcc4ef5300f97f8fe14ac}{TAG\_MAX\_COUNT}} * \mbox{\hyperlink{a00064_aea76d1308d76cc6655150d8662e55abd}{TAG\_NAME\_MAX\_LENGTH}}) + }
+\DoxyCodeLine{                                                (\mbox{\hyperlink{a00064_ac183bd9a6ba98ba52df0b99f552c5d8f}{EDITORS\_MAX\_COUNT}} * \mbox{\hyperlink{a00064_a7f97611f561f5ea9221bc91c249449af}{EDITORS\_NAME\_MAX\_LENGTH}}) +}
+\DoxyCodeLine{                                                (\mbox{\hyperlink{a00064_a47d869a61f4c8288f5ab0cc12549c17f}{AUTHORS\_MAX\_COUNT}} * \mbox{\hyperlink{a00064_ac8fd8ae9ee00627be2a7953fb02167b2}{AUTHORS\_NAME\_MAX\_LENGTH}}) +}
+\DoxyCodeLine{                                                (\mbox{\hyperlink{a00064_ac28d28aff8264d3b40b98cc8e4f8acab}{CATEGORY\_MAX\_COUNT}} * \mbox{\hyperlink{a00064_a20658fb8f331ab40f8954142f51613b7}{CATEGORY\_NAME\_MAX\_LENGTH}})}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}, \mbox{\hyperlink{a00080_ab48291e4615f870edb7f3d866f07dced}{Library\+Management.\+Library\+Manager.\+Delete\+Book()}}, \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}, \mbox{\hyperlink{a00080_ad84c4ab2483efe0ef93a352c7a0514eb}{Library\+Management.\+Library\+Manager.\+Read\+Book()}}, and \mbox{\hyperlink{a00080_aeb3ae635931ae96749d36a18c2c10635}{Library\+Management.\+Library\+Manager.\+Update\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a9d035b084c1d11e084b09e10e94afc5e}\label{a00064_a9d035b084c1d11e084b09e10e94afc5e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CATALOGID\_LENGTH@{CATALOGID\_LENGTH}}
+\index{CATALOGID\_LENGTH@{CATALOGID\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{CATALOGID\_LENGTH}{CATALOGID\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+CATALOGID\+\_\+\+LENGTH = 110\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ac28d28aff8264d3b40b98cc8e4f8acab}\label{a00064_ac28d28aff8264d3b40b98cc8e4f8acab}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CATEGORY\_MAX\_COUNT@{CATEGORY\_MAX\_COUNT}}
+\index{CATEGORY\_MAX\_COUNT@{CATEGORY\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{CATEGORY\_MAX\_COUNT}{CATEGORY\_MAX\_COUNT}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+CATEGORY\+\_\+\+MAX\+\_\+\+COUNT = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a20658fb8f331ab40f8954142f51613b7}\label{a00064_a20658fb8f331ab40f8954142f51613b7}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CATEGORY\_NAME\_MAX\_LENGTH@{CATEGORY\_NAME\_MAX\_LENGTH}}
+\index{CATEGORY\_NAME\_MAX\_LENGTH@{CATEGORY\_NAME\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{CATEGORY\_NAME\_MAX\_LENGTH}{CATEGORY\_NAME\_MAX\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+CATEGORY\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a51bbdde1764e944cc1af4a9f9df9a50f}\label{a00064_a51bbdde1764e944cc1af4a9f9df9a50f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CITY\_LENGTH@{CITY\_LENGTH}}
+\index{CITY\_LENGTH@{CITY\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{CITY\_LENGTH}{CITY\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+CITY\+\_\+\+LENGTH = 60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a8ae417a6f30398e857887bd1780e95ee}\label{a00064_a8ae417a6f30398e857887bd1780e95ee}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!DESCRIPTION\_MAX\_LENGTH@{DESCRIPTION\_MAX\_LENGTH}}
+\index{DESCRIPTION\_MAX\_LENGTH@{DESCRIPTION\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{DESCRIPTION\_MAX\_LENGTH}{DESCRIPTION\_MAX\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+DESCRIPTION\+\_\+\+MAX\+\_\+\+LENGTH = 300\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a014dee4fbb51f54d9ecd6caa3d3f108f}\label{a00064_a014dee4fbb51f54d9ecd6caa3d3f108f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!EDITION\_LENGTH@{EDITION\_LENGTH}}
+\index{EDITION\_LENGTH@{EDITION\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{EDITION\_LENGTH}{EDITION\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+EDITION\+\_\+\+LENGTH = 40\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ac183bd9a6ba98ba52df0b99f552c5d8f}\label{a00064_ac183bd9a6ba98ba52df0b99f552c5d8f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!EDITORS\_MAX\_COUNT@{EDITORS\_MAX\_COUNT}}
+\index{EDITORS\_MAX\_COUNT@{EDITORS\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{EDITORS\_MAX\_COUNT}{EDITORS\_MAX\_COUNT}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+EDITORS\+\_\+\+MAX\+\_\+\+COUNT = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a7f97611f561f5ea9221bc91c249449af}\label{a00064_a7f97611f561f5ea9221bc91c249449af}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!EDITORS\_NAME\_MAX\_LENGTH@{EDITORS\_NAME\_MAX\_LENGTH}}
+\index{EDITORS\_NAME\_MAX\_LENGTH@{EDITORS\_NAME\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{EDITORS\_NAME\_MAX\_LENGTH}{EDITORS\_NAME\_MAX\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+EDITORS\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a20bdc24f320a3ce25f619c326f679a9d}\label{a00064_a20bdc24f320a3ce25f619c326f679a9d}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!GIVEN\_LENGTH@{GIVEN\_LENGTH}}
+\index{GIVEN\_LENGTH@{GIVEN\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{GIVEN\_LENGTH}{GIVEN\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+GIVEN\+\_\+\+LENGTH = 50\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a03579ed7c960b88aa426cbbfdb7207d2}\label{a00064_a03579ed7c960b88aa426cbbfdb7207d2}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!ID\_LENGTH@{ID\_LENGTH}}
+\index{ID\_LENGTH@{ID\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{ID\_LENGTH}{ID\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+ID\+\_\+\+LENGTH = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a91066f877db64b4ac5dd62cc65bbae53}\label{a00064_a91066f877db64b4ac5dd62cc65bbae53}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!PAGES\_LENGTH@{PAGES\_LENGTH}}
+\index{PAGES\_LENGTH@{PAGES\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{PAGES\_LENGTH}{PAGES\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+PAGES\+\_\+\+LENGTH = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a6374f1a5b8a9a1eb6d67ef0db770e37d}\label{a00064_a6374f1a5b8a9a1eb6d67ef0db770e37d}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!PRICE\_LENGTH@{PRICE\_LENGTH}}
+\index{PRICE\_LENGTH@{PRICE\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{PRICE\_LENGTH}{PRICE\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+PRICE\+\_\+\+LENGTH = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a5d654aa6265bd96f8032d9bbaeba6270}\label{a00064_a5d654aa6265bd96f8032d9bbaeba6270}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!PUBLISHER\_LENGTH@{PUBLISHER\_LENGTH}}
+\index{PUBLISHER\_LENGTH@{PUBLISHER\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{PUBLISHER\_LENGTH}{PUBLISHER\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+PUBLISHER\+\_\+\+LENGTH = 60\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_afc7bbfc4155a20f61d3ce0b5c4926cff}\label{a00064_afc7bbfc4155a20f61d3ce0b5c4926cff}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RACKNO\_LENGTH@{RACKNO\_LENGTH}}
+\index{RACKNO\_LENGTH@{RACKNO\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{RACKNO\_LENGTH}{RACKNO\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+RACKNO\+\_\+\+LENGTH = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_aa3abd5dc0e8befb7a89a909bda2f6f33}\label{a00064_aa3abd5dc0e8befb7a89a909bda2f6f33}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RETURN\_LENGTH@{RETURN\_LENGTH}}
+\index{RETURN\_LENGTH@{RETURN\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{RETURN\_LENGTH}{RETURN\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+RETURN\+\_\+\+LENGTH = 50\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a6471e9b4668b55d53e355ba41cfcaa76}\label{a00064_a6471e9b4668b55d53e355ba41cfcaa76}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!ROWNO\_LENGTH@{ROWNO\_LENGTH}}
+\index{ROWNO\_LENGTH@{ROWNO\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{ROWNO\_LENGTH}{ROWNO\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+ROWNO\+\_\+\+LENGTH = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a65a9b24104069217577d77de9e73a53c}\label{a00064_a65a9b24104069217577d77de9e73a53c}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!STATUS\_LENGTH@{STATUS\_LENGTH}}
+\index{STATUS\_LENGTH@{STATUS\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{STATUS\_LENGTH}{STATUS\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+STATUS\+\_\+\+LENGTH = 40\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_af5ad209feebfcc4ef5300f97f8fe14ac}\label{a00064_af5ad209feebfcc4ef5300f97f8fe14ac}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!TAG\_MAX\_COUNT@{TAG\_MAX\_COUNT}}
+\index{TAG\_MAX\_COUNT@{TAG\_MAX\_COUNT}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{TAG\_MAX\_COUNT}{TAG\_MAX\_COUNT}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+TAG\+\_\+\+MAX\+\_\+\+COUNT = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_aea76d1308d76cc6655150d8662e55abd}\label{a00064_aea76d1308d76cc6655150d8662e55abd}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!TAG\_NAME\_MAX\_LENGTH@{TAG\_NAME\_MAX\_LENGTH}}
+\index{TAG\_NAME\_MAX\_LENGTH@{TAG\_NAME\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{TAG\_NAME\_MAX\_LENGTH}{TAG\_NAME\_MAX\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+TAG\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_abfb68ac441903a8beb13b83dbe2603f5}\label{a00064_abfb68ac441903a8beb13b83dbe2603f5}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!TITLE\_MAX\_LENGTH@{TITLE\_MAX\_LENGTH}}
+\index{TITLE\_MAX\_LENGTH@{TITLE\_MAX\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{TITLE\_MAX\_LENGTH}{TITLE\_MAX\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+TITLE\+\_\+\+MAX\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ad44123e0d288f509514e7982d4f3093f}\label{a00064_ad44123e0d288f509514e7982d4f3093f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!URL\_LENGTH@{URL\_LENGTH}}
+\index{URL\_LENGTH@{URL\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{URL\_LENGTH}{URL\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+URL\+\_\+\+LENGTH = 160\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a9d06cba865198481599befc71d9a8dae}\label{a00064_a9d06cba865198481599befc71d9a8dae}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!YEAR\_LENGTH@{YEAR\_LENGTH}}
+\index{YEAR\_LENGTH@{YEAR\_LENGTH}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{YEAR\_LENGTH}{YEAR\_LENGTH}}
+{\footnotesize\ttfamily const int Library\+Management.\+Book.\+YEAR\+\_\+\+LENGTH = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{a00064_acb956c309f00709a1c3aa85d2b126c23}\label{a00064_acb956c309f00709a1c3aa85d2b126c23}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Abstract@{Abstract}}
+\index{Abstract@{Abstract}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Abstract}{Abstract}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Abstract\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_aae8530351bf3bb91add7062f2e9ead26}\label{a00064_aae8530351bf3bb91add7062f2e9ead26}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Authors@{Authors}}
+\index{Authors@{Authors}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Authors}{Authors}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+Authors\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ade2a5dfd636de2011e35d283460fdb69}\label{a00064_ade2a5dfd636de2011e35d283460fdb69}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!CatalogId@{CatalogId}}
+\index{CatalogId@{CatalogId}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{CatalogId}{CatalogId}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Catalog\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ad00a56399b7a6b4b8a0eff52a6145073}\label{a00064_ad00a56399b7a6b4b8a0eff52a6145073}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Categories@{Categories}}
+\index{Categories@{Categories}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Categories}{Categories}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+Categories\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a0fbc199ae3fca5c6742ed05417d280cb}\label{a00064_a0fbc199ae3fca5c6742ed05417d280cb}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!City@{City}}
+\index{City@{City}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{City}{City}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+City\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a7a1e70b658b968325c0638f7da154779}\label{a00064_a7a1e70b658b968325c0638f7da154779}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Description@{Description}}
+\index{Description@{Description}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Description\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ab19d1b4192f0f587ae704c3c523780e7}\label{a00064_ab19d1b4192f0f587ae704c3c523780e7}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Edition@{Edition}}
+\index{Edition@{Edition}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Edition}{Edition}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Edition\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_acd311897b4abb9963405cfc34b154252}\label{a00064_acd311897b4abb9963405cfc34b154252}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Editors@{Editors}}
+\index{Editors@{Editors}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Editors}{Editors}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+Editors\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a1425637c4b73a4ace38247c8069a5941}\label{a00064_a1425637c4b73a4ace38247c8069a5941}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Given@{Given}}
+\index{Given@{Given}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Given}{Given}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Given\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_aed9897bfb7c5b3554529ccdee61bfb53}\label{a00064_aed9897bfb7c5b3554529ccdee61bfb53}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Id@{Id}}
+\index{Id@{Id}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily int Library\+Management.\+Book.\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, \mbox{\hyperlink{a00064_ac2bcf7b67eefae8e85c4c784d7f017e4}{Library\+Management.\+Book.\+Byte\+Array\+Block\+To\+Book()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a05d2ec6e56c087b56ec0a89ebfafad2e}\label{a00064_a05d2ec6e56c087b56ec0a89ebfafad2e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Pages@{Pages}}
+\index{Pages@{Pages}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Pages}{Pages}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Pages\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_af05f22253c674fc6f033adf962bcd22f}\label{a00064_af05f22253c674fc6f033adf962bcd22f}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Price@{Price}}
+\index{Price@{Price}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Price}{Price}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Price\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_ac37b9c4e9de5e0aeeae9c789267bddf8}\label{a00064_ac37b9c4e9de5e0aeeae9c789267bddf8}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Publisher@{Publisher}}
+\index{Publisher@{Publisher}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Publisher}{Publisher}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Publisher\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a781f1daf802fdd17158797814d32475c}\label{a00064_a781f1daf802fdd17158797814d32475c}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RackNo@{RackNo}}
+\index{RackNo@{RackNo}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{RackNo}{RackNo}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Rack\+No\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_af1d18469243b8eda45cc6e6f02e3507e}\label{a00064_af1d18469243b8eda45cc6e6f02e3507e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Return@{Return}}
+\index{Return@{Return}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Return}{Return}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Return\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a6cfec54affa1865cb2ee842b1794bf0b}\label{a00064_a6cfec54affa1865cb2ee842b1794bf0b}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!RowNo@{RowNo}}
+\index{RowNo@{RowNo}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{RowNo}{RowNo}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Row\+No\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a27ca0f6d625eef9bed02e9272fbbf0eb}\label{a00064_a27ca0f6d625eef9bed02e9272fbbf0eb}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Status@{Status}}
+\index{Status@{Status}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_af65fac517952d9daff3d17bbf4212b8e}\label{a00064_af65fac517952d9daff3d17bbf4212b8e}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Tags@{Tags}}
+\index{Tags@{Tags}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Tags}{Tags}}
+{\footnotesize\ttfamily List$<$string$>$ Library\+Management.\+Book.\+Tags\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a31774b08fe723ee6393fcdd587e9a0c0}\label{a00064_a31774b08fe723ee6393fcdd587e9a0c0}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Title@{Title}}
+\index{Title@{Title}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Title}{Title}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Title\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a9be0f36e7ad659ab5454411c1ba6c8db}\label{a00064_a9be0f36e7ad659ab5454411c1ba6c8db}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Url@{Url}}
+\index{Url@{Url}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Url}{Url}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+\mbox{\Hypertarget{a00064_a55a0e4e4003984d362e07e9abdf07848}\label{a00064_a55a0e4e4003984d362e07e9abdf07848}} 
+\index{LibraryManagement.Book@{LibraryManagement.Book}!Year@{Year}}
+\index{Year@{Year}!LibraryManagement.Book@{LibraryManagement.Book}}
+\doxysubsubsection{\texorpdfstring{Year}{Year}}
+{\footnotesize\ttfamily string Library\+Management.\+Book.\+Year\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00064_a9c96155553155ddb77ef541da3face81}{Library\+Management.\+Book.\+Book\+To\+Byte\+Array\+Block()}}, and \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/\mbox{\hyperlink{a00011}{Book.\+cs}}\end{DoxyCompactItemize}

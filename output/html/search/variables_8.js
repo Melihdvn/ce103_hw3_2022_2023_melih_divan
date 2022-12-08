@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['rackno_5flength_0',['RACKNO_LENGTH',['../class_library_management_1_1_book.html#afc7bbfc4155a20f61d3ce0b5c4926cff',1,'LibraryManagement::Book']]],
-  ['return_5flength_1',['RETURN_LENGTH',['../class_library_management_1_1_book.html#aa3abd5dc0e8befb7a89a909bda2f6f33',1,'LibraryManagement::Book']]],
-  ['rowno_5flength_2',['ROWNO_LENGTH',['../class_library_management_1_1_book.html#a6471e9b4668b55d53e355ba41cfcaa76',1,'LibraryManagement::Book']]]
+  ['options_0',['Options',['../d1/d84/a00052.html#a54a659cf2a6827f545fbcf5eedb99fc0',1,'librarianApp.LibraryManager.Menu.Options()'],['../d9/d2e/a00056.html#a9c0aaa46c9e075f200267102ffb09df7',1,'librarianApp.LibraryManager.MainMenu.Options()']]]
 ];

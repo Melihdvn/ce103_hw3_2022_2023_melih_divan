@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['url_0',['Url',['../class_library_management_1_1_book.html#a9be0f36e7ad659ab5454411c1ba6c8db',1,'LibraryManagement::Book']]]
+  ['tags_0',['Tags',['../df/d5f/a00064.html#af65fac517952d9daff3d17bbf4212b8e',1,'LibraryManagement::Book']]],
+  ['title_1',['Title',['../df/d5f/a00064.html#a31774b08fe723ee6393fcdd587e9a0c0',1,'LibraryManagement::Book']]]
 ];

@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['book_0',['Book',['../class_library_management_1_1_book.html#a138bfc22eb24bf1302954d24d01c8b16',1,'LibraryManagement.Book.Book()'],['../class_library_management_1_1_book.html',1,'LibraryManagement.Book']]],
-  ['book_2ecs_1',['Book.cs',['../_book_8cs.html',1,'']]],
-  ['book_5fdata_5fblock_5fsize_2',['BOOK_DATA_BLOCK_SIZE',['../class_library_management_1_1_book.html#a3fbfd6b02f10410081ee64dfad86acf9',1,'LibraryManagement::Book']]],
-  ['booktobytearrayblock_3',['BookToByteArrayBlock',['../class_library_management_1_1_book.html#a9c96155553155ddb77ef541da3face81',1,'LibraryManagement::Book']]],
-  ['bytearrayblocktobook_4',['ByteArrayBlockToBook',['../class_library_management_1_1_book.html#ac2bcf7b67eefae8e85c4c784d7f017e4',1,'LibraryManagement::Book']]]
+  ['_5fabstract_0',['_abstract',['../df/d5f/a00064.html#a1a8c12bc3b1e094232f7a81f7b4c4cbf',1,'LibraryManagement::Book']]],
+  ['_5fauthors_1',['_authors',['../df/d5f/a00064.html#a5d58265811b58431663debcf9e6c3892',1,'LibraryManagement::Book']]],
+  ['_5fcatalogid_2',['_catalogid',['../df/d5f/a00064.html#aa18a77956e8cd7ab9e32f9d986e9e531',1,'LibraryManagement::Book']]],
+  ['_5fcategories_3',['_categories',['../df/d5f/a00064.html#a4672f70e036060dfaf2d621db47daabf',1,'LibraryManagement::Book']]],
+  ['_5fcity_4',['_city',['../df/d5f/a00064.html#ae79753e4375d701ac98b600db80f8127',1,'LibraryManagement::Book']]],
+  ['_5fdescription_5',['_description',['../df/d5f/a00064.html#a4609a43adec9a6c53b54ecc39ad5f350',1,'LibraryManagement::Book']]],
+  ['_5fedition_6',['_edition',['../df/d5f/a00064.html#a6bc76d0837f4ca446e618022c7c3d236',1,'LibraryManagement::Book']]],
+  ['_5feditors_7',['_editors',['../df/d5f/a00064.html#a2b0a5f9b877a5413bbc8cfc164c4e877',1,'LibraryManagement::Book']]],
+  ['_5fgiven_8',['_given',['../df/d5f/a00064.html#a9cec9da04cfed92c7c77d52ca6c38769',1,'LibraryManagement::Book']]],
+  ['_5fid_9',['_id',['../df/d5f/a00064.html#a1fef12378b377d08ef566f24d1551ebd',1,'LibraryManagement::Book']]],
+  ['_5fname_10',['_name',['../da/d24/a00068.html#ae06123707e4b79d3cfec6c828cf9fe8e',1,'LibraryManagement::Category']]],
+  ['_5fpages_11',['_pages',['../df/d5f/a00064.html#ad460930aed9b0f75ece74442a50bba0f',1,'LibraryManagement::Book']]],
+  ['_5fprice_12',['_price',['../df/d5f/a00064.html#aa092492859fbbc0d9fa314f2a6c86090',1,'LibraryManagement::Book']]],
+  ['_5fpublisher_13',['_publisher',['../df/d5f/a00064.html#a3d8230be58a8744f0aac28acef931307',1,'LibraryManagement::Book']]],
+  ['_5frackno_14',['_rackno',['../df/d5f/a00064.html#aed51e1e019856bf3cac2a5d5b6663902',1,'LibraryManagement::Book']]],
+  ['_5freturn_15',['_return',['../df/d5f/a00064.html#aaf540ea0f36b3e632110ec02e5bf322a',1,'LibraryManagement::Book']]],
+  ['_5frowno_16',['_rowno',['../df/d5f/a00064.html#ad9a186118c189c9b40f7dbf55a47fc3b',1,'LibraryManagement::Book']]],
+  ['_5fstatus_17',['_status',['../df/d5f/a00064.html#aefd4158c0fc52cb6f7f5457e57516ad2',1,'LibraryManagement::Book']]],
+  ['_5ftags_18',['_tags',['../df/d5f/a00064.html#af6ea96d847017567598211f8870942cf',1,'LibraryManagement::Book']]],
+  ['_5ftitle_19',['_title',['../df/d5f/a00064.html#a50f524948080ab8734a2d972e3223de8',1,'LibraryManagement::Book']]],
+  ['_5furl_20',['_url',['../df/d5f/a00064.html#a6e8c1f1707b3e4dcea5d797fecfef51a',1,'LibraryManagement::Book']]],
+  ['_5fyear_21',['_year',['../df/d5f/a00064.html#ac08f8e4f4605177b1c59eb7df207c386',1,'LibraryManagement::Book']]]
 ];

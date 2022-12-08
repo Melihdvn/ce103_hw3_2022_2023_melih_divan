@@ -1,0 +1,108 @@
+\hypertarget{a00076}{}\doxysection{Library\+Management.\+File\+Utility Class Reference}
+\label{a00076}\index{LibraryManagement.FileUtility@{LibraryManagement.FileUtility}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{a00076_a78979240b936e4545f7c0506e433c15a}{Delete\+File}} (string path)
+\item 
+static byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{a00076_a49a5140b26df1664813c020f9a4bacfc}{Read\+Block}} (int count, int blocksize, string path)
+\item 
+static bool \mbox{\hyperlink{a00076_a3ec7140a0e147a7213a259a86cbf4b52}{Append\+Block}} (byte\mbox{[}$\,$\mbox{]} data, string path)
+\item 
+static bool \mbox{\hyperlink{a00076_ad91e1bc27f822e742178dc87e418c948}{Update\+Block}} (byte\mbox{[}$\,$\mbox{]} data, int count, int blocksize, string path)
+\item 
+static bool \mbox{\hyperlink{a00076_abdbd3f3d7492f5a4298c3916e6a21b2b}{Delete\+Block}} (int count, int blocksize, string path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{a00076_a3ec7140a0e147a7213a259a86cbf4b52}\label{a00076_a3ec7140a0e147a7213a259a86cbf4b52}} 
+\index{LibraryManagement.FileUtility@{LibraryManagement.FileUtility}!AppendBlock@{AppendBlock}}
+\index{AppendBlock@{AppendBlock}!LibraryManagement.FileUtility@{LibraryManagement.FileUtility}}
+\doxysubsubsection{\texorpdfstring{AppendBlock()}{AppendBlock()}}
+{\footnotesize\ttfamily static bool Library\+Management.\+File\+Utility.\+Append\+Block (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00080_a832e166dbdb6c647dc4bdb320a2965d2}{Library\+Management.\+Library\+Manager.\+Insert\+Book()}}, and \mbox{\hyperlink{a00080_a474ffd521b3a280452ad50ae91f80a2a}{Library\+Management.\+Library\+Manager.\+Insert\+Category()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df8/a00076_a3ec7140a0e147a7213a259a86cbf4b52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00076_abdbd3f3d7492f5a4298c3916e6a21b2b}\label{a00076_abdbd3f3d7492f5a4298c3916e6a21b2b}} 
+\index{LibraryManagement.FileUtility@{LibraryManagement.FileUtility}!DeleteBlock@{DeleteBlock}}
+\index{DeleteBlock@{DeleteBlock}!LibraryManagement.FileUtility@{LibraryManagement.FileUtility}}
+\doxysubsubsection{\texorpdfstring{DeleteBlock()}{DeleteBlock()}}
+{\footnotesize\ttfamily static bool Library\+Management.\+File\+Utility.\+Delete\+Block (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{int}]{blocksize,  }\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00080_ab48291e4615f870edb7f3d866f07dced}{Library\+Management.\+Library\+Manager.\+Delete\+Book()}}, and \mbox{\hyperlink{a00080_ad5be93c95cd661c560773b1dad9e80c4}{Library\+Management.\+Library\+Manager.\+Delete\+Category()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df8/a00076_abdbd3f3d7492f5a4298c3916e6a21b2b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00076_a78979240b936e4545f7c0506e433c15a}\label{a00076_a78979240b936e4545f7c0506e433c15a}} 
+\index{LibraryManagement.FileUtility@{LibraryManagement.FileUtility}!DeleteFile@{DeleteFile}}
+\index{DeleteFile@{DeleteFile}!LibraryManagement.FileUtility@{LibraryManagement.FileUtility}}
+\doxysubsubsection{\texorpdfstring{DeleteFile()}{DeleteFile()}}
+{\footnotesize\ttfamily static bool Library\+Management.\+File\+Utility.\+Delete\+File (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00060_a42ebc1de6c0d554221d823a23e2009d3}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Options()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df8/a00076_a78979240b936e4545f7c0506e433c15a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00076_a49a5140b26df1664813c020f9a4bacfc}\label{a00076_a49a5140b26df1664813c020f9a4bacfc}} 
+\index{LibraryManagement.FileUtility@{LibraryManagement.FileUtility}!ReadBlock@{ReadBlock}}
+\index{ReadBlock@{ReadBlock}!LibraryManagement.FileUtility@{LibraryManagement.FileUtility}}
+\doxysubsubsection{\texorpdfstring{ReadBlock()}{ReadBlock()}}
+{\footnotesize\ttfamily static byte\mbox{[}$\,$\mbox{]} Library\+Management.\+File\+Utility.\+Read\+Block (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{int}]{blocksize,  }\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00080_ab48291e4615f870edb7f3d866f07dced}{Library\+Management.\+Library\+Manager.\+Delete\+Book()}}, \mbox{\hyperlink{a00080_ad5be93c95cd661c560773b1dad9e80c4}{Library\+Management.\+Library\+Manager.\+Delete\+Category()}}, \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}, \mbox{\hyperlink{a00080_ad84c4ab2483efe0ef93a352c7a0514eb}{Library\+Management.\+Library\+Manager.\+Read\+Book()}}, and \mbox{\hyperlink{a00080_a373b8c08d256da3e3b32c0732b199794}{Library\+Management.\+Library\+Manager.\+Read\+Category()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df8/a00076_a49a5140b26df1664813c020f9a4bacfc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{a00076_ad91e1bc27f822e742178dc87e418c948}\label{a00076_ad91e1bc27f822e742178dc87e418c948}} 
+\index{LibraryManagement.FileUtility@{LibraryManagement.FileUtility}!UpdateBlock@{UpdateBlock}}
+\index{UpdateBlock@{UpdateBlock}!LibraryManagement.FileUtility@{LibraryManagement.FileUtility}}
+\doxysubsubsection{\texorpdfstring{UpdateBlock()}{UpdateBlock()}}
+{\footnotesize\ttfamily static bool Library\+Management.\+File\+Utility.\+Update\+Block (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{data,  }\item[{int}]{count,  }\item[{int}]{blocksize,  }\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Referenced by \mbox{\hyperlink{a00080_ab48291e4615f870edb7f3d866f07dced}{Library\+Management.\+Library\+Manager.\+Delete\+Book()}}, \mbox{\hyperlink{a00080_ad5be93c95cd661c560773b1dad9e80c4}{Library\+Management.\+Library\+Manager.\+Delete\+Category()}}, \mbox{\hyperlink{a00060_a20a4b62c91f2c9e6f8a3057a2122947c}{librarian\+App.\+Library\+Manager.\+App.\+Display\+Book()}}, \mbox{\hyperlink{a00080_aeb3ae635931ae96749d36a18c2c10635}{Library\+Management.\+Library\+Manager.\+Update\+Book()}}, and \mbox{\hyperlink{a00080_ab1ace17abe515089642273d76e983b8d}{Library\+Management.\+Library\+Manager.\+Update\+Category()}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/df8/a00076_ad91e1bc27f822e742178dc87e418c948_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ce103-\/hw3-\/melih-\/divan/librarian-\/app-\/dll/\mbox{\hyperlink{a00020}{File\+Utility.\+cs}}\end{DoxyCompactItemize}
