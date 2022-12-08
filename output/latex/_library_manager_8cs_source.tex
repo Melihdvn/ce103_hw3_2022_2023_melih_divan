@@ -33,46 +33,97 @@
 \DoxyCodeLine{00029             FileUtility.AppendBlock(bookBytes, filename);}
 \DoxyCodeLine{00030         \}}
 \DoxyCodeLine{00031 }
-\DoxyCodeLine{00032         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} UpdateBook(Book book, \textcolor{keywordtype}{int} booknumber)}
+\DoxyCodeLine{00032         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} InsertCategory(Category category)}
 \DoxyCodeLine{00033         \{}
 \DoxyCodeLine{00034             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
-\DoxyCodeLine{00035             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00035             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}category.dat"{}});}
 \DoxyCodeLine{00036 }
-\DoxyCodeLine{00037             \textcolor{keywordtype}{byte}[] bookBytes = Book.BookToByteArrayBlock(book);}
-\DoxyCodeLine{00038             FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00037             \textcolor{keywordtype}{byte}[] catBytes = Category.CategoryToByteArrayBlock(category);}
+\DoxyCodeLine{00038             FileUtility.AppendBlock(catBytes, filename);}
 \DoxyCodeLine{00039         \}}
 \DoxyCodeLine{00040 }
-\DoxyCodeLine{00041         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeleteBook(\textcolor{keywordtype}{int} booknumber)}
+\DoxyCodeLine{00041         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} UpdateBook(Book book, \textcolor{keywordtype}{int} booknumber)}
 \DoxyCodeLine{00042         \{}
 \DoxyCodeLine{00043             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
 \DoxyCodeLine{00044             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
 \DoxyCodeLine{00045 }
-\DoxyCodeLine{00046             \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
-\DoxyCodeLine{00047             \{}
-\DoxyCodeLine{00048                 \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
-\DoxyCodeLine{00049                 sr.Close();}
-\DoxyCodeLine{00050                 FileUtility.DeleteBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
-\DoxyCodeLine{00051                 \textcolor{keywordflow}{do}}
-\DoxyCodeLine{00052                 \{}
-\DoxyCodeLine{00053                     \textcolor{keywordtype}{byte}[] nextbookbytes = FileUtility.ReadBlock(booknumber + 1, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
-\DoxyCodeLine{00054                     FileUtility.UpdateBlock(nextbookbytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
-\DoxyCodeLine{00055                     booknumber++;}
-\DoxyCodeLine{00056                 \} \textcolor{keywordflow}{while} (booknumber <= (((datalength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) -\/ 1));}
-\DoxyCodeLine{00057 }
-\DoxyCodeLine{00058                 FileUtility.DeleteBlock(((datalength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)), Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
-\DoxyCodeLine{00059             \}}
-\DoxyCodeLine{00060         \}}
-\DoxyCodeLine{00061         }
-\DoxyCodeLine{00062         \textcolor{keyword}{public} \textcolor{keyword}{static} Book ReadBook(\textcolor{keywordtype}{int} booknumber)}
-\DoxyCodeLine{00063         \{}
-\DoxyCodeLine{00064             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
-\DoxyCodeLine{00065             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
-\DoxyCodeLine{00066 }
-\DoxyCodeLine{00067             \textcolor{keywordtype}{byte}[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
-\DoxyCodeLine{00068             Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);}
-\DoxyCodeLine{00069             \textcolor{keywordflow}{return} bookWrittenObject;}
-\DoxyCodeLine{00070         \}}
-\DoxyCodeLine{00071     \}}
-\DoxyCodeLine{00072 \}}
+\DoxyCodeLine{00046             \textcolor{keywordtype}{byte}[] bookBytes = Book.BookToByteArrayBlock(book);}
+\DoxyCodeLine{00047             FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00048         \}}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} UpdateCategory(Category category, \textcolor{keywordtype}{int} catnumber)}
+\DoxyCodeLine{00051         \{}
+\DoxyCodeLine{00052             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00053             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}category.dat"{}});}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055             \textcolor{keywordtype}{byte}[] catBytes = Category.CategoryToByteArrayBlock(category);}
+\DoxyCodeLine{00056             FileUtility.UpdateBlock(catBytes, catnumber, Category.CATEGORY\_MAX\_LENGTH, filename);}
+\DoxyCodeLine{00057         \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeleteBook(\textcolor{keywordtype}{int} booknumber)}
+\DoxyCodeLine{00060         \{}
+\DoxyCodeLine{00061             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00062             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00063 }
+\DoxyCodeLine{00064             \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}library.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00065             \{}
+\DoxyCodeLine{00066                 \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
+\DoxyCodeLine{00067                 sr.Close();}
+\DoxyCodeLine{00068                 FileUtility.DeleteBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00069                 \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00070                 \{}
+\DoxyCodeLine{00071                     \textcolor{keywordtype}{byte}[] nextbookbytes = FileUtility.ReadBlock(booknumber + 1, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00072                     FileUtility.UpdateBlock(nextbookbytes, booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00073                     booknumber++;}
+\DoxyCodeLine{00074                 \} \textcolor{keywordflow}{while} (booknumber <= (((datalength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)) -\/ 1));}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076                 FileUtility.DeleteBlock(((datalength.Length) / (Book.BOOK\_DATA\_BLOCK\_SIZE)), Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00077             \}}
+\DoxyCodeLine{00078         \}}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080         \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{void} DeleteCategory(\textcolor{keywordtype}{int} catnumber)}
+\DoxyCodeLine{00081         \{}
+\DoxyCodeLine{00082             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00083             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}category.dat"{}});}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085             \textcolor{keyword}{using} (StreamReader sr = \textcolor{keyword}{new} StreamReader(File.Open(\textcolor{stringliteral}{"{}category.dat"{}}, FileMode.Open)))}
+\DoxyCodeLine{00086             \{}
+\DoxyCodeLine{00087                 \textcolor{keywordtype}{string} datalength = sr.ReadLine();}
+\DoxyCodeLine{00088                 sr.Close();}
+\DoxyCodeLine{00089                 FileUtility.DeleteBlock(catnumber, Category.CATEGORY\_MAX\_LENGTH, filename);}
+\DoxyCodeLine{00090                 \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00091                 \{}
+\DoxyCodeLine{00092                     \textcolor{keywordtype}{byte}[] nextbookbytes = FileUtility.ReadBlock(catnumber + 1, Category.CATEGORY\_MAX\_LENGTH, filename);}
+\DoxyCodeLine{00093                     FileUtility.UpdateBlock(nextbookbytes, catnumber, Category.CATEGORY\_MAX\_LENGTH, filename);}
+\DoxyCodeLine{00094                     catnumber++;}
+\DoxyCodeLine{00095                 \} \textcolor{keywordflow}{while} (catnumber <= (((datalength.Length) / (Category.CATEGORY\_MAX\_LENGTH)) -\/ 1));}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097                 FileUtility.DeleteBlock(((datalength.Length) / (Category.CATEGORY\_MAX\_LENGTH)), Category.CATEGORY\_MAX\_LENGTH, filename);}
+\DoxyCodeLine{00098             \}}
+\DoxyCodeLine{00099         \}}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101         \textcolor{keyword}{public} \textcolor{keyword}{static} Book ReadBook(\textcolor{keywordtype}{int} booknumber)}
+\DoxyCodeLine{00102         \{}
+\DoxyCodeLine{00103             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00104             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}library.dat"{}});}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106             \textcolor{keywordtype}{byte}[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK\_DATA\_BLOCK\_SIZE, filename);}
+\DoxyCodeLine{00107             Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);}
+\DoxyCodeLine{00108             \textcolor{keywordflow}{return} bookWrittenObject;}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111         \textcolor{keyword}{public} \textcolor{keyword}{static} Category ReadCategory(\textcolor{keywordtype}{int} catnumber)}
+\DoxyCodeLine{00112         \{}
+\DoxyCodeLine{00113             \textcolor{keywordtype}{string} path = AppDomain.CurrentDomain.BaseDirectory;}
+\DoxyCodeLine{00114             \textcolor{keywordtype}{string} filename = Path.Combine(path, \textcolor{stringliteral}{"{}category.dat"{}});}
+\DoxyCodeLine{00115 }
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118             \textcolor{keywordtype}{byte}[] categoryWrittenBytes = FileUtility.ReadBlock(catnumber, Category.CATEGORY\_MAX\_LENGTH, filename);}
+\DoxyCodeLine{00119             Category categoryWrittenObject = Category.ByteArrayBlockToCategory(categoryWrittenBytes);}
+\DoxyCodeLine{00120             \textcolor{keywordflow}{return} categoryWrittenObject;}
+\DoxyCodeLine{00121         \}}
+\DoxyCodeLine{00122     \}}
+\DoxyCodeLine{00123 \}}
 
 \end{DoxyCode}
