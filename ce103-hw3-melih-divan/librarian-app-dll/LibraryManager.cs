@@ -29,6 +29,15 @@ namespace LibraryManagement
             FileUtility.AppendBlock(bookBytes, filename);
         }
 
+        public static void InsertCategory(Category category)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string filename = Path.Combine(path, "category.dat");
+
+            byte[] catBytes = Category.CategoryToByteArrayBlock(category);
+            FileUtility.AppendBlock(catBytes, filename);
+        }
+
         public static void UpdateBook(Book book, int booknumber)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
@@ -36,6 +45,15 @@ namespace LibraryManagement
 
             byte[] bookBytes = Book.BookToByteArrayBlock(book);
             FileUtility.UpdateBlock(bookBytes, booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
+        }
+
+        public static void UpdateCategory(Category category, int catnumber)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string filename = Path.Combine(path, "category.dat");
+
+            byte[] catBytes = Category.CategoryToByteArrayBlock(category);
+            FileUtility.UpdateBlock(catBytes, catnumber, Category.CATEGORY_MAX_LENGTH, filename);
         }
 
         public static void DeleteBook(int booknumber)
@@ -58,7 +76,28 @@ namespace LibraryManagement
                 FileUtility.DeleteBlock(((datalength.Length) / (Book.BOOK_DATA_BLOCK_SIZE)), Book.BOOK_DATA_BLOCK_SIZE, filename);
             }
         }
-        
+
+        public static void DeleteCategory(int catnumber)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string filename = Path.Combine(path, "category.dat");
+
+            using (StreamReader sr = new StreamReader(File.Open("category.dat", FileMode.Open)))
+            {
+                string datalength = sr.ReadLine();
+                sr.Close();
+                FileUtility.DeleteBlock(catnumber, Category.CATEGORY_MAX_LENGTH, filename);
+                do
+                {
+                    byte[] nextbookbytes = FileUtility.ReadBlock(catnumber + 1, Category.CATEGORY_MAX_LENGTH, filename);
+                    FileUtility.UpdateBlock(nextbookbytes, catnumber, Category.CATEGORY_MAX_LENGTH, filename);
+                    catnumber++;
+                } while (catnumber <= (((datalength.Length) / (Category.CATEGORY_MAX_LENGTH)) - 1));
+
+                FileUtility.DeleteBlock(((datalength.Length) / (Category.CATEGORY_MAX_LENGTH)), Category.CATEGORY_MAX_LENGTH, filename);
+            }
+        }
+
         public static Book ReadBook(int booknumber)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory;
@@ -67,6 +106,18 @@ namespace LibraryManagement
             byte[] bookWrittenBytesforBorrow = FileUtility.ReadBlock(booknumber, Book.BOOK_DATA_BLOCK_SIZE, filename);
             Book bookWrittenObject = Book.ByteArrayBlockToBook(bookWrittenBytesforBorrow);
             return bookWrittenObject;
+        }
+
+        public static Category ReadCategory(int catnumber)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string filename = Path.Combine(path, "category.dat");
+
+
+
+            byte[] categoryWrittenBytes = FileUtility.ReadBlock(catnumber, Category.CATEGORY_MAX_LENGTH, filename);
+            Category categoryWrittenObject = Category.ByteArrayBlockToCategory(categoryWrittenBytes);
+            return categoryWrittenObject;
         }
     }
 }

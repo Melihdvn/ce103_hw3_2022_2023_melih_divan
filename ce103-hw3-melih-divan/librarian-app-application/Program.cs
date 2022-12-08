@@ -4,6 +4,9 @@ using static System.Console;
 using LibraryManagement;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace librarianApp
 {
@@ -309,7 +312,7 @@ namespace librarianApp
 ";
                 ResetColor();
                 string welcome = "            Welcome to the Librarian app! What would you like to do? \n       (Use Arrow Keys to cycle through options and press enter to select.)\n";
-                string[] options = { "Book Options", "Borrow History", "About", "Options", "Exit" };
+                string[] options = { "Book Options", "Category Options", "Borrow History", "About", "Options", "Exit" };
                 MainMenu mainmenu = new MainMenu(prompt, options, welcome);
                 int SelectedIndex = mainmenu.Run();
 
@@ -320,15 +323,18 @@ namespace librarianApp
                         DisplayBook();
                         break;
                     case 1:
-                        DisplayBorrowHistory();
+                        DisplayCtg();
                         break;
                     case 2:
-                        DisplayAbout();
+                        DisplayBorrowHistory();
                         break;
                     case 3:
-                        DisplayOptions();
+                        DisplayAbout();
                         break;
                     case 4:
+                        DisplayOptions();
+                        break;
+                    case 5:
                         ExitApp();
                         break;
                 }
@@ -431,8 +437,14 @@ namespace librarianApp
                     book.Tags.Add(" Tag: " + ReadLine());
                     Write("\nPlease enter book editor: ");
                     book.Editors.Add(" Editor: " + ReadLine());
-                    Write("\nPlease enter book category: ");
-                    book.Categories.Add(" Category: " + ReadLine());
+
+                    Clear();
+                    ListCategoryForAddBook();
+                    int catnumber;
+                    Write("\nPlease enter book category number which you want to add: ");
+                    catnumber = Convert.ToInt32(ReadLine());
+                    Category category = LibraryManagement.LibraryManager.ReadCategory(catnumber);
+                    book.Categories.Add(category.Name + "| ");
 
                     LibraryManagement.LibraryManager.InsertBook(book);
 
@@ -492,8 +504,13 @@ namespace librarianApp
                             book.Tags.Add(" Tag: " + ReadLine());
                             Write("\nPlease enter book editor: ");
                             book.Editors.Add(" Editor: " + ReadLine());
-                            Write("\nPlease enter book category: ");
-                            book.Categories.Add(" Category: " + ReadLine());
+                            Clear();
+                            ListCategoryForAddBook();
+                            int catnumber;
+                            Write("\nPlease enter book category number which you want to add: ");
+                            catnumber = Convert.ToInt32(ReadLine());
+                            Category category = LibraryManagement.LibraryManager.ReadCategory(catnumber);
+                            book.Categories.Add(" Category: " + category.Name);
 
 
                             LibraryManagement.LibraryManager.UpdateBook(book, booknumber);
@@ -602,7 +619,7 @@ namespace librarianApp
                     int i = 1;
                     if (File.Exists("library.dat"))
                     {
-                        Write("Please enter name or ID or Author of the book which do you want to find: ");
+                        Write("Please enter name, ID, Author or Category of the book which do you want to find: ");
                         var search = ReadLine();
                         if (LibraryManagement.LibraryManager.IsNumeric(search) == false)
                         {
@@ -615,7 +632,7 @@ namespace librarianApp
                                 {
                                 Book bookWrittenObject = LibraryManagement.LibraryManager.ReadBook(i);
 
-                                    if (bookWrittenObject != null && (bookWrittenObject.Title.Contains(search) | (bookWrittenObject.Authors[0].Contains(search))))
+                                    if (bookWrittenObject != null && (bookWrittenObject.Title.Contains(search) | (bookWrittenObject.Authors[0].Contains(search) | (bookWrittenObject.Categories[0].Contains(search)))))
                                     {
                                         WriteLine(i + ". - " + bookWrittenObject.Id + " | " + bookWrittenObject.Title + " | " + bookWrittenObject.Description + " | " + bookWrittenObject.Authors[0] + " | " + bookWrittenObject.Status + "\n");
                                     }
@@ -758,6 +775,173 @@ namespace librarianApp
                 #endregion
 
             }
+            #endregion
+            #region Category menu
+            private void DisplayCtg()
+            {
+                string prompt = @"
+
+  ████████████████████████████████████████████████████████████████████████████████████
+  ██                                                                                ██
+  ██  _       _  _                        _                        By Melih Divan   ██
+  ██ | |     (_)| |                      (_)                   /\                   ██
+  ██ | |      _ | |__   _ __  __ _  _ __  _   __ _  _ __      /  \    _ __   _ __   ██
+  ██ | |     | || '_ \ | '__|/ _` || '__|| | / _` || '_ \    / /\ \  | '_ \ | '_ \  ██
+  ██ | |____ | || |_) || |  | (_| || |   | || (_| || | | |  / ____ \ | |_) || |_) | ██
+  ██ |______||_||_.__/ |_|   \__,_||_|   |_| \__,_||_| |_| /_/    \_\| .__/ | .__/  ██
+  ██                                                                 | |    | |     ██
+  ██                                                                 |_|    |_|     ██
+  ██                                                                                ██
+  ████████████████████████████████████████████████████████████████████████████████████
+  ";
+                string[] options = { "Add Category", "List Category", "Edit Category", "Delete Category", "Back to the main menu" };
+                Menu ctgMenu = new Menu(prompt, options);
+                int SelectedIndex = ctgMenu.Run();
+
+                switch (SelectedIndex)
+                {
+                    case 0:
+                        AddCategory();
+                        break;
+                    case 1:
+                        ListCategory();
+                        break;
+                    case 2:
+                        EditCategory();
+                        break;
+                    case 3:
+                        DeleteCategory();
+                        break;
+                    case 4:
+                        RunMainMenu();
+                        break;
+                }
+
+            }
+
+            private void AddCategory()
+            {
+                Clear();
+                Category category = new Category();
+                Write("\nPlease enter category name: ");
+                category.Name = ReadLine();
+
+                LibraryManagement.LibraryManager.InsertCategory(category);
+
+                DisplayCtg();
+            }
+            private void ListCategory()
+            {
+                Clear();
+                if (File.Exists("category.dat"))
+                {
+                    int i = 1;
+                    using (StreamReader sr = new StreamReader(File.Open("category.dat", FileMode.Open)))
+                    {
+                        string datlength = sr.ReadLine();
+                        sr.Close();
+                        do
+                        {
+                            Category categoryWrittenObject = LibraryManagement.LibraryManager.ReadCategory(i);
+
+                            if (categoryWrittenObject != null)
+                            {
+                                WriteLine("Category number : " + i);
+                                WriteLine("Name: " + categoryWrittenObject.Name);
+                                WriteLine("-----------------------");
+                            }
+                            i++;
+
+                        } while (i < (((datlength.Length) / (Category.CATEGORY_MAX_LENGTH)) + 1));
+
+                        WriteLine("Press any key to return...");
+                        ReadKey(true);
+                        DisplayCtg();
+                    }
+                }
+                else { Clear(); WriteLine("Category file couldn't found."); }
+
+                WriteLine("Press any key to return...");
+                ReadKey(true);
+                DisplayCtg();
+            }
+            private void ListCategoryForAddBook()
+            {
+                Clear();
+                if (File.Exists("category.dat"))
+                {
+                    int i = 1;
+                    using (StreamReader sr = new StreamReader(File.Open("category.dat", FileMode.Open)))
+                    {
+                        string datlength = sr.ReadLine();
+                        sr.Close();
+                        do
+                        {
+                            Category categoryWrittenObject = LibraryManagement.LibraryManager.ReadCategory(i);
+
+                            if (categoryWrittenObject != null)
+                            {
+                                WriteLine("Category number : " + i);
+                                WriteLine("Name: " + categoryWrittenObject.Name);
+                                WriteLine("-----------------------");
+                            }
+                            i++;
+
+                        } while (i < (((datlength.Length) / (Category.CATEGORY_MAX_LENGTH)) + 1));
+                    }
+                }
+                else { Clear(); WriteLine("Category file couldn't found."); }
+            }
+            private void EditCategory()
+            {
+                Clear();
+                int catnumber;
+                if (File.Exists("category.dat"))
+                {
+                    Write("Please enter number of book which do you want to edit: ");
+                    catnumber = Convert.ToInt32(ReadLine());
+
+
+                    using (StreamReader sr = new StreamReader(File.Open("category.dat", FileMode.Open)))
+                    {
+                        string datalength = sr.ReadLine();
+                        sr.Close();
+
+                        Category category = new Category();
+                        Write("\nPlease enter book title: ");
+                        category.Name = ReadLine();
+
+
+                        LibraryManagement.LibraryManager.UpdateCategory(category, catnumber);
+                    }
+                }
+                else { WriteLine("Category file couldn't found."); }
+
+                WriteLine("Press any key to return...");
+                ReadKey(true);
+                DisplayCtg();
+            }
+            private void DeleteCategory()
+            {
+                if (File.Exists("category.dat"))
+                {
+                    Clear();
+                    int catnumber;
+                    WriteLine("Please enter number of category which do you want to delete: ");
+                    catnumber = Convert.ToInt32(ReadLine());
+
+                    LibraryManagement.LibraryManager.DeleteCategory(catnumber);
+                }
+
+                else
+                { Clear(); WriteLine("Category file couldn't found."); }
+
+                WriteLine("Press any key to return...");
+                ReadKey(true);
+                DisplayCtg();
+            }
+
+
             #endregion
             #region Borrow History Menu
             private void DisplayBorrowHistory()
